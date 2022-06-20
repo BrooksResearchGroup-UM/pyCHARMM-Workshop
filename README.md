@@ -25,10 +25,10 @@ To run jupyter lab on the cluster and view it in a browser on your computer
 (Note this environment should have pyCHARMM installed as well as any other python modules/applications you want to use.)
 4) jupyter lab —no-browser
 You should see the following somewhere in the output created:
-[I 2022-06-20 09:31:36.674 ServerApp] Jupyter Server 1.17.1 is running at:
-[I 2022-06-20 09:31:36.674 ServerApp] http://localhost:39004/lab
-[I 2022-06-20 09:31:36.674 ServerApp]  or http://127.0.0.1:39004/lab
-[I 2022-06-20 09:31:36.674 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+  [I 2022-06-20 09:31:36.674 ServerApp] Jupyter Server 1.17.1 is running at:
+  [I 2022-06-20 09:31:36.674 ServerApp] http://localhost:39004/lab
+  [I 2022-06-20 09:31:36.674 ServerApp]  or http://127.0.0.1:39004/lab
+  [I 2022-06-20 09:31:36.674 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 
 5) on your home computer  run "ssh -N -f -L localhost:39004:localhost:39004 satyr" 
 you will need to substitute the port your notebook is running on where I have 39004.
