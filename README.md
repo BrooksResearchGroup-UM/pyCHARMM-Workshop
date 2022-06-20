@@ -15,22 +15,21 @@
 ## Following this you will need to set the environment variable __CHARMM_LIB_DIR__ as noted above to point to your install library directory, and install the pyCHARMM modules using pip as noted above.
 
 ## Required modules/codes: 
-> 1. MMTSB Toolset is utilized and should be installed (https://github.com/mmtsb/toolset).
-> 2. I will utilize __propKa__
-> 3. I use pymol locally to view structures.
+> 1. __MMTSB Toolset__ is utilized and should be installed (https://github.com/mmtsb/toolset).
+> 2. __propKa__ (https://github.com/jensengroup/propka) will be utilized.
+> 3. __pymol__ will be utilzied locally to view structures.
 
 ## Using jupyter-lab: You can use jupyter lab to run the tutorial examples (see pyCHARMMWorkshop.pdf in Notes).
-
 
 # Workshop Agenda
 
 ## Monday 4:30 - 5:30 PM 
-Introduction to CHARMM, how to build pyCHARMM and first steps in setting up molecular simulations with pyCHARMM, selecting atoms and basic manipulations of the PSF using pyCHARMM.
+> __Introduction to CHARMM, how to build pyCHARMM and first steps in setting up molecular simulations with pyCHARMM, selecting atoms and basic manipulations of the PSF using pyCHARMM.__
 ## Tuesday 4:00 PM - 5:30 PM 
-Setting up solvated molecular dynamics simulations, using OpenMM, BLaDE GPU accelerated simulation engines for molecular dynamics.
+> __Setting up solvated molecular dynamics simulations, using OpenMM, BLaDE GPU accelerated simulation engines for molecular dynamics.__
 ## Wednesday 4:30 - 5:30 PM 
-Using pyCHARMM CDOCKER for rigid-receptor, flexible ligand and flexible-receptor, flexible ligand docking
+> __Using pyCHARMM CDOCKER for rigid-receptor, flexible ligand and flexible-receptor, flexible ligand docking.__
 ## Thursday 4:00 - 5:30 PM 
-Free energy simulations i) absolute solvation free energy calculations; ii) setting-up MSλD with msld-py-prep and pyCHARMM
+> __Free energy simulations i) absolute solvation free energy calculations; ii) setting-up MSλD with msld-py-prep and pyCHARMM.__
 ## Friday 4:00 - 5:30 PM 
-Advanced topics including integration of python tools with pyCHARMM, utilizing machine-learned potentials in pyCHARMM, parallelism in python with MPI.
+> __Advanced topics including integration of python tools with pyCHARMM, utilizing machine-learned potentials in pyCHARMM, parallelism in python with MPI.__
