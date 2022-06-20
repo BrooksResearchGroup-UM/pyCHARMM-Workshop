@@ -1,20 +1,23 @@
 # pyCHARMM Workshop
-# June 20-24, 2022
-# 4:00 - 5:30 PM*
-# Chem 1706
+## June 20-24, 2022, 4:00 - 5:30 PM*, Chem 1706
 
 # pyCHARMM: A python instantiation of CHARMM
 
 ## Objectives: In this workshop you will be introduced to basic setup and use of pyCHARMM for biomolecule modeling and simulation, including topics of ligand docking, ligand and protein preparation for MSλD simulations. The integration of other python functions, including machine learning derived energy functions will be discussed. Advanced topics including the use of MPI through python for parallel simulation control and integration of complex workflows involving integration of other python tools with CHARMM functionality. The workshop attendees will utilize jupyter-lab to explore pyCHARMM basic tutorials. Bring your laptops to connect to the gollum cluster if you have an account or if you are remote use your local resources. Tutorial examples will not, in general, be compute intensive, but will utilize pymol, CHARMM/OpenMM and CHARMM/BLaDE.
 
 ## Preliminaries: We will utilize pyCHARMM from the current developers stream. If you are working on gollum you can link to the pyCHARMM version I compiled using (tsch):
-setenv CHARMM_LIB_DIR /users/brookscl/charmm/c47-dev-release/install-pycharmm-nompi/lib
-pip install /users/brookscl/charmm/c47-dev-release/tool/pycharmm
+> _setenv CHARMM_LIB_DIR /users/brookscl/charmm/c47-dev-release/install-pycharmm-nompi/lib_
+> _pip install /users/brookscl/charmm/c47-dev-release/tool/pycharmm_
 
 ## Building pyCHARMM: If you are building pyCHARMM in your local environment (assuming Linux, gcc (I use 7.3), NVIDIA drivers (I use 10)/gpu access with OpenMM already installed), in the directory you want to build charmm (I use build_charmm):
-../configure —with-blade —with-fftdock —without-mpi —as-library -p ../install-pycharmm-nompi
+> _../configure —with-blade —with-fftdock —without-mpi —as-library -p ../install-pycharmm-nompi_
 
-## Following this you will need to set the environment variable CHARMM_LIB_DIR as noted above to point to your install library directory, and install the pyCHARMM modules using pip as noted above.
+## Following this you will need to set the environment variable __CHARMM_LIB_DIR__ as noted above to point to your install library directory, and install the pyCHARMM modules using pip as noted above.
+
+## Required modules/codes: 
+> 1. MMTSB Toolset is utilized and should be installed (https://github.com/mmtsb/toolset).
+> 2. I will utilize __propKa__
+> 3. I use pymol locally to view structures.
 
 ## Using jupyter-lab: You can use jupyter lab to run the tutorial examples (see pyCHARMMWorkshop.pdf in Notes).
 
