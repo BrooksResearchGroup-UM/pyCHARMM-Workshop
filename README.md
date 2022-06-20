@@ -7,7 +7,7 @@
 
 ## Preliminaries: We will utilize pyCHARMM from the current developers stream. If you are working on gollum you can link to the pyCHARMM version I compiled using (tsch):
 > _setenv CHARMM_LIB_DIR /users/brookscl/charmm/c47-dev-release/install-pycharmm-nompi/lib_
-> _pip install /users/brookscl/charmm/c47-dev-release/tool/pycharmm_
+>  _pip install /users/brookscl/charmm/c47-dev-release/tool/pycharmm_
 
 ## Building pyCHARMM: If you are building pyCHARMM in your local environment (assuming Linux, gcc (I use 7.3), NVIDIA drivers (I use 10)/gpu access with OpenMM already installed), in the directory you want to build charmm (I use build_charmm):
 > _../configure —with-blade —with-fftdock —without-mpi —as-library -p ../install-pycharmm-nompi_
