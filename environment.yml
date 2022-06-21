@@ -1,0 +1,10 @@
+name: pyCHARMM
+channels:
+  - conda-forge
+  - schrodinger
+dependencies:
+  - numpy
+  - pandas
+  - jupyterlab
+  - pymol
+  - rdkit
