@@ -1,0 +1,40 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 2                                                       
+REMARK  THE CLUSTER ID IS 1                                                           
+REMARK  THE TOTAL ENERGY IS -0.312298                                                 
+REMARK  THE VDW ENERGY IS -50.438326                                                  
+REMARK  THE ELEC ENERGY IS -19.923095                                                 
+REMARK  THE ENTROPY IS -0.411036                                                      
+REMARK   DATE:     2/10/22     12:35:18      CREATED BY USER: yujin                   
+ATOM   2604  CAA 3GZ   200      27.493  10.589   1.880  1.00  0.00      LIGA
+ATOM   2605  CAB 3GZ   200      26.084   5.659   5.932  1.00  0.00      LIGA
+ATOM   2606  CAC 3GZ   200      25.657   4.919   4.830  1.00  0.00      LIGA
+ATOM   2607  CAD 3GZ   200      27.074   6.633   5.783  1.00  0.00      LIGA
+ATOM   2608  CAE 3GZ   200      26.228   5.136   3.583  1.00  0.00      LIGA
+ATOM   2609  CAF 3GZ   200      27.659   6.848   4.528  1.00  0.00      LIGA
+ATOM   2610  CAG 3GZ   200      26.434   9.519   1.646  1.00  0.00      LIGA
+ATOM   2611  CAH 3GZ   200      26.759   8.710   0.394  1.00  0.00      LIGA
+ATOM   2612  CAI 3GZ   200      28.204   8.236   0.410  1.00  0.00      LIGA
+ATOM   2613  CAJ 3GZ   200      28.582   7.462   1.685  1.00  0.00      LIGA
+ATOM   2614  CAK 3GZ   200      27.773   6.198   2.013  1.00  0.00      LIGA
+ATOM   2615  CAL 3GZ   200      27.224   6.103   3.410  1.00  0.00      LIGA
+ATOM   2616  H1  3GZ   200      27.103  11.461   2.402  1.00  0.00      LIGA
+ATOM   2617  H2  3GZ   200      27.881  10.948   0.907  1.00  0.00      LIGA
+ATOM   2618  H3  3GZ   200      28.327  10.197   2.488  1.00  0.00      LIGA
+ATOM   2619  H4  3GZ   200      25.653   5.461   6.895  1.00  0.00      LIGA
+ATOM   2620  H5  3GZ   200      24.894   4.174   4.935  1.00  0.00      LIGA
+ATOM   2621  H6  3GZ   200      27.411   7.187   6.644  1.00  0.00      LIGA
+ATOM   2622  H7  3GZ   200      25.906   4.548   2.740  1.00  0.00      LIGA
+ATOM   2623  H8  3GZ   200      28.456   7.569   4.461  1.00  0.00      LIGA
+ATOM   2624  H9  3GZ   200      26.369   8.854   2.534  1.00  0.00      LIGA
+ATOM   2625  H10 3GZ   200      25.438   9.988   1.535  1.00  0.00      LIGA
+ATOM   2626  H11 3GZ   200      26.085   7.840   0.288  1.00  0.00      LIGA
+ATOM   2627  H12 3GZ   200      26.606   9.351  -0.499  1.00  0.00      LIGA
+ATOM   2628  H13 3GZ   200      28.401   7.678  -0.513  1.00  0.00      LIGA
+ATOM   2629  H14 3GZ   200      28.887   9.108   0.337  1.00  0.00      LIGA
+ATOM   2630  H15 3GZ   200      29.638   7.192   1.554  1.00  0.00      LIGA
+ATOM   2631  H16 3GZ   200      28.558   8.171   2.529  1.00  0.00      LIGA
+ATOM   2632  H17 3GZ   200      28.413   5.302   1.876  1.00  0.00      LIGA
+ATOM   2633  H18 3GZ   200      26.911   6.120   1.319  1.00  0.00      LIGA
+TER    2634      3GZ    200
+END

@@ -1,0 +1,71 @@
+* PARAM file for C36 protein/cgenff docking grid probes
+*
+
+
+ATOMS
+MASS  -1  PR1   1  PR1 
+MASS  -1  PR2   1  PR2 
+MASS  -1  PR3   1  PR3 
+MASS  -1  PR4   1  PR4 
+MASS  -1  PR5   1  PR5 
+MASS  -1  PR6   1  PR6 
+MASS  -1  PR7   1  PR7 
+MASS  -1  PR8   1  PR8 
+MASS  -1  PR9   1  PR9 
+MASS  -1  PR10  1  PR10
+MASS  -1  PR11  1  PR11
+MASS  -1  PR12  1  PR12
+MASS  -1  PR13  1  PR13
+MASS  -1  PR14  1  PR14
+MASS  -1  PR15  1  PR15
+MASS  -1  PR16  1  PR16
+MASS  -1  PR17  1  PR17
+MASS  -1  PR18  1  PR18
+MASS  -1  PR19  1  PR19
+MASS  -1  PR20  1  PR20
+MASS  -1  PR21  1  PR21
+MASS  -1  PR22  1  PR22
+MASS  -1  PR23  1  PR23
+MASS  -1  PR24  1  PR24
+MASS  -1  PR25  1  PR25
+MASS  -1  PR26  1  PR26
+
+
+NBONDED  NBXMOD 5  ATOM RDIEL SWITCH VATOM VDISTANCE VSWITCH -
+CUTNB 999 CTOFNB 999 CTONNB 999 EPS 3 E14FAC 0.5 WMIN 1.5
+
+
+!
+!       EMIN  Rmin/2
+!    (kcal/mol) (A)
+!
+
+PR1   0  -1  0.225  !   5 points centered around 0.225 +/-0.03 A
+PR2   0  -1  0.450  !   2 points centered around 0.450 +/-0.03 A
+PR3   0  -1  0.700  !   3 points centered around 0.700 +/-0.03 A
+PR4   0  -1  0.900  !   6 points centered around 0.900 +/-0.03 A
+PR5   0  -1  1.100  !   1 points centered around 1.100 +/-0.03 A
+PR6   0  -1  1.260  !   7 points centered around 1.260 +/-0.03 A
+PR7   0  -1  1.300  !   1 points centered around 1.300 +/-0.03 A
+PR8   0  -1  1.340  !  14 points centered around 1.340 +/-0.03 A
+PR9   0  -1  1.468  !   1 points centered around 1.468 +/-0.03 A
+PR10  0  -1  1.563  !   1 points centered around 1.563 +/-0.03 A
+PR11  0  -1  1.600  !   2 points centered around 1.600 +/-0.03 A
+PR12  0  -1  1.650  !  10 points centered around 1.650 +/-0.03 A
+PR13  0  -1  1.700  !  14 points centered around 1.700 +/-0.03 A
+PR14  0  -1  1.750  !   1 points centered around 1.750 +/-0.03 A
+PR15  0  -1  1.765  !   1 points centered around 1.765 +/-0.03 A
+PR16  0  -1  1.800  !   6 points centered around 1.800 +/-0.03 A
+PR17  0  -1  1.850  !  37 points centered around 1.850 +/-0.03 A
+PR18  0  -1  1.900  !   7 points centered around 1.900 +/-0.03 A
+PR19  0  -1  2.000  !  46 points centered around 2.000 +/-0.03 A
+PR20  0  -1  2.050  !   7 points centered around 2.050 +/-0.03 A
+PR21  0  -1  2.090  !  19 points centered around 2.090 +/-0.03 A
+PR22  0  -1  2.150  !   4 points centered around 2.150 +/-0.03 A
+PR23  0  -1  2.200  !  12 points centered around 2.200 +/-0.03 A
+PR24  0  -1  2.240  !   1 points centered around 2.240 +/-0.03 A
+PR25  0  -1  2.275  !   2 points centered around 2.275 +/-0.03 A
+PR26  0  -1  2.300  !   1 points centered around 2.300 +/-0.03 A
+
+
+END

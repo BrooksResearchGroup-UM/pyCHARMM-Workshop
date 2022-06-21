@@ -1,0 +1,27 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 12                                                      
+REMARK  THE CLUSTER ID IS 3                                                           
+REMARK  THE TOTAL ENERGY IS -19.194672                                                
+REMARK  THE VDW ENERGY IS -61.145087                                                  
+REMARK  THE ELEC ENERGY IS -16.044155                                                 
+REMARK  THE ENTROPY IS -0.572855                                                      
+REMARK   DATE:     2/10/22     10:23:40      CREATED BY USER: yujin                   
+ATOM   2604  C1  DEN     1      28.298   7.411   3.014  1.00  0.00      LIGA
+ATOM   2605  C2  DEN     1      28.302   6.595   1.929  1.00  0.00      LIGA
+ATOM   2606  C3  DEN     1      27.528   5.333   2.219  1.00  0.00      LIGA
+ATOM   2607  C4  DEN     1      26.112   4.856   4.363  1.00  0.00      LIGA
+ATOM   2608  C5  DEN     1      25.663   5.407   5.563  1.00  0.00      LIGA
+ATOM   2609  C6  DEN     1      26.150   6.640   5.996  1.00  0.00      LIGA
+ATOM   2610  C7  DEN     1      27.096   7.330   5.259  1.00  0.00      LIGA
+ATOM   2611  C8  DEN     1      27.479   6.837   4.034  1.00  0.00      LIGA
+ATOM   2612  C9  DEN     1      27.000   5.590   3.597  1.00  0.00      LIGA
+ATOM   2613  H01 DEN     1      28.178   4.445   2.182  1.00  0.00      LIGA
+ATOM   2614  H02 DEN     1      26.731   5.148   1.485  1.00  0.00      LIGA
+ATOM   2615  H03 DEN     1      28.778   8.370   3.077  1.00  0.00      LIGA
+ATOM   2616  H04 DEN     1      24.920   4.904   6.155  1.00  0.00      LIGA
+ATOM   2617  H05 DEN     1      25.750   3.899   4.022  1.00  0.00      LIGA
+ATOM   2618  H06 DEN     1      25.739   7.126   6.858  1.00  0.00      LIGA
+ATOM   2619  H07 DEN     1      27.455   8.279   5.619  1.00  0.00      LIGA
+ATOM   2620  H08 DEN     1      28.842   6.802   1.017  1.00  0.00      LIGA
+TER    2621      DEN      1
+END

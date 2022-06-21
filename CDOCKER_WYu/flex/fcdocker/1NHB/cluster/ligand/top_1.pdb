@@ -1,0 +1,28 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 12                                                      
+REMARK  THE CLUSTER ID IS 3                                                           
+REMARK  THE TOTAL ENERGY IS -32.385302                                                
+REMARK  THE VDW ENERGY IS -67.921343                                                  
+REMARK  THE ELEC ENERGY IS -19.461135                                                 
+REMARK  THE ENTROPY IS -0.767466                                                      
+REMARK   DATE:     2/10/22     10:56:27      CREATED BY USER: yujin                   
+ATOM   2604  CB  PYJ   401      28.361   6.963   2.212  1.00  0.00      LIGA
+ATOM   2605  CG  PYJ   401      27.548   6.485   3.380  1.00  0.00      LIGA
+ATOM   2606  CD1 PYJ   401      27.721   7.074   4.641  1.00  0.00      LIGA
+ATOM   2607  CD2 PYJ   401      26.650   5.415   3.236  1.00  0.00      LIGA
+ATOM   2608  CE1 PYJ   401      26.968   6.637   5.738  1.00  0.00      LIGA
+ATOM   2609  CE2 PYJ   401      25.914   4.962   4.338  1.00  0.00      LIGA
+ATOM   2610  CZ  PYJ   401      26.068   5.576   5.587  1.00  0.00      LIGA
+ATOM   2611  CX  PYJ   401      27.609   7.997   1.370  1.00  0.00      LIGA
+ATOM   2612  H1  PYJ   401      29.298   7.404   2.607  1.00  0.00      LIGA
+ATOM   2613  H2  PYJ   401      28.625   6.084   1.591  1.00  0.00      LIGA
+ATOM   2614  H3  PYJ   401      28.442   7.868   4.767  1.00  0.00      LIGA
+ATOM   2615  H4  PYJ   401      26.528   4.944   2.272  1.00  0.00      LIGA
+ATOM   2616  H5  PYJ   401      27.103   7.101   6.703  1.00  0.00      LIGA
+ATOM   2617  H6  PYJ   401      25.228   4.138   4.229  1.00  0.00      LIGA
+ATOM   2618  H7  PYJ   401      25.504   5.223   6.436  1.00  0.00      LIGA
+ATOM   2619  H8  PYJ   401      28.286   8.426   0.599  1.00  0.00      LIGA
+ATOM   2620  H9  PYJ   401      27.227   8.829   1.997  1.00  0.00      LIGA
+ATOM   2621  H10 PYJ   401      26.755   7.525   0.843  1.00  0.00      LIGA
+TER    2622      PYJ    401
+END

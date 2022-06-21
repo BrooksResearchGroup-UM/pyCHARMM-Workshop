@@ -1,0 +1,29 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 18                                                      
+REMARK  THE CLUSTER ID IS 1                                                           
+REMARK  THE TOTAL ENERGY IS -30.040329                                                
+REMARK  THE VDW ENERGY IS -68.866595                                                  
+REMARK  THE ELEC ENERGY IS -20.314286                                                 
+REMARK  THE ENTROPY IS -0.537044                                                      
+REMARK   DATE:     2/10/22     11: 6:20      CREATED BY USER: yujin                   
+ATOM   2604  CAB 258   901      26.069   5.680   5.763  1.00  0.00      LIGA
+ATOM   2605  CAC 258   901      26.982   6.722   5.586  1.00  0.00      LIGA
+ATOM   2606  CAD 258   901      25.829   4.781   4.723  1.00  0.00      LIGA
+ATOM   2607  CAE 258   901      27.663   6.854   4.369  1.00  0.00      LIGA
+ATOM   2608  CAF 258   901      26.522   4.893   3.519  1.00  0.00      LIGA
+ATOM   2609  CAH 258   901      28.451   7.298   1.631  1.00  0.00      LIGA
+ATOM   2610  CAJ 258   901      27.428   5.935   3.319  1.00  0.00      LIGA
+ATOM   2611  OAI 258   901      28.076   6.003   2.079  1.00  0.00      LIGA
+ATOM   2612  H1  258   901      25.561   5.557   6.704  1.00  0.00      LIGA
+ATOM   2613  H2  258   901      27.168   7.416   6.390  1.00  0.00      LIGA
+ATOM   2614  H3  258   901      25.103   4.002   4.846  1.00  0.00      LIGA
+ATOM   2615  H4  258   901      28.385   7.648   4.287  1.00  0.00      LIGA
+ATOM   2616  H5  258   901      26.352   4.179   2.730  1.00  0.00      LIGA
+ATOM   2617  H6  258   901      26.637   7.596   0.456  1.00  0.00      LIGA
+ATOM   2618  H7  258   901      26.616   8.391   2.086  1.00  0.00      LIGA
+ATOM   2619  H8  258   901      29.048   7.815   2.397  1.00  0.00      LIGA
+ATOM   2620  H9  258   901      29.118   7.168   0.751  1.00  0.00      LIGA
+ATOM   2621 CLAA 258   901      27.713   9.681   0.468  1.00  0.00      LIGA
+ATOM   2622  CAG 258   901      27.245   8.137   1.209  1.00  0.00      LIGA
+TER    2623      258    901
+END

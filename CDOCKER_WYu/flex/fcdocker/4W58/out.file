@@ -1,0 +1,1744 @@
+  
+ CHARMM>     read rtf card -
+ CHARMM>     name "../Toppar/top_all36_prot.rtf"
+ VOPEN> Attempting to open::../Toppar/top_all36_prot.rtf::
+ MAINIO> Residue topology file being read from unit  91.
+ TITLE> *>>>>>>>>CHARMM36 ALL-HYDROGEN TOPOLOGY FILE FOR PROTEINS <<<<<<
+ TITLE> *>>>>> INCLUDES PHI, PSI CROSS TERM MAP (CMAP) CORRECTION <<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>>>>>> MAY 2011 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> * ALL COMMENTS TO THE CHARMM WEB SITE: WWW.CHARMM.ORG
+ TITLE> *             PARAMETER SET DISCUSSION FORUM
+ TITLE> *
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+  
+ CHARMM>     read rtf card -
+ CHARMM>     name "../Toppar/top_all36_cgenff.rtf" -
+ CHARMM>     append
+ VOPEN> Attempting to open::../Toppar/top_all36_cgenff.rtf::
+ MAINIO> Residue topology file being read from unit  91.
+ TITLE> *  --------------------------------------------------------------------------  *
+ TITLE> *          CGENFF: TOPOLOGY FOR THE CHARMM GENERAL FORCE FIELD V. 4.3          *
+ TITLE> *                    FOR SMALL MOLECULE DRUG DESIGN                            *
+ TITLE> *  --------------------------------------------------------------------------  *
+ TITLE> *
+
+ DRUDES PARTICLES WILL BE GENERATED AUTOMATICALLY FOR ALL ATOMS WITH NON-ZERO ALPHA
+ Thole-type dipole screening, Slater-Delta shape {S(u) = 1 - (1+u/2)*exp(-u)}, default radius =  1.300000
+
+      ***** LEVEL  1 WARNING FROM <DECODF> *****
+      ***** Zero length string
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ WARNING from DECODF -- Zero length string being converted to 0.
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+  
+ CHARMM>     read param card -
+ CHARMM>     name "../Toppar/par_all36m_prot.prm" -
+ CHARMM>     flex
+ VOPEN> Attempting to open::../Toppar/par_all36m_prot.prm::
+
+          PARAMETER FILE BEING READ FROM UNIT 91
+ TITLE> *>>>> CHARMM36 ALL-HYDROGEN PARAMETER FILE FOR PROTEINS <<<<<<<<<<
+ TITLE> *>>>>> INCLUDES PHI, PSI CROSS TERM MAP (CMAP) CORRECTION <<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>>>>>> JAN. 2016 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> * ALL COMMENTS TO THE CHARMM WEB SITE: WWW.CHARMM.ORG
+ TITLE> *             PARAMETER SET DISCUSSION FORUM
+ TITLE> *
+ PARRDR> Error: Repeated ANGLE parameter (    13): NH2   CT2   CD   is replaced
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+  
+ CHARMM>     read param card -
+ CHARMM>     name "../Toppar/par_all36_cgenff.prm" -
+ CHARMM>     append -
+ CHARMM>     flex
+ VOPEN> Attempting to open::../Toppar/par_all36_cgenff.prm::
+
+          PARAMETER FILE BEING READ FROM UNIT 91
+ TITLE> *  --------------------------------------------------------------------------  *
+ TITLE> *         CGENFF: PARAMETERS FOR THE CHARMM GENERAL FORCE FIELD V. 4.3         *
+ TITLE> *                    FOR SMALL MOLECULE DRUG DESIGN                            *
+ TITLE> *  --------------------------------------------------------------------------  *
+ TITLE> *  2017/8: IF PROTEIN, NUCLEIC ACID AND CARBOHYDRATE TOPOLOGY AND PARAMETER FILES
+ TITLE> *  ARE NOT READ PRIOR TO THE CGENFF FILES "WARNING: ATOMS IN NBFIX ' errors will
+ TITLE> *  BE ENCOUNTERED.  THESE CAN BE PASSED BY SETTING BOMLEV ( -2) PRIOR TO READING
+ TITLE> *  THIS FILE. IN ADDITION, WHEN GENERATING AROMATIC HALOGENS (CL, BR, I) WITH
+ TITLE> *  PRE C41B/C42A VERSIONS OF CHARMM "MISSING PARAMETER" ERRORS WILL BE
+ TITLE> *  ENCOUNTERED THAT ALSO REQUIRE SETTING BOMLEV ( -2).
+ TITLE> *
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX OC2D CLGR   -0.20000   3.40000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX OC2D CLGR   -2.50000   2.80000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX OC2D CLGR   -0.20000   3.40000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX OC2D CLGR   -0.20000   3.40000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX OC2D BRGR   -1.25000   2.98000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX OC2D BRGR   -0.27000   3.52000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX OC2D BRGR   -0.27000   3.52000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX OBL  CLGR   -0.20000   3.40000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NH3L CLGR   -3.60000   3.18000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX OCL  CLGR   -2.50000   2.80000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX OBL  BRGR   -0.27000   3.52000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NH3L BRGR   -3.65000   3.33000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX OCL  BRGR   -1.25000   2.98000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN1  CLGR   -0.40000   3.88000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN2  CLGR   -0.48000   3.75000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN2U CLGR   -0.48000   3.75000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN2G CLGR   -0.48000   3.75000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN3  CLGR   -0.46000   3.42000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN3A CLGR   -0.46000   3.42000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN3G CLGR   -0.46000   3.42000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN4  CLGR   -0.46000   3.42000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX ON1  CLGR   -0.20000   3.40000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX ON1C CLGR   -0.20000   3.40000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN1  BRGR   -0.30000   4.05000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN2  BRGR   -0.72000   3.80000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN2U BRGR   -0.72000   3.80000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN2G BRGR   -0.72000   3.80000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN3  BRGR   -0.22000   3.61000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN3A BRGR   -0.22000   3.61000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN3G BRGR   -0.22000   3.61000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX NN4  BRGR   -0.22000   3.61000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX ON1  BRGR   -0.27000   3.52000 DONT EXIST
+
+      ***** LEVEL  0 WARNING FROM <PARRDR> *****
+      ***** NO MATCH FOR NBFIX
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PARRDR> WARNING: ATOMS IN NBFIX ON1C BRGR   -0.27000   3.52000 DONT EXIST
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+  
+ CHARMM>     stream "./ligandrtf"
+ VOPEN> Attempting to open::./ligandrtf::
+ OPNLGU> Unit 99 opened for READONLY access to ./ligandrtf
+
+                    INPUT STREAM SWITCHING TO UNIT    99
+ RDTITL> * TOPPAR STREAM FILE GENERATED BY
+ RDTITL> * CHARMM GENERAL FORCE FIELD (CGENFF) PROGRAM VERSION 2.2.0
+ RDTITL> * FOR USE WITH CGENFF VERSION 4.0
+ RDTITL> *
+ Parameter: IN1 <- "" <empty>
+  
+ CHARMM>     
+  
+ CHARMM>    read rtf card append
+ MAINIO> Residue topology file being read from unit  99.
+ RDTITL> * TOPOLOGIES GENERATED BY
+ RDTITL> * CHARMM GENERAL FORCE FIELD (CGENFF) PROGRAM VERSION 2.2.0
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    read param card flex append
+
+          PARAMETER FILE BEING READ FROM UNIT 99
+ RDTITL> * PARAMETERS GENERATED BY ANALOGY BY
+ RDTITL> * CHARMM GENERAL FORCE FIELD (CGENFF) PROGRAM VERSION 2.2.0
+ RDTITL> *
+ PARRDR> Error: Repeated BOND parameter (   331): CG2R  CG2R is replaced
+ PARRDR> Error: Repeated BOND parameter (   340): CG2R  CG32 is replaced
+ PARRDR> Error: Repeated BOND parameter (   365): CG2R  HGR6 is replaced
+ PARRDR> Error: Repeated BOND parameter (   456): CG32  CG32 is replaced
+ PARRDR> Error: Repeated BOND parameter (   458): CG32  CG33 is replaced
+ PARRDR> Error: Repeated BOND parameter (   487): CG32  HGA2 is replaced
+ PARRDR> Error: Repeated BOND parameter (   527): CG33  HGA3 is replaced
+ PARRDR> Error: Repeated ANGLE parameter (   792): CG2R  CG2R  CG2R is replaced
+ PARRDR> Error: Repeated ANGLE parameter (   801): CG2R  CG2R  CG32 is replaced
+ PARRDR> Error: Repeated ANGLE parameter (   826): CG2R  CG2R  HGR6 is replaced
+ PARRDR> Error: Repeated ANGLE parameter (  1171): CG2R  CG32  CG32 is replaced
+ PARRDR> Error: Repeated ANGLE parameter (  1178): CG2R  CG32  HGA2 is replaced
+ PARRDR> Error: Repeated ANGLE parameter (  1200): CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated ANGLE parameter (  1202): CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated ANGLE parameter (  1216): CG32  CG32  HGA2 is replaced
+ PARRDR> Error: Repeated ANGLE parameter (  1243): CG33  CG32  HGA2 is replaced
+ PARRDR> Error: Repeated ANGLE parameter (  1279): HGA2  CG32  HGA2 is replaced
+ PARRDR> Error: Repeated ANGLE parameter (  1340): CG32  CG33  HGA3 is replaced
+ PARRDR> Error: Repeated ANGLE parameter (  1366): HGA3  CG33  HGA3 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  2272): CG2R  CG2R  CG2R  CG2R is replaced
+ PARRDR> Error: Repeated DIHE parameter (  2281): CG2R  CG2R  CG2R  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  2306): CG2R  CG2R  CG2R  HGR6 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  2327): CG32  CG2R  CG2R  HGR6 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  2381): HGR6  CG2R  CG2R  HGR6 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  2492): CG2R  CG2R  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  2501): CG2R  CG2R  CG32  HGA2 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3394): CG2R  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3396): CG2R  CG32  CG32  HGA2 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3412): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3413): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3414): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3415): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3412): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3413): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3414): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3415): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3412): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3413): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3414): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3415): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3412): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3413): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3414): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3415): CG32  CG32  CG32  CG32 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3417): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3418): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3419): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3420): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3417): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3418): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3419): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3420): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3417): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3418): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3419): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3420): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3417): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3418): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3419): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3420): CG32  CG32  CG32  CG33 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3441): CG32  CG32  CG32  HGA2 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3457): CG33  CG32  CG32  HGA2 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3481): HGA2  CG32  CG32  HGA2 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3529): CG32  CG32  CG33  HGA3 is replaced
+ PARRDR> Error: Repeated DIHE parameter (  3550): HGA2  CG32  CG33  HGA3 is replaced
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+  
+ CHARMM>    RETURN
+ VCLOSE: Closing unit   99 with status "KEEP"
+
+                    RETURNING TO INPUT STREAM    90
+  
+  
+ CHARMM>     read sequence pdb -
+ CHARMM>     name ./ligand.pdb
+ VOPEN> Attempting to open::./LIGAND.PDB::
+ MAINIO> Sequence information being read from unit  91.
+ TITLE>  *
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          3H2 
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ GENPSF> Segment   1 has been generated. Its identifier is LIGA.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =       27   Number of groups     =        1
+         Number of bonds         =       27   Number of angles     =       48
+         Number of dihedrals     =       66   Number of impropers  =        0
+         Number of cross-terms   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+ QXFORM> Expanded format used.
+         More than 4 character atom type used.
+  
+ CHARMM>     read coor pdb -
+ CHARMM>     name ./ligand.pdb -
+ CHARMM>     resid
+ VOPEN> Attempting to open::./LIGAND.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 91
+ TITLE>  *
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+  
+ CHARMM>     write name ./ligand.pdb -
+ CHARMM>     coor pdb -
+ CHARMM>     sele AKIYIUQAUWRXQKGFTTSQ end
+ VOPEN> Attempting to open::./ligand.pdb::
+ RDTITL> * TITLE
+ RDTITL> * MOVE LIGAND TO THE CENTER OF BINDING POCKET
+ RDTITL> *
+  Write CHARMM-pdb format
+ SELRPN>     27 atoms have been selected out of     27
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          1 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:        27 bonds deleted
+ DELTIC:        48 angles deleted
+ DELTIC:        66 dihedrals deleted
+  
+ CHARMM>     read psf card -
+ CHARMM>     name ./protein.psf -
+ CHARMM>     append
+ VOPEN> Attempting to open::./PROTEIN.PSF::
+ MAINIO> Protein structure file being read from unit  91.
+ TITLE>  * BUILD PROTEIN PSF AND PDB FILE
+ TITLE>  *  DATE:    12/ 3/21     13:16: 4      CREATED BY USER: yujin
+ TITLE>  *
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =      162
+         Number of atoms         =     2603   Number of groups     =      765
+         Number of bonds         =     2623   Number of angles     =     4734
+         Number of dihedrals     =     6892   Number of impropers  =      450
+         Number of cross-terms   =      160
+         Number of HB acceptors  =      240   Number of HB donors  =      325
+         Number of NB exclusions =        0   Total charge =    8.00000
+ QXFORM> Expanded format used.
+         More than 4 character atom type used.
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+  
+ CHARMM>     read coor pdb -
+ CHARMM>     name ./protein.pdb -
+ CHARMM>     resid
+ VOPEN> Attempting to open::./PROTEIN.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 91
+ TITLE>   BUILD PROTEIN PSF AND PDB FILE
+ TITLE>    DATE:    12/ 3/21     13:16: 4      CREATED BY USER: YUJIN
+ TITLE>  *
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          5 residues deleted.
+ DELTIC:        85 bonds deleted
+ DELTIC:       170 angles deleted
+ DELTIC:       265 dihedrals deleted
+ DELTIC:        20 improper dihedrals deleted
+ DELTIC:        15 crossterm maps deleted
+ DELTIC:         5 donors deleted
+ DELTIC:         5 acceptors deleted
+ VOPEN> Attempting to open::grid-emax-0.6-mine--0.4-maxe-0.4.bin::
+  
+ CHARMM>     update atom -
+ CHARMM>     switch -
+ CHARMM>     vswitch -
+ CHARMM>     soft -
+ CHARMM>     vdwe -
+ CHARMM>     elee -
+ CHARMM>     rdie -
+ CHARMM>     cutnb 999 -
+ CHARMM>     ctofnb 999 -
+ CHARMM>     ctonnb 999 -
+ CHARMM>     emax 0.6 -
+ CHARMM>     mine -0.4 -
+ CHARMM>     maxe 0.4 -
+ CHARMM>     epsilon 3.0
+
+ **** SOFT CORE AVAILABLE 
+       SUGGESTED OPTIONS : RDIE SWIT VSWIT 
+ FOR SPC WATER in CDIE USE : EMAX > 1000/EPS OR MINE=-100/EPS,
+ FOR SPC WATER in RDIE USE : EMAX > 200/EPS
+
+ ****  ERROR :POSSIBLE UNPHYSICAL RESULTS
+ - VDW core too soft with respect to electrostatics 
+ **** INCREASE EMAX to at least       5.00
+
+ ****  ERROR :POSSIBLE UNPHYSICAL RESULTS
+ - Elec attractive soft core starts at too high Rcut
+ **** DECREASE MINE to at least     -33.33
+
+ ****  ERROR :POSSIBLE UNPHYSICAL RESULTS
+  - Elec repulsive soft core starts at too high Rcut
+ **** INCREASE MAXA to at least      66.67
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    RDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =999.000 CTEXNB =999.000 CTONNB =999.000 CTOFNB =999.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  3.000
+ NBXMOD =      5
+ VDW SOFT CORE: BEGINS AT: EMAX =      0.60 kcal/mol
+ VDW SOFT CORE : EXPONENTIAL FORM 
+ ELECTROSTATIC ATRACTIVE SOFT CORE : BEGINS AT : EMIN =     -0.40 kcal/mol
+ ELECTROSTATIC  REPULSIVE SOFT CORE : BEGINS AT : EMAX =      0.40 kcal/mol
+ ELECTROSTATIC SOFT CORE : EXPONENTIAL FORM 
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+
+      ***** LEVEL  1 WARNING FROM <GTNBCT> *****
+      ***** CUTNB and CTOFNB are too close for efficient heuristic update.
+      ******************************************
+      BOMLEV (  0) IS NOT REACHED. WRNLEV IS  5
+
+ GTNBCT> CUTNB,CTOFNB,CTONNB=     999.0     999.0     999.0
+
+      ***** LEVEL  1 WARNING FROM <GTNBCT> *****
+      ***** CUTNB,CTOFNB,CTONNB are not in correct order.
+      ******************************************
+      BOMLEV (  0) IS NOT REACHED. WRNLEV IS  5
+
+ <MAKINB> with mode   5 found   7102 exclusions and   6550 interactions(1-4)
+ <MAKGRP> found   2130 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR  3181504 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+  3174401 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ VOPEN> Attempting to open::../Toppar/fftdock_c36prot_cgenff_probes.txt::
+<FFTDOCK> - num of probes read:    26
+  Probe       Radii
+      1    0.225000
+      2    0.450000
+      3    0.700000
+      4    0.900000
+      5    1.100000
+      6    1.260000
+      7    1.300000
+      8    1.340000
+      9    1.468000
+     10    1.563000
+     11    1.600000
+     12    1.650000
+     13    1.700000
+     14    1.750000
+     15    1.765000
+     16    1.800000
+     17    1.850000
+     18    1.900000
+     19    2.000000
+     20    2.050000
+     21    2.090000
+     22    2.150000
+     23    2.200000
+     24    2.240000
+     25    2.275000
+     26    2.300000
+<FFTDOCK> Generate protein grid using GPU
+Grid center x=     26.91133 y=      6.12567 z=      4.17800
+Grid length x=     14.49200 y=     14.49200 z=     14.49200
+Grid points number x=    30 y=    30 z=    30
+Grid minimum dimension x=    19.66533 y=     -1.12033 z=     -3.06800
+Hydrogen bond grid rcta=     0.00000 rctb=      1.00000 cutoff=     -1.00000
+Grid space =      0.50000
+Number of grid points per type =      27000
+Grid force constant =    300.00000 kcal/mol/A^2
+Electrostatics softcore repulsion emax  =      0.40000
+Electrostatics softcore attraction emax  =     -0.40000
+Van der Waals softcore emax  =      0.60000
+Using radial dependent dielectric constant =      3.00000
+  Probe       Radii
+      1    0.225000
+      2    0.450000
+      3    0.700000
+      4    0.900000
+      5    1.100000
+      6    1.260000
+      7    1.300000
+      8    1.340000
+      9    1.468000
+     10    1.563000
+     11    1.600000
+     12    1.650000
+     13    1.700000
+     14    1.750000
+     15    1.765000
+     16    1.800000
+     17    1.850000
+     18    1.900000
+     19    2.000000
+     20    2.050000
+     21    2.090000
+     22    2.150000
+     23    2.200000
+     24    2.240000
+     25    2.275000
+     26    2.300000
+Total number of grid types   29
+Total number of grid points =     783000
+Total number of atoms used for protein grid =       2523
+Device selected:
+ OpenCL device: (id #) (name) (bytes of memory)
+ 3. AMD Radeon Pro 560X Compute Engine with 4 GB of memory.
+Total number of grids for writing  27
+Grid potentials written to binary file on unit   1
+ VCLOSE: Closing unit    2 with status "KEEP"
+ VCLOSE: Closing unit    1 with status "KEEP"
+All space for grid potentials freed
+ VOPEN> Attempting to open::grid-emax-3-mine--30-maxe-30.bin::
+  
+ CHARMM>     update atom -
+ CHARMM>     switch -
+ CHARMM>     vswitch -
+ CHARMM>     soft -
+ CHARMM>     vdwe -
+ CHARMM>     elee -
+ CHARMM>     rdie -
+ CHARMM>     cutnb 999 -
+ CHARMM>     ctofnb 999 -
+ CHARMM>     ctonnb 999 -
+ CHARMM>     emax 3 -
+ CHARMM>     mine -30 -
+ CHARMM>     maxe 30 -
+ CHARMM>     epsilon 3.0
+
+ **** SOFT CORE AVAILABLE 
+       SUGGESTED OPTIONS : RDIE SWIT VSWIT 
+ FOR SPC WATER in CDIE USE : EMAX > 1000/EPS OR MINE=-100/EPS,
+ FOR SPC WATER in RDIE USE : EMAX > 200/EPS
+
+ ****  ERROR :POSSIBLE UNPHYSICAL RESULTS
+ - VDW core too soft with respect to electrostatics 
+ **** INCREASE EMAX to at least       5.00
+
+ ****  ERROR :POSSIBLE UNPHYSICAL RESULTS
+ - Elec attractive soft core starts at too high Rcut
+ **** DECREASE MINE to at least     -33.33
+
+ ****  ERROR :POSSIBLE UNPHYSICAL RESULTS
+  - Elec repulsive soft core starts at too high Rcut
+ **** INCREASE MAXA to at least      66.67
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    RDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =999.000 CTEXNB =999.000 CTONNB =999.000 CTOFNB =999.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  3.000
+ NBXMOD =      5
+ VDW SOFT CORE: BEGINS AT: EMAX =      3.00 kcal/mol
+ VDW SOFT CORE : EXPONENTIAL FORM 
+ ELECTROSTATIC ATRACTIVE SOFT CORE : BEGINS AT : EMIN =    -30.00 kcal/mol
+ ELECTROSTATIC  REPULSIVE SOFT CORE : BEGINS AT : EMAX =     30.00 kcal/mol
+ ELECTROSTATIC SOFT CORE : EXPONENTIAL FORM 
+ There are  3174401 atom  pairs and    13652 atom  exclusions.
+ There are        0 group pairs and     2130 group exclusions.
+
+      ***** LEVEL  1 WARNING FROM <GTNBCT> *****
+      ***** CUTNB and CTOFNB are too close for efficient heuristic update.
+      ******************************************
+      BOMLEV (  0) IS NOT REACHED. WRNLEV IS  5
+
+ GTNBCT> CUTNB,CTOFNB,CTONNB=     999.0     999.0     999.0
+
+      ***** LEVEL  1 WARNING FROM <GTNBCT> *****
+      ***** CUTNB,CTOFNB,CTONNB are not in correct order.
+      ******************************************
+      BOMLEV (  0) IS NOT REACHED. WRNLEV IS  5
+
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR  3181504 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+  3174401 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ VOPEN> Attempting to open::../Toppar/fftdock_c36prot_cgenff_probes.txt::
+<FFTDOCK> - num of probes read:    26
+  Probe       Radii
+      1    0.225000
+      2    0.450000
+      3    0.700000
+      4    0.900000
+      5    1.100000
+      6    1.260000
+      7    1.300000
+      8    1.340000
+      9    1.468000
+     10    1.563000
+     11    1.600000
+     12    1.650000
+     13    1.700000
+     14    1.750000
+     15    1.765000
+     16    1.800000
+     17    1.850000
+     18    1.900000
+     19    2.000000
+     20    2.050000
+     21    2.090000
+     22    2.150000
+     23    2.200000
+     24    2.240000
+     25    2.275000
+     26    2.300000
+<FFTDOCK> Generate protein grid using GPU
+Grid center x=     26.91133 y=      6.12567 z=      4.17800
+Grid length x=     14.49200 y=     14.49200 z=     14.49200
+Grid points number x=    30 y=    30 z=    30
+Grid minimum dimension x=    19.66533 y=     -1.12033 z=     -3.06800
+Hydrogen bond grid rcta=     0.00000 rctb=      1.00000 cutoff=     -1.00000
+Grid space =      0.50000
+Number of grid points per type =      27000
+Grid force constant =    300.00000 kcal/mol/A^2
+Electrostatics softcore repulsion emax  =     30.00000
+Electrostatics softcore attraction emax  =    -30.00000
+Van der Waals softcore emax  =      3.00000
+Using radial dependent dielectric constant =      3.00000
+  Probe       Radii
+      1    0.225000
+      2    0.450000
+      3    0.700000
+      4    0.900000
+      5    1.100000
+      6    1.260000
+      7    1.300000
+      8    1.340000
+      9    1.468000
+     10    1.563000
+     11    1.600000
+     12    1.650000
+     13    1.700000
+     14    1.750000
+     15    1.765000
+     16    1.800000
+     17    1.850000
+     18    1.900000
+     19    2.000000
+     20    2.050000
+     21    2.090000
+     22    2.150000
+     23    2.200000
+     24    2.240000
+     25    2.275000
+     26    2.300000
+Total number of grid types   29
+Total number of grid points =     783000
+Total number of atoms used for protein grid =       2523
+Device selected:
+ OpenCL device: (id #) (name) (bytes of memory)
+ 3. AMD Radeon Pro 560X Compute Engine with 4 GB of memory.
+Total number of grids for writing  27
+Grid potentials written to binary file on unit   1
+ VCLOSE: Closing unit    2 with status "KEEP"
+ VCLOSE: Closing unit    1 with status "KEEP"
+All space for grid potentials freed
+ VOPEN> Attempting to open::grid-emax-100-mine--100-maxe-100.bin::
+  
+ CHARMM>     update atom -
+ CHARMM>     switch -
+ CHARMM>     vswitch -
+ CHARMM>     soft -
+ CHARMM>     vdwe -
+ CHARMM>     elee -
+ CHARMM>     rdie -
+ CHARMM>     cutnb 999 -
+ CHARMM>     ctofnb 999 -
+ CHARMM>     ctonnb 999 -
+ CHARMM>     emax 100 -
+ CHARMM>     mine -100 -
+ CHARMM>     maxe 100 -
+ CHARMM>     epsilon 3.0
+
+ **** SOFT CORE AVAILABLE 
+       SUGGESTED OPTIONS : RDIE SWIT VSWIT 
+ FOR SPC WATER in CDIE USE : EMAX > 1000/EPS OR MINE=-100/EPS,
+ FOR SPC WATER in RDIE USE : EMAX > 200/EPS
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    RDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =999.000 CTEXNB =999.000 CTONNB =999.000 CTOFNB =999.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  3.000
+ NBXMOD =      5
+ VDW SOFT CORE: BEGINS AT: EMAX =    100.00 kcal/mol
+ VDW SOFT CORE : EXPONENTIAL FORM 
+ ELECTROSTATIC ATRACTIVE SOFT CORE : BEGINS AT : EMIN =   -100.00 kcal/mol
+ ELECTROSTATIC  REPULSIVE SOFT CORE : BEGINS AT : EMAX =    100.00 kcal/mol
+ ELECTROSTATIC SOFT CORE : EXPONENTIAL FORM 
+ There are  3174401 atom  pairs and    13652 atom  exclusions.
+ There are        0 group pairs and     2130 group exclusions.
+
+      ***** LEVEL  1 WARNING FROM <GTNBCT> *****
+      ***** CUTNB and CTOFNB are too close for efficient heuristic update.
+      ******************************************
+      BOMLEV (  0) IS NOT REACHED. WRNLEV IS  5
+
+ GTNBCT> CUTNB,CTOFNB,CTONNB=     999.0     999.0     999.0
+
+      ***** LEVEL  1 WARNING FROM <GTNBCT> *****
+      ***** CUTNB,CTOFNB,CTONNB are not in correct order.
+      ******************************************
+      BOMLEV (  0) IS NOT REACHED. WRNLEV IS  5
+
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR  3181504 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+  3174401 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ VOPEN> Attempting to open::../Toppar/fftdock_c36prot_cgenff_probes.txt::
+<FFTDOCK> - num of probes read:    26
+  Probe       Radii
+      1    0.225000
+      2    0.450000
+      3    0.700000
+      4    0.900000
+      5    1.100000
+      6    1.260000
+      7    1.300000
+      8    1.340000
+      9    1.468000
+     10    1.563000
+     11    1.600000
+     12    1.650000
+     13    1.700000
+     14    1.750000
+     15    1.765000
+     16    1.800000
+     17    1.850000
+     18    1.900000
+     19    2.000000
+     20    2.050000
+     21    2.090000
+     22    2.150000
+     23    2.200000
+     24    2.240000
+     25    2.275000
+     26    2.300000
+<FFTDOCK> Generate protein grid using GPU
+Grid center x=     26.91133 y=      6.12567 z=      4.17800
+Grid length x=     14.49200 y=     14.49200 z=     14.49200
+Grid points number x=    30 y=    30 z=    30
+Grid minimum dimension x=    19.66533 y=     -1.12033 z=     -3.06800
+Hydrogen bond grid rcta=     0.00000 rctb=      1.00000 cutoff=     -1.00000
+Grid space =      0.50000
+Number of grid points per type =      27000
+Grid force constant =    300.00000 kcal/mol/A^2
+Electrostatics softcore repulsion emax  =    100.00000
+Electrostatics softcore attraction emax  =   -100.00000
+Van der Waals softcore emax  =    100.00000
+Using radial dependent dielectric constant =      3.00000
+  Probe       Radii
+      1    0.225000
+      2    0.450000
+      3    0.700000
+      4    0.900000
+      5    1.100000
+      6    1.260000
+      7    1.300000
+      8    1.340000
+      9    1.468000
+     10    1.563000
+     11    1.600000
+     12    1.650000
+     13    1.700000
+     14    1.750000
+     15    1.765000
+     16    1.800000
+     17    1.850000
+     18    1.900000
+     19    2.000000
+     20    2.050000
+     21    2.090000
+     22    2.150000
+     23    2.200000
+     24    2.240000
+     25    2.275000
+     26    2.300000
+Total number of grid types   29
+Total number of grid points =     783000
+Total number of atoms used for protein grid =       2523
+Device selected:
+ OpenCL device: (id #) (name) (bytes of memory)
+ 3. AMD Radeon Pro 560X Compute Engine with 4 GB of memory.
+Total number of grids for writing  27
+Grid potentials written to binary file on unit   1
+ VCLOSE: Closing unit    2 with status "KEEP"
+ VCLOSE: Closing unit    1 with status "KEEP"
+All space for grid potentials freed
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:        157 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:      2538 bonds deleted
+ DELTIC:      4564 angles deleted
+ DELTIC:      6627 dihedrals deleted
+ DELTIC:       430 improper dihedrals deleted
+ DELTIC:       145 crossterm maps deleted
+ DELTIC:       320 donors deleted
+ DELTIC:       235 acceptors deleted
+  
+ CHARMM>     read psf card -
+ CHARMM>     name ./protein.psf -
+ CHARMM>     append
+ VOPEN> Attempting to open::./PROTEIN.PSF::
+ MAINIO> Protein structure file being read from unit  91.
+ TITLE>  * BUILD PROTEIN PSF AND PDB FILE
+ TITLE>  *  DATE:    12/ 3/21     13:16: 4      CREATED BY USER: yujin
+ TITLE>  *
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =      162
+         Number of atoms         =     2603   Number of groups     =      765
+         Number of bonds         =     2623   Number of angles     =     4734
+         Number of dihedrals     =     6892   Number of impropers  =      450
+         Number of cross-terms   =      160
+         Number of HB acceptors  =      240   Number of HB donors  =      325
+         Number of NB exclusions =        0   Total charge =    8.00000
+ QXFORM> Expanded format used.
+         More than 4 character atom type used.
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+  
+ CHARMM>     read coor pdb -
+ CHARMM>     name ./protein.pdb -
+ CHARMM>     resid
+ VOPEN> Attempting to open::./PROTEIN.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 91
+ TITLE>   BUILD PROTEIN PSF AND PDB FILE
+ TITLE>    DATE:    12/ 3/21     13:16: 4      CREATED BY USER: YUJIN
+ TITLE>  *
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:        157 residues deleted.
+ DELTIC:      2548 bonds deleted
+ DELTIC:      4604 angles deleted
+ DELTIC:      6727 dihedrals deleted
+ DELTIC:       450 improper dihedrals deleted
+ DELTIC:       160 crossterm maps deleted
+ DELTIC:       320 donors deleted
+ DELTIC:       235 acceptors deleted
+  
+ CHARMM>     read sequence pdb -
+ CHARMM>     name ./ligand.pdb
+ VOPEN> Attempting to open::./LIGAND.PDB::
+ MAINIO> Sequence information being read from unit  91.
+ TITLE>   TITLE
+ TITLE>   MOVE LIGAND TO THE CENTER OF BINDING POCKET
+ TITLE>    DATE:     2/10/22     12:20:43      CREATED BY USER: YUJIN
+ TITLE>  *
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          3H2     
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ GENPSF> Segment   2 has been generated. Its identifier is LIGA.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =        6
+         Number of atoms         =      107   Number of groups     =       26
+         Number of bonds         =      102   Number of angles     =      178
+         Number of dihedrals     =      231   Number of impropers  =        0
+         Number of cross-terms   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =        5
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     read coor pdb -
+ CHARMM>     name ./ligand.pdb -
+ CHARMM>     resid
+ VOPEN> Attempting to open::./LIGAND.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 91
+ TITLE>   TITLE
+ TITLE>   MOVE LIGAND TO THE CENTER OF BINDING POCKET
+ TITLE>    DATE:     2/10/22     12:20:43      CREATED BY USER: YUJIN
+ TITLE>  *
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+  
+ CHARMM>     write name "./flexchain.crd" -
+ CHARMM>     coor card -
+ CHARMM>     sele CEFKMKABPPUMMWTFUCSQ end
+ VOPEN> Attempting to open::./flexchain.crd::
+ RDTITL> * TITLE
+ RDTITL> * RECEPTOR SIDE CHAIN INITIAL POSITION
+ RDTITL> *
+ SELRPN>     80 atoms have been selected out of    107
+ NOTE: A SELECTED SUBSET OF ATOMS WILL BE USED
+
+ VCLOSE: Closing unit   91 with status "KEEP"
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+  
+ CHARMM>     update atom -
+ CHARMM>     switch -
+ CHARMM>     vswitch -
+ CHARMM>     vdwe -
+ CHARMM>     elec -
+ CHARMM>     rdie -
+ CHARMM>     cutnb 12 -
+ CHARMM>     ctofnb 10 -
+ CHARMM>     ctonnb 8 -
+ CHARMM>     emax 10000 -
+ CHARMM>     maxe 10000 -
+ CHARMM>     mine -10000 -
+ CHARMM>     epsilon 3
+
+ **** SOFT CORE AVAILABLE 
+       SUGGESTED OPTIONS : RDIE SWIT VSWIT 
+A selection has been stored as AKIYIUQAUWRXQKGFTTSQ
+Use GPU to generate grids
+Use default non-bond set up
+Grid generation for grid-emax-0.6-mine--0.4-maxe-0.4.bin is  True
+Use GPU to generate grids
+Use default non-bond set up
+Grid generation for grid-emax-3-mine--30-maxe-30.bin is  True
+Use GPU to generate grids
+Use default non-bond set up
+Grid generation for grid-emax-100-mine--100-maxe-100.bin is  True
+A selection has been stored as CEFKMKABPPUMMWTFUCSQ
+Specific atoms are considered flexible particles
+OMMD set up for flexible docking
+Flexible docking for the first generation
+A selection has been stored as LHTSAEMAXLTADJDONPKP
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  1
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  2
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  3
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  4
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  5
+A selection has been stored as HBSYSENLEWYRADWRWRTM
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  6
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  7
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  8
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  9
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  10
+A selection has been stored as OHRJEVXXGPCLBKWBDVDD
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  11
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  12
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  13
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  14
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  15
+A selection has been stored as IQXXTUYPDOEUEDPHYLHQ
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  16
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  17
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  18
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  19
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  20
+A selection has been stored as VNVTTDZBMCZYYMGYRQOS
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  21
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  22
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  23
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  24
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  25
+Set OMMD ligand copy 1
+Set OMMD ligand copy 2
+Set OMMD ligand copy 3
+Set OMMD ligand copy 4
+Set OMMD ligand copy 5
+Set OMMD ligand copy 6
+Set OMMD ligand copy 7
+Set OMMD ligand copy 8
+Set OMMD ligand copy 9
+Set OMMD ligand copy 10
+Set OMMD ligand copy 11
+Set OMMD ligand copy 12
+Set OMMD ligand copy 13
+Set OMMD ligand copy 14
+Set OMMD ligand copy 15
+Set OMMD ligand copy 16
+Set OMMD ligand copy 17
+Set OMMD ligand copy 18
+Set OMMD ligand copy 19
+Set OMMD ligand copy 20
+Set OMMD ligand copy 21
+Set OMMD ligand copy 22
+Set OMMD ligand copy 23
+Set OMMD ligand copy 24
+Set OMMD ligand copy 25
+Grid is applied to specified atoms
+Grid minimize OMMD ligand copy 1
+A selection has been stored as LYMYFMTGPMREYRYTOYNA
+A selection has been stored as QBAUHOEGITYGVOKOKBKT
+A selection has been stored as KMHRJGZUJXBZIGPYSGBD
+Grid minimize OMMD ligand copy 2
+A selection has been stored as TQXQHXOYJEFWBLCJOPGQ
+A selection has been stored as KUISFKOHXSCHIHKWAACO
+A selection has been stored as PEVZRXVPTXOSIYGVONXO
+Grid minimize OMMD ligand copy 3
+A selection has been stored as ONSHAPBHYXWXCVVUPXFO
+A selection has been stored as NXBLOFSLQRTEMAYYSWOT
+A selection has been stored as VNDFEPNGNMQYPEITDUDL
+Grid minimize OMMD ligand copy 4
+A selection has been stored as FESKMKPHYRCSJGFCBCJX
+A selection has been stored as UVPPDYPKOOVEGXJHECFT
+A selection has been stored as PSGUDDKFQGVEQQANEYHD
+Grid minimize OMMD ligand copy 5
+A selection has been stored as KDOIRUWADTXKFTJUIUYH
+A selection has been stored as QEBDMVBJYLPXEDTCGQIK
+A selection has been stored as VJXSGTMDMXKRDCAFAZIZ
+Grid minimize OMMD ligand copy 6
+A selection has been stored as SFLWLOLVSVVJXWAHOCKO
+A selection has been stored as EXOUFRZEWUAXOENITOKO
+A selection has been stored as XERHULMEZMRASJWHUFUJ
+Grid minimize OMMD ligand copy 7
+A selection has been stored as SFTJFPVMEGIEZFLNXHRP
+A selection has been stored as UXNNYWVBAEMMAXSPFFMR
+A selection has been stored as HEMENJMDPZPKXRCHIFUC
+Grid minimize OMMD ligand copy 8
+A selection has been stored as AYEMHAVOLCCCUUKGKQLL
+A selection has been stored as ICGQQGRZWLVWYGBOALVB
+A selection has been stored as GEAUSGFDIWGPHEFBHMPZ
+Grid minimize OMMD ligand copy 9
+A selection has been stored as VDLZMTEQEDHIJEGHQPXI
+A selection has been stored as NDLXBGJVXBJQRAWWLBSP
+A selection has been stored as EVVZBMETPBKYNNQSCRZP
+Grid minimize OMMD ligand copy 10
+A selection has been stored as YUCFEXZIIRCSQOLJUXQH
+A selection has been stored as TCAZVUQCNJYGHOZOMSHX
+A selection has been stored as LQIQFFNBHJXZBWNFSMZP
+Grid minimize OMMD ligand copy 11
+A selection has been stored as BJAFCJRZLMYHSQHOPGWG
+A selection has been stored as SXNWZEGDWVGTFSNJUDPW
+A selection has been stored as GFZFTKDZTEXUWCRDLELV
+Grid minimize OMMD ligand copy 12
+A selection has been stored as UHXXSJSQUEVSCCYHTOPD
+A selection has been stored as OMPNJKPUTSYTMXLUFRLH
+A selection has been stored as PGSZAWYGGWSAOLWKQVXA
+Grid minimize OMMD ligand copy 13
+A selection has been stored as NNWQBTUYPSBNTYFQILUZ
+A selection has been stored as CINNUIXROURELDNJJKLZ
+A selection has been stored as BZNKMVXHRKTYQKXNUDKP
+Grid minimize OMMD ligand copy 14
+A selection has been stored as OONNLFOEATWTLOXWDFPD
+A selection has been stored as IRSDLYBORIUUYCIIOGOD
+A selection has been stored as UQBLRNXRENHTZOSCXRHC
+Grid minimize OMMD ligand copy 15
+A selection has been stored as HYKQOSLAPJEQZLAQLHZZ
+A selection has been stored as USPWHCBJPEKMRDBWFFXI
+A selection has been stored as GJWAGJWJFZJWPFGYOREG
+Grid minimize OMMD ligand copy 16
+A selection has been stored as SGXQCDERVZEAVXAMBBEO
+A selection has been stored as GGEZMBBHIFBXKNDDBOAK
+A selection has been stored as ASHGQEFJUJCWNRUCXBNM
+Grid minimize OMMD ligand copy 17
+A selection has been stored as XBTLMVBADOYDKKODBKON
+A selection has been stored as UWYOEETJGTIEYJWJSALX
+A selection has been stored as BQUFIQSVSXHFJIPBSCOX
+Grid minimize OMMD ligand copy 18
+A selection has been stored as JFEGHGGSCJSOSXWTRKEG
+A selection has been stored as YGJQMCKYGWQAGWMAFKQX
+A selection has been stored as YCZTQICUPBMOKIJUWLNA
+Grid minimize OMMD ligand copy 19
+A selection has been stored as ICORHNNTFVUUTQBCZAYE
+A selection has been stored as EJEXFZDVXEEWLQJQBIDJ
+A selection has been stored as MXSXHHSNXAAYOUXLAVFD
+Grid minimize OMMD ligand copy 20
+A selection has been stored as XFCACURIDYKVIYNFAOSS
+A selection has been stored as TFCNAOSEKAXCRXOPWTVS
+A selection has been stored as NEIDWGQBVBSDPBUHLDMA
+Grid minimize OMMD ligand copy 21
+A selection has been stored as BAZRXBJXPCALLOSPFHSY
+A selection has been stored as GKJAHXXHMESTSOLIFBAE
+ FOR SPC WATER in CDIE USE : EMAX > 1000/EPS OR MINE=-100/EPS,
+ FOR SPC WATER in RDIE USE : EMAX > 200/EPS
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    RDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 12.000 CTEXNB =999.000 CTONNB =  8.000 CTOFNB = 10.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  3.000
+ NBXMOD =      5
+ VDW SOFT CORE: BEGINS AT: EMAX =    100.00 kcal/mol
+ VDW SOFT CORE : EXPONENTIAL FORM 
+ ELECTROSTATIC ATRACTIVE SOFT CORE : BEGINS AT : EMIN =   -100.00 kcal/mol
+ ELECTROSTATIC  REPULSIVE SOFT CORE : BEGINS AT : EMAX =    100.00 kcal/mol
+ ELECTROSTATIC SOFT CORE : LINEAR FORM 
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    280 exclusions and    228 interactions(1-4)
+ <MAKGRP> found     49 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR  3181504 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+     4970 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       24 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ VOPEN> Attempting to open::grid-emax-0.6-mine--0.4-maxe-0.4.bin::
+ VOPEN> Attempting to open::grid-emax-3-mine--30-maxe-30.bin::
+ Read in grid potentials for OpenMM docking system
+ Soft grid potentials read from binary file on unit   1
+* EXECUTING CHARMM SCRIPT FROM PYTHON
+*  DATE:     2/10/22     12:20:47      CREATED BY USER: yujin
+*
+ Hard grid potentials read from binary file on unit   2
+* EXECUTING CHARMM SCRIPT FROM PYTHON
+*  DATE:     2/10/22     12:20:47      CREATED BY USER: yujin
+*
+ GridSetUp: soft and hard Grid potentials will be set-up for  26 atom types , plus electrostatics
+ GridSetUp: and read from unit   1 and unit   2
+ GridSetUp: Grid centered at  26.91133   6.12567   4.17800
+ GridSetUp: Grid runs from (X)  19.66533 -  34.15733
+ GridSetUp: soft Grid runs from (Y)  -1.12033 -  13.37167
+ GridSetUp: soft Grid runs from (Z)  -3.06800 -  11.42400
+
+ GridSetUp: With a grid spacing of   0.50000
+ GridSetUp: Force constant at grid edge set to    300.000 kcal/mol/A^2
+ Number of fixed atoms =         30
+ Number of flexible atoms =         77
+ Hydrogen bond grids will not be used
+ Create OpenMM docking system
+ Number of particles      1955      1955
+ Number of vdw grids =   26
+ VCLOSE: Closing unit    1 with status "KEEP"
+ VCLOSE: Closing unit    2 with status "KEEP"
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          6 residues deleted.
+
+ Message from MAPIC:          2 segments deleted.
+ DELTIC:       102 bonds deleted
+ DELTIC:       178 angles deleted
+ DELTIC:       231 dihedrals deleted
+ DELTIC:         5 donors deleted
+ DELTIC:         5 acceptors deleted
+  
+ CHARMM>     read psf card -
+ CHARMM>     name ./protein.psf -
+ CHARMM>     append
+ VOPEN> Attempting to open::./PROTEIN.PSF::
+ MAINIO> Protein structure file being read from unit  91.
+ TITLE>  * BUILD PROTEIN PSF AND PDB FILE
+ TITLE>  *  DATE:    12/ 3/21     13:16: 4      CREATED BY USER: yujin
+ TITLE>  *
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =      162
+         Number of atoms         =     2603   Number of groups     =      765
+         Number of bonds         =     2623   Number of angles     =     4734
+         Number of dihedrals     =     6892   Number of impropers  =      450
+         Number of cross-terms   =      160
+         Number of HB acceptors  =      240   Number of HB donors  =      325
+         Number of NB exclusions =        0   Total charge =    8.00000
+ QXFORM> Expanded format used.
+         More than 4 character atom type used.
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+  
+ CHARMM>     read coor pdb -
+ CHARMM>     name ./protein.pdb -
+ CHARMM>     resid
+ VOPEN> Attempting to open::./PROTEIN.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 91
+A selection has been stored as LTINNPCOQYUGGEZPNCPI
+Grid minimize OMMD ligand copy 22
+A selection has been stored as HQNVTEQQGVIWKEDBQCQE
+A selection has been stored as WVANEUVIPQCEJRCOHMIG
+A selection has been stored as DTONUJFTEQQSLOAPKHSY
+Grid minimize OMMD ligand copy 23
+A selection has been stored as NXBJBMFBLESIKJPEYTAS
+A selection has been stored as ULSXAXNBRMKQMCKORGQY
+A selection has been stored as KMVMEQPWFYPYTBKOKAIM
+Grid minimize OMMD ligand copy 24
+A selection has been stored as GNRVVGAQVJTBTPMZIZER
+A selection has been stored as SNENYFTLBBTHNPNAMURP
+A selection has been stored as YRBVEXOFRBMSEAJIYEPJ
+Grid minimize OMMD ligand copy 25
+A selection has been stored as RGIILNDDGDRLGDDZUTLZ
+A selection has been stored as CLLMVQDYZFMUUOKXZJPM
+A selection has been stored as QACUUGJCJPLVDJKUUKKE
+Flexible docking for generation: 2
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  1
+Flexible receptor + ligand placement  2
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  3
+Flexible receptor + ligand placement  4
+Flexible receptor + ligand placement  5
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  6
+Flexible receptor + ligand placement  7
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  8
+Flexible receptor + ligand placement  9
+Flexible receptor + ligand placement  10
+Flexible receptor + ligand placement  11
+Flexible receptor + ligand placement  12
+Flexible receptor + ligand placement  13
+Flexible receptor + ligand placement  14
+Flexible receptor + ligand placement  15
+Flexible receptor + ligand placement  16
+Flexible receptor + ligand placement  17
+Flexible receptor + ligand placement  18
+Flexible receptor + ligand placement  19
+Flexible receptor + ligand placement  20
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  21
+Flexible receptor + ligand placement  22
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  23
+Flexible receptor + ligand placement  24
+Grid is applied to specified atoms
+Grid is applied to specified atoms
+Flexible receptor + ligand placement  25
+Set OMMD ligand copy 1
+Set OMMD ligand copy 2
+Set OMMD ligand copy 3
+Set OMMD ligand copy 4
+Set OMMD ligand copy 5
+Set OMMD ligand copy 6
+Set OMMD ligand copy 7
+Set OMMD ligand copy 8
+Set OMMD ligand copy 9
+Set OMMD ligand copy 10
+Set OMMD ligand copy 11
+Set OMMD ligand copy 12
+Set OMMD ligand copy 13
+Set OMMD ligand copy 14
+Set OMMD ligand copy 15
+Set OMMD ligand copy 16
+Set OMMD ligand copy 17
+Set OMMD ligand copy 18
+Set OMMD ligand copy 19
+Set OMMD ligand copy 20
+Set OMMD ligand copy 21
+Set OMMD ligand copy 22
+Set OMMD ligand copy 23
+Set OMMD ligand copy 24
+Set OMMD ligand copy 25
+Grid is applied to specified atoms
+Grid minimize OMMD ligand copy 1
+A selection has been stored as QBDMNFDBEFGYMOLYEDNP
+A selection has been stored as FAKPIQOVHYHLULXNAURD
+A selection has been stored as SUVBOIDKYBWRYJGXZWYO
+Grid minimize OMMD ligand copy 2
+A selection has been stored as YMXODVAAHDJGPQZBZAHK
+A selection has been stored as ALKZHKXPMRPTECCJDFKO
+A selection has been stored as RUGXWAWPZKAMQDGLYWOO
+Grid minimize OMMD ligand copy 3
+A selection has been stored as HFXHZSWMQTTECKMESYGT
+A selection has been stored as XBRWTAXJXSEHEJYRBSDN
+A selection has been stored as GZDGERSWKGAFOHNPHAVH
+Grid minimize OMMD ligand copy 4
+A selection has been stored as JLZIOPTZHGOOSJDJIZIY
+A selection has been stored as ENXQLKUOPRJIKKDNSMVU
+A selection has been stored as IVMLLAALJSMZZFJIZWPW
+Grid minimize OMMD ligand copy 5
+A selection has been stored as BPPYJIAPDXGOLTHXWDQN
+A selection has been stored as WJJLHBXNKVZSQOYVGJJP
+A selection has been stored as BPCKMNXTXVUIUGDCNBKH
+Grid minimize OMMD ligand copy 6
+A selection has been stored as VZYTLBLHYNQXYRRMNJRO
+A selection has been stored as CZHLFVNSMGLGTXMHUPXY
+A selection has been stored as LYLPQLNSQEPCZKZTGPOP
+Grid minimize OMMD ligand copy 7
+A selection has been stored as GJAPCNPVSBTSTTYPFEPZ
+A selection has been stored as HPRBKEJDUHRMMSUYBSHR
+A selection has been stored as TPJKOTWFKFZSSCFXLRTS
+Grid minimize OMMD ligand copy 8
+A selection has been stored as FXOMPZNBGLDXPOEZQOEH
+A selection has been stored as OJWBWOAXVDTACIYUPLUJ
+A selection has been stored as RIAJWHLEVAXTEVGILYIV
+Grid minimize OMMD ligand copy 9
+A selection has been stored as YHSAEZZREDDBYZHLWIZW
+A selection has been stored as GRFYXPZXGSPMJXLPKMFX
+A selection has been stored as XCXKYOVCTOPBIBIICDCP
+Grid minimize OMMD ligand copy 10
+A selection has been stored as MDTHYSFFJXWZAXRJQCDW
+A selection has been stored as NFXZJRGEHXAZFLYMNVQO
+A selection has been stored as DMONGFOTKQHJPKLIHSCU
+Grid minimize OMMD ligand copy 11
+A selection has been stored as AXDTWNBRYBZXPVFVBAKB
+A selection has been stored as VRILVRCSFQCBLLGXGVGL
+A selection has been stored as DAKVKXOAKWYTBQHCWXQX
+Grid minimize OMMD ligand copy 12
+A selection has been stored as TEKNAQOBRTPEHYCZCLMW
+A selection has been stored as WHZQYTTIFSVLAGVIUZLF
+A selection has been stored as UADAFTXOORZEBDIKZUEG
+Grid minimize OMMD ligand copy 13
+A selection has been stored as YDJECEQJEKBANLQFNJXZ
+A selection has been stored as DUNVEJRFVIDMXIYRFRGB
+A selection has been stored as HHYIFXTZCAAHABQWBNGB
+Grid minimize OMMD ligand copy 14
+A selection has been stored as CIGLZVXAADJEMJHMLEOK
+A selection has been stored as UDXJJYRNDQSYMXOQOFBV
+A selection has been stored as LJETOZTXZYECXHBAAJZA
+Grid minimize OMMD ligand copy 15
+A selection has been stored as PFEFAUESURABNFQSBBNC
+A selection has been stored as YAVTOBNIVBQOCJXEXMSU
+A selection has been stored as HFBNOJDQIELRGTURHVUA
+Grid minimize OMMD ligand copy 16
+A selection has been stored as WBRQNIJFIYDOXNEZHXQJ
+A selection has been stored as BDMYDWVWIKPGHZPIIQGP
+A selection has been stored as PFPEMLTVPGBYRZVGRUMB
+Grid minimize OMMD ligand copy 17
+A selection has been stored as IZLELNWHKUQTTPNMDDQF
+A selection has been stored as HEBTLQWJGTMEEDGJLZEK
+A selection has been stored as SHLNMGSCBFEFHNGHXSVD
+Grid minimize OMMD ligand copy 18
+A selection has been stored as FNSUBQZYABQBHHIZDCJW
+A selection has been stored as YVYKTREAADAVYMQSPVUD
+A selection has been stored as QVMJMYZVTPBEHIXUDKDI
+Grid minimize OMMD ligand copy 19
+A selection has been stored as HNLSFZXNQBJVWXSJDYPZ
+A selection has been stored as RUBUQPHHHRLWAFPBALAT
+A selection has been stored as JBVZVTLKKHHBQPBUNONT
+Grid minimize OMMD ligand copy 20
+A selection has been stored as VGXECFOKLFCMVIWRPJUY
+A selection has been stored as NEQWOPEPKXAVIDSKGJYI
+A selection has been stored as LIWCYNWXRUBHFUYQWXFQ
+Grid minimize OMMD ligand copy 21
+A selection has been stored as LYSAXCSQCVGTXTKXBXHP
+A selection has been stored as DVBRSBSUZEGJAOOGVBQM
+A selection has been stored as VGYRPPLHFVEZRGWRNLZC
+Grid minimize OMMD ligand copy 22
+A selection has been stored as FSHUZEJEZVPYSQKIDPYX
+A selection has been stored as TNOIIMXLVVGCIFPXQWON
+A selection has been stored as BCCFOGPCHXAAVLEOHGED
+Grid minimize OMMD ligand copy 23
+A selection has been stored as TPSYKUWVHNQOEBIWFACH
+A selection has been stored as GNMNEJVFCQWVLSMYNHLJ
+A selection has been stored as ADVIWUGXVABXQHNJWSCZ
+Grid minimize OMMD ligand copy 24
+A selection has been stored as ULTBVQZZDBDFGYLBMHJK
+A selection has been stored as NBJHQJGYOMXSDMYASTEA
+A selection has been stored as VVCWXUGOTOXUHCXAHWFH
+Grid minimize OMMD ligand copy 25
+A selection has been stored as GVRUWQYLVNKCRQNKRXLJ
+A selection has been stored as RHCCLBGLVTNPTDPKWIGG
+A selection has been stored as DATACVEIVJOZLUTDKTNB
+Calculate conformational entropy contribution from amino acid  LEU
+Calculate conformational entropy contribution from amino acid  VAL
+Calculate conformational entropy contribution from amino acid  VAL
+Calculate conformational entropy contribution from amino acid  LEU
+A selection has been stored as ZGKNQOIHFLGTVPKICOUW
+A selection has been stored as SEOYHFARUEYYQNHCBTSW
+A selection has been stored as DFZMFTHOUGLUFFQWOEOW
+A selection has been stored as XLIVGCACXSIZSWLSWPXF
+A selection has been stored as WFEMHLGEIYCDIOVNAYLQ
+A selection has been stored as INMCRFTPQKQEEOHVWTGV
+A selection has been stored as MJEDFRVRKDRPWHFDMQSQ
+A selection has been stored as IVCSSCVAWZIYWUJWOGAE
+A selection has been stored as VPTNOQFJNMFSPTTDKKUS
+A selection has been stored as NLJVPHWAMUJAUIRVOCSD
+A selection has been stored as JGLZQYTFWATBXCGCJGVB
+A selection has been stored as LHCDUMQWZHHNKJCQJXZG
+A selection has been stored as IROQICTTLVWPPDPASENT
+A selection has been stored as KFXHMCAVRMNCWJWNRFFJ
+A selection has been stored as CEPQMYPGTSOEYBWQNPYW
+A selection has been stored as UYWARPZAUFKNOKCLZMTG
+A selection has been stored as KTXHSLCUNVKSVLPEYGHJ
+A selection has been stored as GLMJRPRTUHKDUNMYTZJS
+A selection has been stored as AYOIVUXXDGUGEYIZRLTC
+A selection has been stored as OAHGSWAYMGTWWJXNXYCQ
+A selection has been stored as BBVSWSCWMSXPPLFPATEZ
+A selection has been stored as YGKLSMZUGKAJHCRXTRET
+A selection has been stored as HUSFHIIJDAHVDHIZIDWR
+A selection has been stored as TUYAMAWUAPVGFSQDOSVP
+A selection has been stored as QWWZLQVELAFLIQXEXJOD
+A selection has been stored as ZKNNJXWVNVOMHXYTVIBA
+A selection has been stored as LJCWNQYPIZAJOARJGMUG
+A selection has been stored as WZNQDCDZWEDJGTVISJBG
+   total_energy        vdw       elec  ...  cluster_size  PDB_name  cluster_id
+0    -15.497704 -62.255436 -18.489387  ...             2        19           1
+1    -10.356190 -59.917740 -19.163202  ...             4        14           4
+2     -9.549635 -55.799890 -18.631663  ...             2        21           3
+3     -9.139458 -53.843078 -18.774368  ...             4        20           5
+4     -8.759328 -53.136149 -20.186642  ...             2        11           2
+
+[5 rows x 7 columns]
+     enthalpy  PDB_name
+0  -24.171317         4
+1  -23.987358        13
+2  -23.236271        23
+3  -21.271209        11
+4  -20.548848        10
+5  -19.421412         8
+6  -19.405391         6
+7  -19.317157        19
+8  -19.246596        24
+9  -18.405890        18
+10 -18.306227        25
+11 -17.954232         7
+12 -17.927082         1
+13 -17.260275        12
+14 -16.933828        17
+15 -16.871177        14
+16 -16.757483        15
+17 -16.030040        20
+18 -15.650432         5
+19 -14.824622        21
+20 -13.101396        22
+21 -11.691004         9
+22  -9.428716         2
+23  -5.856064        16
+24  -5.276936         3
+ TITLE>   BUILD PROTEIN PSF AND PDB FILE
+ TITLE>    DATE:    12/ 3/21     13:16: 4      CREATED BY USER: YUJIN
+ TITLE>  *
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+  
+ CHARMM>     read sequence pdb -
+ CHARMM>     name ./ligand.pdb
+ VOPEN> Attempting to open::./LIGAND.PDB::
+ MAINIO> Sequence information being read from unit  91.
+ TITLE>   TITLE
+ TITLE>   MOVE LIGAND TO THE CENTER OF BINDING POCKET
+ TITLE>    DATE:     2/10/22     12:20:43      CREATED BY USER: YUJIN
+ TITLE>  *
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          3H2     
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ GENPSF> Segment   2 has been generated. Its identifier is LIGA.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =      163
+         Number of atoms         =     2630   Number of groups     =      766
+         Number of bonds         =     2650   Number of angles     =     4782
+         Number of dihedrals     =     6958   Number of impropers  =      450
+         Number of cross-terms   =      160
+         Number of HB acceptors  =      240   Number of HB donors  =      325
+         Number of NB exclusions =        0   Total charge =    8.00000
+  
+ CHARMM>     read coor pdb -
+ CHARMM>     name ./ligand.pdb -
+ CHARMM>     resid
+ VOPEN> Attempting to open::./LIGAND.PDB::
+  read CHARMM-pdb format
+          SPATIAL COORDINATES BEING READ FROM UNIT 91
+ TITLE>   TITLE
+ TITLE>   MOVE LIGAND TO THE CENTER OF BINDING POCKET
+ TITLE>    DATE:     2/10/22     12:20:43      CREATED BY USER: YUJIN
+ TITLE>  *
+ VCLOSE: Closing unit   91 with status "KEEP"
+  
+ CHARMM>     
+  
+      $$$$$$  New timer profile Local node$$$$$
+      Heuristic check                 0.09 Other:            0.00
+      NBONDS                          2.85 Other:            0.00
+   List time                       2.94 Other:            0.00
+         Electrostatic & VDW            15.62 Other:            0.00
+      Nonbond force                  15.98 Other:            0.36
+         Bond energy                     0.21 Other:            0.00
+         Angle energy                    0.78 Other:            0.00
+         Dihedral energy                 1.38 Other:            0.00
+         Restraints energy               0.08 Other:            0.00
+      INTRNL energy                   3.22 Other:            0.77
+      Comm energy                     0.11 Other:            0.00
+      Comm force                      0.14 Other:            0.00
+   Energy time                    20.58 Other:            1.13
+ Total time                    436.05 Other:          412.53
+         $$$$$$  Average   profile $$$$$
+      Heuristic check                 0.09 Other:            0.00
+      NBONDS                          2.85 Other:            0.00
+   List time                       2.94 Other:            0.00
+         Electrostatic & VDW            15.62 Other:            0.00
+      Nonbond force                  15.98 Other:            0.36
+         Bond energy                     0.21 Other:            0.00
+         Angle energy                    0.78 Other:            0.00
+         Dihedral energy                 1.38 Other:            0.00
+         Restraints energy               0.08 Other:            0.00
+      INTRNL energy                   3.22 Other:            0.77
+      Comm energy                     0.11 Other:            0.00
+      Comm force                      0.14 Other:            0.00
+   Energy time                    20.58 Other:            1.13
+ Total time                    436.05 Other:          412.53
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    MOST SEVERE WARNING WAS AT LEVEL  0
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     7.27  MINUTES 
+                         CPU TIME:     1.75  MINUTES 

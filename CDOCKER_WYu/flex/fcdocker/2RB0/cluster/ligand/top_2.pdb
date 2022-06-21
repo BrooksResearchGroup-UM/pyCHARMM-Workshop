@@ -1,0 +1,25 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 10                                                      
+REMARK  THE CLUSTER ID IS 1                                                           
+REMARK  THE TOTAL ENERGY IS -23.286827                                                
+REMARK  THE VDW ENERGY IS -59.571609                                                  
+REMARK  THE ELEC ENERGY IS -22.209257                                                 
+REMARK  THE ENTROPY IS 0.000000                                                       
+REMARK   DATE:     2/10/22     11:21:46      CREATED BY USER: yujin                   
+ATOM   2604  CAD 260   400      26.211   5.386   5.842  1.00  0.00      LIGA
+ATOM   2605  CAE 260   400      26.278   6.768   5.651  1.00  0.00      LIGA
+ATOM   2606  CAF 260   400      26.363   4.528   4.746  1.00  0.00      LIGA
+ATOM   2607  CAH 260   400      26.453   7.266   4.365  1.00  0.00      LIGA
+ATOM   2608  CAI 260   400      26.568   5.067   3.480  1.00  0.00      LIGA
+ATOM   2609  CAJ 260   400      26.584   6.440   3.253  1.00  0.00      LIGA
+ATOM   2610  FAA 260   400      26.481   8.601   4.178  1.00  0.00      LIGA
+ATOM   2611  FAB 260   400      26.766   4.227   2.438  1.00  0.00      LIGA
+ATOM   2612  H1  260   400      26.074   4.986   6.833  1.00  0.00      LIGA
+ATOM   2613  H2  260   400      26.175   7.436   6.495  1.00  0.00      LIGA
+ATOM   2614  H3  260   400      26.345   3.461   4.894  1.00  0.00      LIGA
+ATOM   2615  H4  260   400      26.311   6.310   1.122  1.00  0.00      LIGA
+ATOM   2616  H5  260   400      26.167   7.982   1.813  1.00  0.00      LIGA
+ATOM   2617 BRAC 260   400      28.551   7.429   1.419  1.00  0.00      LIGA
+ATOM   2618  CAG 260   400      26.713   7.019   1.876  1.00  0.00      LIGA
+TER    2619      260    400
+END

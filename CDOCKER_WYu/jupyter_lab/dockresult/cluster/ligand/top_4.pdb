@@ -1,0 +1,22 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 13                                                      
+REMARK  THE CLUSTER ID IS 1                                                           
+REMARK  THE TOTAL ENERGY IS -32.700584                                                
+REMARK  THE VDW ENERGY IS -64.692293                                                  
+REMARK  THE ELEC ENERGY IS -20.136180                                                 
+REMARK  THE ENTROPY IS -0.411036                                                      
+REMARK   DATE:     6/21/22     11:40: 3      CREATED BY USER: yujin                   
+ATOM   2604  C1  BNZ   400      27.871   6.120   2.844  1.00  0.00      LIGA
+ATOM   2605  C2  BNZ   400      27.833   6.990   3.941  1.00  0.00      LIGA
+ATOM   2606  C3  BNZ   400      26.984   6.717   5.025  1.00  0.00      LIGA
+ATOM   2607  C4  BNZ   400      26.184   5.566   5.015  1.00  0.00      LIGA
+ATOM   2608  C5  BNZ   400      26.242   4.687   3.926  1.00  0.00      LIGA
+ATOM   2609  C6  BNZ   400      27.081   4.965   2.839  1.00  0.00      LIGA
+ATOM   2610  H1  BNZ   400      28.512   6.340   2.004  1.00  0.00      LIGA
+ATOM   2611  H2  BNZ   400      28.460   7.868   3.950  1.00  0.00      LIGA
+ATOM   2612  H3  BNZ   400      26.952   7.387   5.870  1.00  0.00      LIGA
+ATOM   2613  H4  BNZ   400      25.535   5.350   5.851  1.00  0.00      LIGA
+ATOM   2614  H5  BNZ   400      25.638   3.794   3.925  1.00  0.00      LIGA
+ATOM   2615  H6  BNZ   400      27.119   4.290   1.996  1.00  0.00      LIGA
+TER    2616      BNZ    400
+END

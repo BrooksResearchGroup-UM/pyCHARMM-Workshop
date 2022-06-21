@@ -1,0 +1,17 @@
+REMARK  TITLE                                                                         
+REMARK  MOVE LIGAND TO THE CENTER OF BINDING POCKET                                   
+REMARK   DATE:     6/21/22     11:34:23      CREATED BY USER: yujin                   
+ATOM      1  C1  BNZ   400      25.987   5.306   4.762  1.00  0.00      LIGA
+ATOM      2  C2  BNZ   400      26.404   5.053   3.482  1.00  0.00      LIGA
+ATOM      3  C3  BNZ   400      27.349   5.839   2.885  1.00  0.00      LIGA
+ATOM      4  C4  BNZ   400      27.846   6.900   3.552  1.00  0.00      LIGA
+ATOM      5  C5  BNZ   400      27.429   7.175   4.839  1.00  0.00      LIGA
+ATOM      6  C6  BNZ   400      26.507   6.358   5.452  1.00  0.00      LIGA
+ATOM      7  H1  BNZ   400      25.279   4.699   5.203  1.00  0.00      LIGA
+ATOM      8  H2  BNZ   400      25.999   4.259   2.962  1.00  0.00      LIGA
+ATOM      9  H3  BNZ   400      27.679   5.622   1.932  1.00  0.00      LIGA
+ATOM     10  H4  BNZ   400      28.543   7.511   3.098  1.00  0.00      LIGA
+ATOM     11  H5  BNZ   400      27.809   7.993   5.341  1.00  0.00      LIGA
+ATOM     12  H6  BNZ   400      26.213   6.541   6.424  1.00  0.00      LIGA
+TER      13      BNZ    400
+END

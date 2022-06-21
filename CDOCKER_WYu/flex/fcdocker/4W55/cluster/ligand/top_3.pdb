@@ -1,0 +1,31 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 20                                                      
+REMARK  THE CLUSTER ID IS 3                                                           
+REMARK  THE TOTAL ENERGY IS -22.637922                                                
+REMARK  THE VDW ENERGY IS -63.515016                                                  
+REMARK  THE ELEC ENERGY IS -19.375922                                                 
+REMARK  THE ENTROPY IS -0.296739                                                      
+REMARK   DATE:     2/10/22     12:45: 3      CREATED BY USER: yujin                   
+ATOM   2604  CAA 3H0   200      26.020   5.192   5.713  1.00  0.00      LIGA
+ATOM   2605  CAB 3H0   200      27.310   9.100   0.502  1.00  0.00      LIGA
+ATOM   2606  CAC 3H0   200      28.302   8.131   0.660  1.00  0.00      LIGA
+ATOM   2607  CAD 3H0   200      26.188   9.084   1.339  1.00  0.00      LIGA
+ATOM   2608  CAE 3H0   200      28.179   7.169   1.662  1.00  0.00      LIGA
+ATOM   2609  CAF 3H0   200      26.054   8.098   2.328  1.00  0.00      LIGA
+ATOM   2610  CAG 3H0   200      25.914   6.207   4.581  1.00  0.00      LIGA
+ATOM   2611  CAH 3H0   200      27.088   6.108   3.599  1.00  0.00      LIGA
+ATOM   2612  CAI 3H0   200      27.070   7.145   2.511  1.00  0.00      LIGA
+ATOM   2613  H1  3H0   200      26.829   5.474   6.419  1.00  0.00      LIGA
+ATOM   2614  H2  3H0   200      26.236   4.184   5.300  1.00  0.00      LIGA
+ATOM   2615  H3  3H0   200      25.071   5.140   6.282  1.00  0.00      LIGA
+ATOM   2616  H4  3H0   200      27.415   9.852  -0.262  1.00  0.00      LIGA
+ATOM   2617  H5  3H0   200      29.173   8.117   0.025  1.00  0.00      LIGA
+ATOM   2618  H6  3H0   200      25.405   9.811   1.210  1.00  0.00      LIGA
+ATOM   2619  H7  3H0   200      28.936   6.420   1.777  1.00  0.00      LIGA
+ATOM   2620  H8  3H0   200      25.171   8.104   2.947  1.00  0.00      LIGA
+ATOM   2621  H9  3H0   200      25.889   7.225   5.030  1.00  0.00      LIGA
+ATOM   2622  H10 3H0   200      24.959   6.036   4.034  1.00  0.00      LIGA
+ATOM   2623  H11 3H0   200      27.098   5.105   3.120  1.00  0.00      LIGA
+ATOM   2624  H12 3H0   200      28.037   6.245   4.164  1.00  0.00      LIGA
+TER    2625      3H0    200
+END

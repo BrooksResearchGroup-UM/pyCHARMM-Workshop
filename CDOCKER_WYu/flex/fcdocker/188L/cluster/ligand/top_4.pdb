@@ -1,0 +1,28 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 13                                                      
+REMARK  THE CLUSTER ID IS 2                                                           
+REMARK  THE TOTAL ENERGY IS -27.324372                                                
+REMARK  THE VDW ENERGY IS -61.596211                                                  
+REMARK  THE ELEC ENERGY IS -20.028505                                                 
+REMARK  THE ENTROPY IS 0.000000                                                       
+REMARK   DATE:     2/10/22     10:50:43      CREATED BY USER: yujin                   
+ATOM   2604  C2' OXE   400      26.569   6.599   6.111  1.00  0.00      LIGA
+ATOM   2605  C1' OXE   400      26.281   4.296   4.211  1.00  0.00      LIGA
+ATOM   2606  C1  OXE   400      26.906   5.593   3.790  1.00  0.00      LIGA
+ATOM   2607  C2  OXE   400      27.005   6.684   4.682  1.00  0.00      LIGA
+ATOM   2608  C3  OXE   400      27.556   7.893   4.241  1.00  0.00      LIGA
+ATOM   2609  C4  OXE   400      27.971   8.041   2.918  1.00  0.00      LIGA
+ATOM   2610  C5  OXE   400      27.904   6.957   2.040  1.00  0.00      LIGA
+ATOM   2611  C6  OXE   400      27.378   5.734   2.476  1.00  0.00      LIGA
+ATOM   2612  H1  OXE   400      26.179   7.587   6.437  1.00  0.00      LIGA
+ATOM   2613  H2  OXE   400      27.448   6.327   6.732  1.00  0.00      LIGA
+ATOM   2614  H3  OXE   400      25.768   5.842   6.241  1.00  0.00      LIGA
+ATOM   2615  H4  OXE   400      26.382   3.537   3.407  1.00  0.00      LIGA
+ATOM   2616  H5  OXE   400      25.205   4.472   4.420  1.00  0.00      LIGA
+ATOM   2617  H6  OXE   400      26.781   3.920   5.127  1.00  0.00      LIGA
+ATOM   2618  H7  OXE   400      27.654   8.719   4.926  1.00  0.00      LIGA
+ATOM   2619  H8  OXE   400      28.334   8.998   2.577  1.00  0.00      LIGA
+ATOM   2620  H9  OXE   400      28.246   7.079   1.024  1.00  0.00      LIGA
+ATOM   2621  H10 OXE   400      27.307   4.902   1.792  1.00  0.00      LIGA
+TER    2622      OXE    400
+END

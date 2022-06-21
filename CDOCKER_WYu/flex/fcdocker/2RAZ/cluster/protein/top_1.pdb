@@ -1,0 +1,90 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 6                                                       
+REMARK  THE CLUSTER ID IS 4                                                           
+REMARK  THE TOTAL ENERGY IS -16.364282                                                
+REMARK  THE VDW ENERGY IS -60.077938                                                  
+REMARK  THE ELEC ENERGY IS -15.948043                                                 
+REMARK  THE ENTROPY IS -0.206857                                                      
+REMARK   DATE:     2/10/22     11:16:23      CREATED BY USER: yujin                   
+ATOM   1323  N   LEU    84      20.393   6.672   6.051  1.00 29.38      PROT
+ATOM   1324  HN  LEU    84      20.055   7.006   6.928  1.00  0.00      PROT
+ATOM   1325  CA  LEU    84      21.768   6.201   6.021  1.00 35.50      PROT
+ATOM   1326  HA  LEU    84      22.165   6.291   5.020  1.00  0.00      PROT
+ATOM   1327  CB  LEU    84      22.684   7.001   6.979  1.00 19.57      PROT
+ATOM   1328  HB1 LEU    84      22.365   6.827   8.026  1.00  0.00      PROT
+ATOM   1329  HB2 LEU    84      23.721   6.618   6.894  1.00  0.00      PROT
+ATOM   1330  CG  LEU    84      22.703   8.522   6.698  1.00 29.56      PROT
+ATOM   1331  HG  LEU    84      21.658   8.897   6.756  1.00  0.00      PROT
+ATOM   1332  CD1 LEU    84      23.500   9.294   7.772  1.00 29.33      PROT
+ATOM   1333 HD11 LEU    84      23.102   9.078   8.785  1.00  0.00      PROT
+ATOM   1334 HD12 LEU    84      24.569   9.007   7.756  1.00  0.00      PROT
+ATOM   1335 HD13 LEU    84      23.427  10.388   7.596  1.00  0.00      PROT
+ATOM   1336  CD2 LEU    84      23.195   8.836   5.272  1.00 29.14      PROT
+ATOM   1337 HD21 LEU    84      23.195   9.931   5.111  1.00  0.00      PROT
+ATOM   1338 HD22 LEU    84      24.225   8.458   5.116  1.00  0.00      PROT
+ATOM   1339 HD23 LEU    84      22.529   8.379   4.511  1.00  0.00      PROT
+ATOM   1340  C   LEU    84      21.875   4.753   6.404  1.00 18.71      PROT
+ATOM   1341  O   LEU    84      22.734   4.045   5.882  1.00 25.84      PROT
+ATOM   1378  N   VAL    87      21.544   2.043   3.488  1.00 19.12      PROT
+ATOM   1379  HN  VAL    87      21.203   2.929   3.789  1.00  0.00      PROT
+ATOM   1380  CA  VAL    87      22.726   2.079   2.655  1.00 19.77      PROT
+ATOM   1381  HA  VAL    87      22.503   1.514   1.760  1.00  0.00      PROT
+ATOM   1382  CB  VAL    87      23.106   3.497   2.244  1.00 26.77      PROT
+ATOM   1383  HB  VAL    87      23.370   4.104   3.140  1.00  0.00      PROT
+ATOM   1384  CG1 VAL    87      24.318   3.478   1.281  1.00 20.86      PROT
+ATOM   1385 HG11 VAL    87      24.109   2.823   0.409  1.00  0.00      PROT
+ATOM   1386 HG12 VAL    87      24.520   4.502   0.905  1.00  0.00      PROT
+ATOM   1387 HG13 VAL    87      25.234   3.113   1.791  1.00  0.00      PROT
+ATOM   1388  CG2 VAL    87      21.880   4.150   1.571  1.00 22.87      PROT
+ATOM   1389 HG21 VAL    87      21.537   3.542   0.708  1.00  0.00      PROT
+ATOM   1390 HG22 VAL    87      21.037   4.270   2.281  1.00  0.00      PROT
+ATOM   1391 HG23 VAL    87      22.152   5.158   1.202  1.00  0.00      PROT
+ATOM   1392  C   VAL    87      23.877   1.393   3.351  1.00 17.86      PROT
+ATOM   1393  O   VAL    87      24.532   0.553   2.769  1.00 20.41      PROT
+ATOM   1563  N   ALA    99      32.058   4.612   5.063  1.00 12.87      PROT
+ATOM   1564  HN  ALA    99      32.018   3.616   4.987  1.00  0.00      PROT
+ATOM   1565  CA  ALA    99      30.820   5.258   5.425  1.00 13.69      PROT
+ATOM   1566  HA  ALA    99      30.593   5.999   4.674  1.00  0.00      PROT
+ATOM   1567  CB  ALA    99      29.662   4.245   5.502  1.00 17.98      PROT
+ATOM   1568  HB1 ALA    99      28.714   4.749   5.776  1.00  0.00      PROT
+ATOM   1569  HB2 ALA    99      29.525   3.754   4.515  1.00  0.00      PROT
+ATOM   1570  HB3 ALA    99      29.861   3.458   6.255  1.00  0.00      PROT
+ATOM   1571  C   ALA    99      30.953   5.988   6.733  1.00 15.90      PROT
+ATOM   1572  O   ALA    99      30.438   7.095   6.885  1.00 20.25      PROT
+ATOM   1736  N   VAL   111      26.394  14.048   5.057  1.00 35.53      PROT
+ATOM   1737  HN  VAL   111      26.659  13.918   6.012  1.00  0.00      PROT
+ATOM   1738  CA  VAL   111      26.388  12.849   4.225  1.00 29.30      PROT
+ATOM   1739  HA  VAL   111      26.997  13.081   3.362  1.00  0.00      PROT
+ATOM   1740  CB  VAL   111      26.981  11.600   4.860  1.00 27.13      PROT
+ATOM   1741  HB  VAL   111      27.083  10.824   4.065  1.00  0.00      PROT
+ATOM   1742  CG1 VAL   111      28.392  11.916   5.379  1.00 39.02      PROT
+ATOM   1743 HG11 VAL   111      29.025  12.319   4.561  1.00  0.00      PROT
+ATOM   1744 HG12 VAL   111      28.365  12.656   6.204  1.00  0.00      PROT
+ATOM   1745 HG13 VAL   111      28.858  10.988   5.773  1.00  0.00      PROT
+ATOM   1746  CG2 VAL   111      26.088  11.009   5.965  1.00 31.49      PROT
+ATOM   1747 HG21 VAL   111      25.060  10.801   5.631  1.00  0.00      PROT
+ATOM   1748 HG22 VAL   111      26.487  10.025   6.274  1.00  0.00      PROT
+ATOM   1749 HG23 VAL   111      26.049  11.689   6.838  1.00  0.00      PROT
+ATOM   1750  C   VAL   111      25.016  12.486   3.713  1.00 59.63      PROT
+ATOM   1751  O   VAL   111      24.879  11.953   2.619  1.00 27.98      PROT
+ATOM   1828  N   LEU   118      24.437   7.873  -2.517  1.00 23.35      PROT
+ATOM   1829  HN  LEU   118      24.142   8.819  -2.377  1.00  0.00      PROT
+ATOM   1830  CA  LEU   118      23.906   6.927  -1.553  1.00 26.84      PROT
+ATOM   1831  HA  LEU   118      24.742   6.464  -1.048  1.00  0.00      PROT
+ATOM   1832  CB  LEU   118      22.950   7.591  -0.515  1.00 26.37      PROT
+ATOM   1833  HB1 LEU   118      22.272   8.284  -1.048  1.00  0.00      PROT
+ATOM   1834  HB2 LEU   118      22.307   6.829  -0.026  1.00  0.00      PROT
+ATOM   1835  CG  LEU   118      23.637   8.382   0.624  1.00 42.26      PROT
+ATOM   1836  HG  LEU   118      24.402   9.046   0.167  1.00  0.00      PROT
+ATOM   1837  CD1 LEU   118      22.638   9.287   1.371  1.00 25.58      PROT
+ATOM   1838 HD11 LEU   118      21.831   8.676   1.828  1.00  0.00      PROT
+ATOM   1839 HD12 LEU   118      23.157   9.847   2.178  1.00  0.00      PROT
+ATOM   1840 HD13 LEU   118      22.180  10.020   0.677  1.00  0.00      PROT
+ATOM   1841  CD2 LEU   118      24.339   7.445   1.620  1.00 15.30      PROT
+ATOM   1842 HD21 LEU   118      23.600   6.784   2.120  1.00  0.00      PROT
+ATOM   1843 HD22 LEU   118      25.080   6.810   1.093  1.00  0.00      PROT
+ATOM   1844 HD23 LEU   118      24.865   8.034   2.401  1.00  0.00      PROT
+ATOM   1845  C   LEU   118      23.144   5.836  -2.254  1.00 23.85      PROT
+ATOM   1846  O   LEU   118      23.287   4.659  -1.924  1.00 23.25      PROT
+TER    2622      LEU    118
+END

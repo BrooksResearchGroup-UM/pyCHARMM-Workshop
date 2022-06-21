@@ -1,0 +1,25 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 17                                                      
+REMARK  THE CLUSTER ID IS 1                                                           
+REMARK  THE TOTAL ENERGY IS -28.936310                                                
+REMARK  THE VDW ENERGY IS -63.652190                                                  
+REMARK  THE ELEC ENERGY IS -17.665627                                                 
+REMARK  THE ENTROPY IS -0.695835                                                      
+REMARK   DATE:     2/10/22     10:18:54      CREATED BY USER: yujin                   
+ATOM   2604  O1  BZF   401      26.477   6.590   5.982  1.00  0.00      LIGA
+ATOM   2605  C2  BZF   401      25.987   5.309   5.891  1.00  0.00      LIGA
+ATOM   2606  C3  BZF   401      26.198   4.755   4.662  1.00  0.00      LIGA
+ATOM   2607  C3A BZF   401      26.870   5.757   3.904  1.00  0.00      LIGA
+ATOM   2608  C4  BZF   401      27.337   5.794   2.600  1.00  0.00      LIGA
+ATOM   2609  C5  BZF   401      27.899   6.984   2.119  1.00  0.00      LIGA
+ATOM   2610  C6  BZF   401      28.011   8.098   2.959  1.00  0.00      LIGA
+ATOM   2611  C7  BZF   401      27.622   8.015   4.297  1.00  0.00      LIGA
+ATOM   2612  C7A BZF   401      27.024   6.859   4.756  1.00  0.00      LIGA
+ATOM   2613  H1  BZF   401      25.500   4.893   6.764  1.00  0.00      LIGA
+ATOM   2614  H2  BZF   401      25.913   3.769   4.333  1.00  0.00      LIGA
+ATOM   2615  H3  BZF   401      27.229   4.936   1.953  1.00  0.00      LIGA
+ATOM   2616  H4  BZF   401      28.230   7.058   1.094  1.00  0.00      LIGA
+ATOM   2617  H5  BZF   401      28.386   9.032   2.572  1.00  0.00      LIGA
+ATOM   2618  H6  BZF   401      27.767   8.847   4.965  1.00  0.00      LIGA
+TER    2619      BZF    401
+END

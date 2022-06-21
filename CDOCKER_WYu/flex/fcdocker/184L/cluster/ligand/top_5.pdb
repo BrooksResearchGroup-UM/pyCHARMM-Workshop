@@ -1,0 +1,34 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 21                                                      
+REMARK  THE CLUSTER ID IS 2                                                           
+REMARK  THE TOTAL ENERGY IS -21.017032                                                
+REMARK  THE VDW ENERGY IS -60.437558                                                  
+REMARK  THE ELEC ENERGY IS -21.662558                                                 
+REMARK  THE ENTROPY IS -0.411036                                                      
+REMARK   DATE:     2/10/22     10:29: 3      CREATED BY USER: yujin                   
+ATOM   2604  C4' I4B   401      28.370   7.101   1.863  1.00  0.00      LIGA
+ATOM   2605  C3' I4B   401      27.592   9.298   0.876  1.00  0.00      LIGA
+ATOM   2606  C2' I4B   401      27.690   8.446   2.155  1.00  0.00      LIGA
+ATOM   2607  C1' I4B   401      26.291   8.243   2.763  1.00  0.00      LIGA
+ATOM   2608  C1  I4B   401      26.307   7.287   3.914  1.00  0.00      LIGA
+ATOM   2609  C2  I4B   401      27.079   7.559   5.052  1.00  0.00      LIGA
+ATOM   2610  C3  I4B   401      27.068   6.671   6.130  1.00  0.00      LIGA
+ATOM   2611  C4  I4B   401      26.300   5.502   6.071  1.00  0.00      LIGA
+ATOM   2612  C5  I4B   401      25.552   5.214   4.926  1.00  0.00      LIGA
+ATOM   2613  C6  I4B   401      25.543   6.110   3.856  1.00  0.00      LIGA
+ATOM   2614  H1  I4B   401      29.266   7.249   1.226  1.00  0.00      LIGA
+ATOM   2615  H2  I4B   401      27.662   6.431   1.336  1.00  0.00      LIGA
+ATOM   2616  H3  I4B   401      28.679   6.604   2.806  1.00  0.00      LIGA
+ATOM   2617  H4  I4B   401      27.168  10.293   1.122  1.00  0.00      LIGA
+ATOM   2618  H5  I4B   401      26.942   8.799   0.127  1.00  0.00      LIGA
+ATOM   2619  H6  I4B   401      28.594   9.446   0.426  1.00  0.00      LIGA
+ATOM   2620  H7  I4B   401      28.316   9.005   2.886  1.00  0.00      LIGA
+ATOM   2621  H8  I4B   401      25.645   7.816   1.972  1.00  0.00      LIGA
+ATOM   2622  H9  I4B   401      25.862   9.206   3.111  1.00  0.00      LIGA
+ATOM   2623  H10 I4B   401      27.687   8.450   5.097  1.00  0.00      LIGA
+ATOM   2624  H11 I4B   401      27.670   6.874   7.000  1.00  0.00      LIGA
+ATOM   2625  H12 I4B   401      26.307   4.817   6.902  1.00  0.00      LIGA
+ATOM   2626  H13 I4B   401      24.980   4.303   4.866  1.00  0.00      LIGA
+ATOM   2627  H14 I4B   401      24.953   5.894   2.978  1.00  0.00      LIGA
+TER    2628      I4B    401
+END

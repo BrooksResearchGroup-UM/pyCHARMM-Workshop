@@ -1,0 +1,23 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 13                                                      
+REMARK  THE CLUSTER ID IS 3                                                           
+REMARK  THE TOTAL ENERGY IS -45.040889                                                
+REMARK  THE VDW ENERGY IS -74.680841                                                  
+REMARK  THE ELEC ENERGY IS -22.117456                                                 
+REMARK  THE ENTROPY IS 0.000000                                                       
+REMARK   DATE:     2/10/22     11: 1: 5      CREATED BY USER: yujin                   
+ATOM   2604  CAA MR3   303      26.583   6.619   5.922  1.00  0.00      LIGA
+ATOM   2605  CAB MR3   303      27.146   5.101   2.683  1.00  0.00      LIGA
+ATOM   2606  CAC MR3   303      27.900   6.227   2.577  1.00  0.00      LIGA
+ATOM   2607  CAD MR3   303      26.548   5.088   3.905  1.00  0.00      LIGA
+ATOM   2608  CAE MR3   303      27.800   6.933   3.733  1.00  0.00      LIGA
+ATOM   2609  NAF MR3   303      26.953   6.231   4.563  1.00  0.00      LIGA
+ATOM   2610  H1  MR3   303      25.882   5.886   6.377  1.00  0.00      LIGA
+ATOM   2611  H2  MR3   303      26.098   7.618   5.928  1.00  0.00      LIGA
+ATOM   2612  H3  MR3   303      27.488   6.674   6.566  1.00  0.00      LIGA
+ATOM   2613  H4  MR3   303      27.050   4.337   1.925  1.00  0.00      LIGA
+ATOM   2614  H5  MR3   303      28.489   6.513   1.718  1.00  0.00      LIGA
+ATOM   2615  H6  MR3   303      25.879   4.360   4.345  1.00  0.00      LIGA
+ATOM   2616  H7  MR3   303      28.263   7.867   4.019  1.00  0.00      LIGA
+TER    2617      MR3    303
+END

@@ -1,0 +1,22 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 16                                                      
+REMARK  THE CLUSTER ID IS 4                                                           
+REMARK  THE TOTAL ENERGY IS -26.182207                                                
+REMARK  THE VDW ENERGY IS -61.298170                                                  
+REMARK  THE ELEC ENERGY IS -17.989098                                                 
+REMARK  THE ENTROPY IS -0.206857                                                      
+REMARK   DATE:     2/10/22     11:46: 4      CREATED BY USER: yujin                   
+ATOM   2604  C1  HFB   900      27.896   6.692   3.128  1.00  0.00      LIGA
+ATOM   2605  C2  HFB   900      27.372   5.404   3.061  1.00  0.00      LIGA
+ATOM   2606  C3  HFB   900      26.600   4.906   4.096  1.00  0.00      LIGA
+ATOM   2607  C4  HFB   900      26.328   5.695   5.202  1.00  0.00      LIGA
+ATOM   2608  C5  HFB   900      26.854   6.973   5.283  1.00  0.00      LIGA
+ATOM   2609  C6  HFB   900      27.660   7.470   4.259  1.00  0.00      LIGA
+ATOM   2610  F1  HFB   900      28.638   7.181   2.095  1.00  0.00      LIGA
+ATOM   2611  F2  HFB   900      27.629   4.602   2.002  1.00  0.00      LIGA
+ATOM   2612  F3  HFB   900      26.140   3.634   4.035  1.00  0.00      LIGA
+ATOM   2613  F4  HFB   900      25.592   5.201   6.228  1.00  0.00      LIGA
+ATOM   2614  F5  HFB   900      26.578   7.716   6.381  1.00  0.00      LIGA
+ATOM   2615  F6  HFB   900      28.231   8.699   4.369  1.00  0.00      LIGA
+TER    2616      HFB    900
+END

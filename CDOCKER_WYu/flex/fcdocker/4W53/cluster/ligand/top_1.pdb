@@ -1,0 +1,25 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 21                                                      
+REMARK  THE CLUSTER ID IS 4                                                           
+REMARK  THE TOTAL ENERGY IS -33.618865                                                
+REMARK  THE VDW ENERGY IS -64.997655                                                  
+REMARK  THE ELEC ENERGY IS -20.681966                                                 
+REMARK  THE ENTROPY IS -1.041772                                                      
+REMARK   DATE:     2/10/22     12:17: 6      CREATED BY USER: yujin                   
+ATOM   2604  C   MBN   200      28.251   7.016   2.298  1.00  0.00      LIGA
+ATOM   2605  C1  MBN   200      27.544   6.466   3.494  1.00  0.00      LIGA
+ATOM   2606  C2  MBN   200      26.627   5.413   3.359  1.00  0.00      LIGA
+ATOM   2607  C3  MBN   200      25.921   4.950   4.477  1.00  0.00      LIGA
+ATOM   2608  C4  MBN   200      26.122   5.545   5.729  1.00  0.00      LIGA
+ATOM   2609  C5  MBN   200      27.040   6.591   5.868  1.00  0.00      LIGA
+ATOM   2610  C6  MBN   200      27.767   7.033   4.756  1.00  0.00      LIGA
+ATOM   2611  H1  MBN   200      29.234   7.421   2.611  1.00  0.00      LIGA
+ATOM   2612  H2  MBN   200      27.635   7.827   1.853  1.00  0.00      LIGA
+ATOM   2613  H3  MBN   200      28.410   6.207   1.557  1.00  0.00      LIGA
+ATOM   2614  H4  MBN   200      26.459   4.969   2.391  1.00  0.00      LIGA
+ATOM   2615  H5  MBN   200      25.218   4.141   4.375  1.00  0.00      LIGA
+ATOM   2616  H6  MBN   200      25.576   5.191   6.589  1.00  0.00      LIGA
+ATOM   2617  H7  MBN   200      27.210   7.039   6.833  1.00  0.00      LIGA
+ATOM   2618  H8  MBN   200      28.501   7.815   4.870  1.00  0.00      LIGA
+TER    2619      MBN    200
+END

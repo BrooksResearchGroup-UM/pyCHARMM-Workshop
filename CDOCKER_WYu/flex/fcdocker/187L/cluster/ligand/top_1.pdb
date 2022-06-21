@@ -1,0 +1,28 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 8                                                       
+REMARK  THE CLUSTER ID IS 3                                                           
+REMARK  THE TOTAL ENERGY IS -31.113322                                                
+REMARK  THE VDW ENERGY IS -63.134330                                                  
+REMARK  THE ELEC ENERGY IS -21.817126                                                 
+REMARK  THE ENTROPY IS -0.815475                                                      
+REMARK   DATE:     2/10/22     10:45:41      CREATED BY USER: yujin                   
+ATOM   2604  C4' PXY   400      26.064   5.400   5.973  1.00  0.00      LIGA
+ATOM   2605  C1' PXY   400      28.257   7.724   1.186  1.00  0.00      LIGA
+ATOM   2606  C1  PXY   400      27.878   6.973   2.425  1.00  0.00      LIGA
+ATOM   2607  C2  PXY   400      28.204   7.504   3.679  1.00  0.00      LIGA
+ATOM   2608  C3  PXY   400      27.645   6.959   4.838  1.00  0.00      LIGA
+ATOM   2609  C4  PXY   400      26.769   5.872   4.751  1.00  0.00      LIGA
+ATOM   2610  C5  PXY   400      26.529   5.266   3.512  1.00  0.00      LIGA
+ATOM   2611  C6  PXY   400      27.089   5.812   2.353  1.00  0.00      LIGA
+ATOM   2612  H1  PXY   400      25.829   6.281   6.603  1.00  0.00      LIGA
+ATOM   2613  H2  PXY   400      26.718   4.705   6.535  1.00  0.00      LIGA
+ATOM   2614  H3  PXY   400      25.120   4.894   5.686  1.00  0.00      LIGA
+ATOM   2615  H4  PXY   400      27.462   7.607   0.421  1.00  0.00      LIGA
+ATOM   2616  H5  PXY   400      29.224   7.334   0.805  1.00  0.00      LIGA
+ATOM   2617  H6  PXY   400      28.347   8.807   1.420  1.00  0.00      LIGA
+ATOM   2618  H7  PXY   400      28.831   8.380   3.752  1.00  0.00      LIGA
+ATOM   2619  H8  PXY   400      27.855   7.404   5.800  1.00  0.00      LIGA
+ATOM   2620  H9  PXY   400      25.876   4.408   3.451  1.00  0.00      LIGA
+ATOM   2621  H10 PXY   400      26.834   5.383   1.398  1.00  0.00      LIGA
+TER    2622      PXY    400
+END
