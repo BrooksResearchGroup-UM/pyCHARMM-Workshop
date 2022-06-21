@@ -1,0 +1,466 @@
+* DRUDE cation-pi model compounds
+* REFERENCES:
+* This work:
+*    Orabi, Lopes, MacKerell, and Lamoureux, submitted
+* For SWM4:
+*    Lamoureux, Harder, Vorobyov, Roux, and MacKerell, Jr. Chem. Phys. Lett. 2006, 418, 245-249
+* For BENX and NH4+:
+*    Orabi and Lamoureux. J. Chem. Theory Comput. 2012, 8, 182-193
+* For NH4+ and aromatics:
+*    Wang, Orabi, Baday, Berneche, and Lamoureux. J. Am. Chem. Soc. 2012, USA 134, 10419-1042
+*
+
+ioformat extended
+
+bomlev -1
+
+read rtf card !append
+* Topology for Drude cation-pi model compounds
+*
+34
+
+! Hydrogen
+MASS     1 HDP1A     1.00800 H  ! polar H, general
+MASS     2 HDA3A     1.00800 H  ! aliphatic, H, methyl (-CH3), general
+MASS     3 HDA3C     1.00800 H  ! aliphatic, H, methyl (-CH3), special case for ammonium cations
+MASS     4 HDR5A     1.00800 H  ! 5-membered ring, HG and HD2 in imidazole
+MASS     5 HDR6A     1.00800 H  ! aromatic H, 6-membered ring, general
+MASS     6 HAM       1.00800 H  ! ammonium (G.Lamoureux)
+
+!Carbon
+MASS     7 CD2R5A   12.01100 C  ! 5-membered ring, CG and CD2 in imidazole
+MASS     8 CD2R5C   12.01100 C  ! 5-membered ring, pyrole, adjacent to N
+MASS     9 CD2R6A   12.01100 C  ! aromatic C, 6-membered ring
+MASS    10 CD2R6D   12.01100 C  ! aromatic C, 6-membered ring, bridging far from N (indole)
+MASS    11 CD32A    12.01100 C  ! aliphatic sp3 C, 2 hydrogens 
+MASS    12 CD33A    12.01100 C  ! aliphatic sp3 C, 3 hydrogens
+
+!Nitrogen
+MASS    13 ND2R5A   14.00700 N  ! neutral his protonated ring nitrogen
+MASS    14 ND3P2A   14.00700 N  ! protonated sp3 nitrogen, 0, 1 or 3 hydrogens 
+MASS    15 NAM      14.00700 N  ! ammonium (G. Lamoureux)
+
+!Oxygen
+MASS    16 OD31C    15.99900 O  ! hydroxyl oxygen, phenol
+
+! lone pair
+MASS    17 LP        0.00000 H  ! general lone pair
+MASS    18 LPX       0.00000 H  ! benzene X site
+MASS    19 DRUD      0.00000 H  ! Drude particle
+
+!! SWM4 TIP4P polarizable water model
+MASS    20 ODW      15.99940 O  ! water oxygen
+MASS    21 HDW       1.00800 H  ! water hydrogen
+MASS    22 DOH2      0.00000 H  ! water Drude
+
+DEFA FIRS NONE LAST NONE
+AUTOGENERATE ANGLES DIHEDRALS DRUDE  ! not used for DRUDE
+
+!! SWM4-NDP water
+RESI SWM4          0.000
+GROUP
+ATOM OH2  ODW      0.00000  TYPE DOH2    ALPHA -0.97825258 THOLE 1.3   
+ATOM OM   LP      -1.11466 
+ATOM H1   HDW      0.55733
+ATOM H2   HDW      0.55733
+BOND OH2 H1
+BOND OH2 H2
+BOND OH2 OM
+BOND H1  H2 ! for SHAKE
+ANGLE H1 OH2 H2
+ACCEPTOR OH2
+LONEPAIR bisector OM OH2 H1 H2 distance 0.24034492 angle 0.0 dihe 0.0
+IC   H1   OH2   H2    H1    0.9572 104.52     0.00   37.74   1.5139
+IC   H1   OM   *OH2   H2    0.9572  52.26   180.00   52.26   0.9572
+IC   H2   H1    OH2   OM    1.5139  37.74     0.01   52.26   0.24034492
+PATCH FIRST NONE LAST NONE
+
+!! aromatics
+
+RESI BENX          0.000 ! benzene with dummy atom at its center (E. Orabi)
+
+!--------To generate this residue use----------
+!read sequence BENX 1
+!generate BENX first none last none setup warn DRUDE DMASS 0.4
+!LONEpair CENTer 1 BENX select segid BENX .and. type C*  end
+!
+!
+!            HD1  HE1
+!             |    |
+!            CD1--CE1
+!            /      \
+!       HG--CG  lpx  CZ--HZ
+!            \      /
+!            CD2--CE2
+!             |    |
+!            HD2  HE2
+!
+GROUP
+ATOM CG   CD2R6A  -0.0819  ALPHA -1.500  THOLE 1.201
+ATOM HG   HDR6A    0.0819
+ATOM CD1  CD2R6A  -0.0819  ALPHA -1.500  THOLE 1.201
+ATOM HD1  HDR6A    0.0819
+ATOM CD2  CD2R6A  -0.0819  ALPHA -1.500  THOLE 1.201
+ATOM HD2  HDR6A    0.0819
+ATOM CE1  CD2R6A  -0.0819  ALPHA -1.500  THOLE 1.201
+ATOM HE1  HDR6A    0.0819
+ATOM CE2  CD2R6A  -0.0819  ALPHA -1.500  THOLE 1.201
+ATOM HE2  HDR6A    0.0819
+ATOM CZ   CD2R6A  -0.0819  ALPHA -1.500  THOLE 1.201
+ATOM HZ   HDR6A    0.0819
+ATOM LPBX LPX      0.0000
+BOND CD1 CG CD2 CG CE1 CD1
+BOND CE2 CD2 CZ CE1 CZ CE2
+BOND CG HG CD1 HD1 CD2 HD2 CE1 HE1
+BOND CE2 HE2 CZ HZ
+LONE CENT LPBX CD1 CE1 CZ CE2 CD2 CG
+IC CG   CD1  CE1  CZ    0.0000  0.0000   0.0000  0.0000  0.0000
+IC CD1  CE1  CZ   CE2   0.0000  0.0000   0.0000  0.0000  0.0000
+IC CE1  CZ   CE2  CD2   0.0000  0.0000   0.0000  0.0000  0.0000
+IC CD1  CD2  *CG  HG    0.0000  0.0000 180.0000  0.0000  0.0000
+IC CE1  CG   *CD1 HD1   0.0000  0.0000 180.0000  0.0000  0.0000
+IC CE2  CG   *CD2 HD2   0.0000  0.0000 180.0000  0.0000  0.0000
+IC CZ   CD1  *CE1 HE1   0.0000  0.0000 180.0000  0.0000  0.0000
+IC CZ   CD2  *CE2 HE2   0.0000  0.0000 180.0000  0.0000  0.0000
+IC CE1  CE2  *CZ  HZ    0.0000  0.0000 180.0000  0.0000  0.0000
+PATCHING FIRST NONE LAST NONE
+
+RESI TOLX          0.000 ! toluene with dummy atom at the center of the aromatic ring (E. Orabi)
+!--------To generate this residue use----------
+!read sequence TOLX 1
+!generate TOLX first none last none setup warn DRUDE DMASS 0.4
+!LONEpair CENTer 1 TOLX select segid TOLX .and. type CG .or. type CD1 .or. type CE1 .or. type CZ .or. type CE2 .or. type CD2 end
+!
+!
+!                   HD1  HE1
+!                    |    |
+!         HB1       CD1--CE1
+!            \     /        \
+!        HB2-CB--CG   lpx   CZ--HZ
+!            /     \        /
+!         HB3       CD2--CE2
+!                    |    |
+!                   HD2  HE2
+!
+
+GROUP
+ATOM CB   CD33A   -0.226  ALPHA -1.473  THOLE 1.3
+ATOM HB1  HDA3A    0.079
+ATOM HB2  HDA3A    0.079
+ATOM HB3  HDA3A    0.079
+ATOM CG   CD2R6A   0.036  ALPHA -0.875  THOLE 1.3
+ATOM CD1  CD2R6A  -0.088  ALPHA -1.214  THOLE 1.3
+ATOM HD1  HDR6A    0.099
+ATOM CD2  CD2R6A  -0.088  ALPHA -1.214  THOLE 1.3
+ATOM HD2  HDR6A    0.099
+ATOM CE1  CD2R6A  -0.119  ALPHA -1.376  THOLE 1.3
+ATOM HE1  HDR6A    0.098
+ATOM CE2  CD2R6A  -0.119  ALPHA -1.376  THOLE 1.3
+ATOM HE2  HDR6A    0.098
+ATOM CZ   CD2R6A  -0.125  ALPHA -1.376  THOLE 1.3
+ATOM HZ   HDR6A    0.098
+ATOM LPTX LPX      0.000
+
+BOND CD1 CG  CD2 CG  CE1 CD1
+BOND CE2 CD2 CZ  CE1 CZ  CE2 CG  CB
+BOND CD1 HD1 CD2 HD2 CE1 HE1
+BOND CE2 HE2 CZ HZ
+BOND CB  HB1 CB HB2 CB HB3
+LONE CENT LPTX CD1 CE1 CZ CE2 CD2 CG
+IC CG   CD1  CE1  CZ    0.0000  0.0000    0.0000  0.0000  0.0000
+IC CD1  CE1  CZ   CE2   0.0000  0.0000    0.0000  0.0000  0.0000
+IC CE1  CZ   CE2  CD2   0.0000  0.0000    0.0000  0.0000  0.0000
+IC CD1  CD2  *CG  CB    0.0000  0.0000  180.0000  0.0000  0.0000
+IC CE1  CG   *CD1 HD1   0.0000  0.0000  180.0000  0.0000  0.0000
+IC CE2  CG   *CD2 HD2   0.0000  0.0000  180.0000  0.0000  0.0000
+IC CZ   CD1  *CE1 HE1   0.0000  0.0000  180.0000  0.0000  0.0000
+IC CZ   CD2  *CE2 HE2   0.0000  0.0000  180.0000  0.0000  0.0000
+IC CE1  CE2  *CZ  HZ    0.0000  0.0000  180.0000  0.0000  0.0000
+IC CD1  CG   CB   HB1   0.0000  0.0000  180.0000  0.0000  0.0000
+IC CG   HB1  *CB  HB2   0.0000  0.0000  120.0000  0.0000  0.0000
+IC CG   HB1  *CB  HB3   0.0000  0.0000 -120.0000  0.0000  0.0000
+PATCHING FIRST NONE LAST NONE
+
+RESI MPHE         0.000 ! p-methylphenol with dummy atom at the center of the aromatic ring (E. Orabi)
+!                       ! CH3 from toluene and the rest from phenol
+
+!--------To generate this residue use----------
+!read sequence MPHE 1
+!generate MPHE first none last none setup warn DRUDE DMASS 0.4
+!LONEpair CENTer 1 MPHE select segid MPHE .and. type CZ .or. type CE1 .or. type CD1 .or. type CG .or. type CD2 .or. type CE2  end
+!
+!             HD1  HE1
+!              |    |
+!       HB1   CD1--CE1      HH
+!        \    /      \     /
+!   HB2--CB--CG  lpx  CZ--OH
+!        /    \      /
+!       HB3   CD2--CE2
+!              |    |
+!             HD2  HE2
+!
+GROUP
+ATOM CB   CD33A   -0.237   ALPHA -1.473   THOLE 1.3
+ATOM HB1  HDA3A    0.079
+ATOM HB2  HDA3A    0.079
+ATOM HB3  HDA3A    0.079
+ATOM CG   CD2R6A  -0.0462  ALPHA -1.3993  THOLE 1.254
+ATOM CD1  CD2R6A  -0.2453  ALPHA -1.3594  THOLE 1.254
+ATOM HD1  HDR6A    0.1518
+ATOM CD2  CD2R6A  -0.2453  ALPHA -1.3594  THOLE 1.254
+ATOM HD2  HDR6A    0.1518
+ATOM CE1  CD2R6A  -0.0935  ALPHA -1.3447  THOLE 1.254
+ATOM HE1  HDR6A    0.1210
+ATOM CE2  CD2R6A  -0.0935  ALPHA -1.3447  THOLE 1.254
+ATOM HE2  HDR6A    0.1210
+ATOM CZ   CD2R6A   0.2794  ALPHA -1.0906  THOLE 1.254
+ATOM OH   OD31C    0.000   ALPHA -0.6286  THOLE 0.672
+ATOM HH   HDP1A    0.3476
+ATOM LP1A LP      -0.2244
+ATOM LP1B LP      -0.2244
+ATOM LPMX LPX      0.0000
+
+BOND CD1 CG CD2 CG CE1 CD1
+BOND CE2 CD2 CZ CE1 CZ CE2
+BOND CG CB CD1 HD1 CD2 HD2 CE1 HE1
+BOND CE2 HE2 CZ OH OH  HH
+BOND OH  LP1A OH  LP1B CZ  LP1A CZ LP1B
+BOND CB HB1 CB HB2 CB HB3
+
+LONEPAIR relative LP1A OH CZ HH   distance 0.35 angle 110.9 dihe  91.0
+LONEPAIR relative LP1B OH CZ HH   distance 0.35 angle 110.9 dihe 269.0
+LONEPAIR center   LPMX CD1 CE1 CZ CE2 CD2 CG
+ANISOTROPY OH CZ LP1A LP1B A11 0.8108 A22 1.2162
+
+IC CG     CD1    CE1    CZ       0.0000    0.00    0.00    0.00   0.0000
+IC CD1    CE1    CZ     CE2      0.0000    0.00    0.00    0.00   0.0000
+IC CE1    CZ     CE2    CD2      0.0000    0.00    0.00    0.00   0.0000
+IC CD1    CD2    *CG    CB       0.0000    0.00  180.00    0.00   0.0000
+IC CE1    CG     *CD1   HD1      0.0000    0.00  180.00    0.00   0.0000
+IC CE2    CG     *CD2   HD2      0.0000    0.00  180.00    0.00   0.0000
+IC CZ     CD1    *CE1   HE1      0.0000    0.00  180.00    0.00   0.0000
+IC CZ     CD2    *CE2   HE2      0.0000    0.00  180.00    0.00   0.0000
+IC CE2    CE1    *CZ    OH       0.0000    0.00  180.00    0.00   0.0000
+IC CE1    CZ     OH     HH       0.0000    0.00  180.00    0.00   0.0000
+IC CD1    CG     CB     HB1      0.0000    0.00  180.00    0.00   0.0000
+IC CG     HB1    *CB    HB2      0.0000    0.00  120.00    0.00   0.0000
+IC CG     HB1    *CB    HB3      0.0000    0.00 -120.00    0.00   0.0000
+
+PATCHING FIRST NONE LAST NONE
+
+end
+
+read para card !append
+* Parameters for Drude cation-pi model compounds
+*
+
+BONDS
+!atom types      Kb       b0
+!============================================
+
+CD2R6A    HDR6A             340.0     1.080      ! benzene
+CD2R6A    CD2R6A            305.0     1.375      ! benzene
+CD33A     HDA3C             300.0     1.080      ! nc4
+ND3P2A    CD33A             215.0     1.510      ! nc4 
+CD32A     HDA3C             300.0     1.080      ! tea 
+CD33A     CD32A             222.5     1.528      ! tea 
+ND3P2A    CD32A             215.0     1.510      ! tea 
+LP        DOH2              500.0     0.000      ! swm4
+ODW       LP                  0.0     0.240      ! swm4
+HDW       ODW               450.0     0.957      ! swm4
+HDW       HDW                 0.0     1.514      ! swm4
+DOH2      ODW               500.0     0.000      ! swm4
+CD2R5A    HDR5A             365.0     1.083      ! meindole      
+CD2R5C    CD2R5A            322.6     1.397      ! meindole
+CD2R6D    CD2R5C            407.6     1.420      ! meindole
+CD2R6D    CD2R6A            315.0     1.382      ! meindole
+CD2R6D    CD2R6D            198.2     1.400      ! meindole
+CD33A     HDA3A             322.0     1.111      ! meindole
+CD33A     CD2R5C            229.6     1.500      ! meindole
+ND2R5A    HDP1A             466.0     1.000      ! meindole
+ND2R5A    CD2R5A            400.0     1.380      ! meindole
+ND2R5A    CD2R6D            279.9     1.415      ! meindole
+CD33A     CD2R6A             230.0     1.490     ! toluene  
+OD31C     HDP1A              545.0     0.960     ! mephenol 
+OD31C     CD2R6A             334.3     1.411     ! mephenol 
+LP        CD2R6A               0.0     0.000     ! mephenol 
+LP        OD31C                0.0     0.000     ! mephenol 
+X         DRUD               500.0     0.000
+NAM       HAM                470.00    1.024469  ! NH4+, E. Orabi & G. Lamoureux
+
+ANGLES
+!atom types     Ktheta  Theta0   Kub     S0
+!==================================================
+
+HDA3C     CD33A     HDA3C          24.00  109.5000   28.0000    1.7670   ! nc4
+CD2R6A    CD2R6A    HDR6A          30.00  120.0000   22.0000    2.1525   ! benzene
+CD2R6A    CD2R6A    CD2R6A         40.00  120.0000   35.0000    2.4162   ! benzene
+CD33A     ND3P2A    CD33A          60.00  109.5000   26.0000    2.4660   ! nc4
+ND3P2A    CD33A     HDA3C          40.00  109.5000   27.0000    2.1300   ! nc4
+HDA3C     CD32A     HDA3C          24.00  109.5000   28.0000    1.7670   ! tea 
+CD32A     CD33A     HDA3A          34.60  111.5000   22.5300    2.1790   ! tea 
+CD32A     ND3P2A    CD32A          60.00  109.5000   26.0000    2.4660   ! tea 
+CD33A     CD32A     HDA3C          26.50  110.1000   22.5300    2.1790   ! tea 
+ND3P2A    CD32A     HDA3C          40.00  109.5000   27.0000    2.1300   ! tea 
+ND3P2A    CD32A     CD33A          67.70  113.0000    0.0000    0.0000   ! tea 
+HDW       ODW       HDW            55.00  104.5200    0.0000    0.0000   ! swm4
+HDA3A     CD33A     HDA3A          35.50  108.4000    5.4000    1.8020   ! meindole  
+CD2R5A    ND2R5A    HDP1A          30.00  125.5000   20.0000    2.1500   ! meindole  
+CD2R5C    CD33A     HDA3A          49.30  107.5000    0.0000    0.0000   ! meindole  
+CD2R5C    CD2R5A    HDR5A          18.63  125.0000   28.0000    2.1730   ! meindole
+CD2R6A    CD2R6D    CD2R5C        144.30  130.9000    0.0000    0.0000   ! meindole
+CD2R6D    ND2R5A    HDP1A          12.80  130.1000    0.0000    0.0000   ! meindole
+CD2R6D    CD2R6A    HDR6A          43.50  122.6000   19.9000    2.0833   ! meindole
+CD2R6D    CD2R5C    CD2R5A         81.90  106.1000   22.5000    2.2163   ! meindole
+CD2R6D    ND2R5A    CD2R5A         81.40  108.6000    0.0000    0.0000   ! meindole
+CD2R6D    CD2R6D    CD2R5C         81.90  106.1000   22.5900    2.2163   ! meindole
+CD2R6D    CD2R6A    CD2R6A        143.50  123.8000    0.0000    0.0000   ! meindole
+CD2R6D    CD2R6D    CD2R6A         50.10  126.5000    0.0000    0.0000   ! meindole
+CD33A     CD2R5C    CD2R5A         45.80  122.3000    0.0000    0.0000   ! meindole
+CD33A     CD2R5C    CD2R6D         45.80  122.3000    0.0000    0.0000   ! meindole
+ND2R5A    CD2R5A    HDR5A          25.00  124.0000   20.0000    2.1400   ! meindole
+ND2R5A    CD2R5A    CD2R5C        100.02  106.0000   28.0000    2.2400   ! meindole
+ND2R5A    CD2R6D    CD2R6A        132.10  130.9000    0.0000    0.0000   ! meindole
+ND2R5A    CD2R6D    CD2R6D         31.40  105.5000    0.0000    0.0000   ! meindole
+CD2R6A    CD33A     HDA3A          49.30  107.5000    0.0000    0.0000   ! toluene
+CD33A     CD2R6A    CD2R6A         45.80  122.3000    0.0000    0.0000   ! toluene
+CD2R6A    OD31C     HDP1A          65.00  108.0000    0.0000    0.0000   ! mephenol
+OD31C     CD2R6A    CD2R6A         45.20  120.0000    0.0000    0.0000   ! mephenol
+HAM       NAM       HAM            50.00  109.47122   18.00     1.67295  ! NH4+, E. Orabi & G. Lamoureux
+
+DIHEDRALS
+!atom types            Kchi     n     delta
+!=================================================
+
+HDR6A     CD2R6A    CD2R6A    HDR6A         2.40        2   180.0000      ! benzene
+CD2R6A    CD2R6A    CD2R6A    HDR6A         4.20        2   180.0000      ! benzene
+CD2R6A    CD2R6A    CD2R6A    CD2R6A        2.80        2   180.0000      ! benzene
+CD33A     ND3P2A    CD33A     HDA3C         0.23        3     0.0000      ! nc4
+CD32A     ND3P2A    CD32A     HDA3C         0.26        3     0.0000      ! tea
+HDA3A     CD33A     CD32A     HDA3C         0.16        3     0.0000      ! tea
+CD32A     ND3P2A    CD32A     CD33A         0.26        2     0.0000      ! tea
+HDA3A     CD33A     CD32A     ND3P2A        0.16        3     0.0000      ! tea
+CD2R5C    CD2R6D    CD2R6A    HDR6A         0.44        2   180.0000      ! meindole
+CD2R6A    CD2R6D    CD2R5C    CD2R5A        6.61        2   180.0000      ! meindole
+CD2R6A    CD2R6D    CD2R6D    CD2R5C        1.76        2   180.0000      ! meindole
+CD2R6A    CD2R6D    CD2R6D    CD2R6A        3.46        2   180.0000      ! meindole
+CD2R6D    CD2R5C    CD2R5A    HDR5A         0.81        2   180.0000      ! meindole
+CD2R6D    ND2R5A    CD2R5A    HDR5A         0.81        2   180.0000      ! meindole
+CD2R6D    CD2R6A    CD2R6A    HDR6A         1.20        2   180.0000      ! meindole
+CD2R6D    CD2R6D    CD2R6A    HDR6A         0.92        2   180.0000      ! meindole
+CD2R6D    CD2R6D    CD2R5C    CD2R5A        6.34        2   180.0000      ! meindole
+CD2R6D    ND2R5A    CD2R5A    CD2R5C        9.52        2   180.0000      ! meindole
+CD2R6D    CD2R6A    CD2R6A    CD2R6A        1.59        2   180.0000      ! meindole
+CD2R6D    CD2R6D    CD2R6A    CD2R6A        1.34        2   180.0000      ! meindole
+CD33A     CD2R5C    CD2R5A    HDR5A         4.20        2   180.0000      ! meindole
+ND2R5A    CD2R6D    CD2R6A    HDR6A         0.92        2   180.0000      ! meindole
+ND2R5A    CD2R6D    CD2R6D    CD2R5C        8.50        2   180.0000      ! meindole
+ND2R5A    CD2R6D    CD2R6A    CD2R6A        1.93        2   180.0000      ! meindole
+ND2R5A    CD2R6D    CD2R6D    CD2R6A        1.61        2   180.0000      ! meindole
+HDP1A     ND2R5A    CD2R5A    HDR5A         0.00        2   180.0000      ! meindole
+HDA3A     CD33A     CD2R5C    CD2R5A        0.00        3     0.0000      ! meindole
+HDP1A     ND2R5A    CD2R5A    CD2R5C        1.30        2   180.0000      ! meindole
+HDP1A     ND2R5A    CD2R6D    CD2R6A        0.25        2   180.0000      ! meindole
+CD2R5A    ND2R5A    CD2R6D    CD2R6A        2.04        2   180.0000      ! meindole
+CD2R5C    CD2R6D    CD2R6A    CD2R6A        1.68        2   180.0000      ! meindole
+HDP1A     ND2R5A    CD2R6D    CD2R6D        0.25        2   180.0000      ! meindole
+HDA3A     CD33A     CD2R5C    CD2R6D        0.00        3     0.0000      ! meindole
+CD2R5A    ND2R5A    CD2R6D    CD2R6D        8.26        2   180.0000      ! meindole
+CD2R6A    CD2R6D    CD2R5C    CD33A         3.10        2   180.0000      ! meindole
+CD2R6D    CD2R6D    CD2R5C    CD33A         3.10        2   180.0000      ! meindole
+CD2R6D    CD2R5C    CD2R5A    ND2R5A        8.19        2   180.0000      ! meindole
+CD33A     CD2R5C    CD2R5A    ND2R5A        3.00        2   180.0000      ! meindole
+CD33A     CD2R6A    CD2R6A    HDR6A         4.20        2   180.0000      ! toluene
+CD33A     CD2R6A    CD2R6A    CD2R6A        3.10        2   180.0000      ! toluene
+HDA3A     CD33A     CD2R6A    CD2R6A        0.00        6     0.0000      ! toluene
+OD31C     CD2R6A    CD2R6A    HDR6A         4.20        2   180.0000      ! mephenol
+OD31C     CD2R6A    CD2R6A    CD2R6A        3.10        2   180.0000      ! mephenol
+HDP1A     OD31C     CD2R6A    CD2R6A        0.99        2   180.0000      ! mephenol
+
+IMPROPER
+!
+!V(improper) = Kpsi(psi - psi0)**2
+!
+!Kpsi: kcal/mole/rad**2
+!psi0: degrees
+!note that the second column of numbers (0) is ignored
+!
+ND2R5A    CD2R6D    CD2R5A    HDP1A        0.45        0     0.0000       ! meindole
+CD2R6A    CD2R6D    CD2R6A    HDR6A        0.45        0     0.0000       ! meindole
+CD2R5A    ND2R5A    CD2R5C    HDR5A        0.45        0     0.0000       ! meindole
+ND2R5A    CD2R5A    CD2R6D    HDP1A        0.45        0     0.0000       ! meindole
+CD2R6A    CD2R6A    CD2R6D    HDR6A        0.45        0     0.0000       ! meindole
+CD2R5A    CD2R5C    ND2R5A    HDR5A        0.45        0     0.0000       ! meindole
+
+!!! WARNING: Use this cutoff scheme for gas-phase calculations only
+!!!          For condensed-phase calculations, use the cutoff scheme reported in the manuscript
+NONBONDED nbxmod  5 atom vatom cdiel vdistance switch vswitch -
+cutnb 150.0 ctofnb 148.0 ctonnb 146.0 eps 1.0 e14fac 1.0 wmin 1.5
+
+!! Hydrogens
+HDW      0.0   -0.0000     0.0000 ! SWM4, SWM4-NDP water, GL, 2005
+HDA3A    0.0   -0.0240     1.3400 ! ETHA, ethane,  yin and mackerell, 4/98
+HDA3C    0.0   -0.0460     0.9250 ! NC4, EH 2007
+HDP1A    0.0   -0.0100     0.4000 !  -0.01  0.9 ! ethanol 1,4-term ! polar hydrogen, adm jr. and va
+HDR5A    0.0   -0.0550     1.2500 ! IMID, imidazole (HG, HD1 atoms), PYRR on C removed from N
+HDR6A    0.0   -0.0300     1.0500 ! BENZ, benzene (standard aromatic)
+HAM      0.0   -0.0039978      1.0870509         ! NH4+, E. Orabi & G. Lamoureux
+
+!! Carbons
+CD2R5A   0.0   -0.0950     2.0700 !intermediate to CD2R6A and CD2R5B, -0.132     2.074  ! IMID, imidazole, CG,CD2
+CD2R5C   0.0   -0.0500     2.0900 ! too big (balance with its H) PYRR, pyrrole
+CD2R6A   0.0   -0.0690     2.0900 ! BENZ, benzene
+CD2R6D   0.0   -0.0380     1.9000 ! INDO, indole: 5,6 membered ring bisector C
+CD32A    0.0   -0.0560     2.1000  0.0 -0.01 1.9 ! PROP, propane, VA, 10/07
+CD33A    0.0   -0.0780     2.0400  0.0 -0.01 1.9 ! ETHA, ethane, 4/98, yin, adm jr.
+
+!! Nitrogens
+ND2R5A   0.0   -0.0870     1.8610 ! IMID, imidazole (N-H donor)
+ND3P2A   0.0   -0.2000     1.7400 ! protonated sp3 N, 0-2 hydrogens, NC4, EH 2007
+NAM      0.0   -2.3870296  1.3062713 ! NH4+, E. Orabi & G. Lamoureux
+
+!! Oxygens
+ODW      0.0   -0.21094325 1.78692899 ! SWM4, SWM4-NDP water, GL, 2005
+OD31C    0.0   -0.2000    1.7400 ! PHEN, Phenol
+
+!! Drude and lonepair
+D*       0.0   -0.0000         0.0000   ! Wildcard for Drudes and dummy atom
+LP       0.0   -0.0000         0.0000
+LPX      0.0   -0.0000         0.0000   ! Aromatic Center Lone Pair, E. Orabi
+
+NBFIX
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! WARNING: Make sure you uncomment the NBFIX lines for the complexes you are generating
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!HAM      ODW     -0.0092367   2.8848120   ! NH4+-water
+!NAM      ODW     -0.1018466   3.7592014   ! NH4+-water
+
+!NAM      LPX     -0.1470587   3.5000595   ! NH4+-benzene and toluene
+!HAM      LPX     -0.0060183   3.2808392   ! NH4+-benzene and toluene
+
+!NAM      CD2R6A  -0.3105234   3.7323063   ! NH4+-indole and methylindole
+!NAM      CD2R6D  -0.3105234   3.7323063   ! NH4+-indole and methylindole
+!HAM      CD2R6A  -0.0083613   3.4949277   ! NH4+-indole and methylindole
+!HAM      CD2R6D  -0.0083613   3.4949277   ! NH4+-indole and methylindole
+!NAM      LPX     -0.6632312   2.9908044   ! NH4+-indole and methylindole
+!HAM      LPX     -0.0271424   2.7715841   ! NH4+-indole and methylindole
+
+!HAM      OD31C   -0.0184439   2.5637375   ! NH4+-phenol and p-methylphenol
+!NAM      LPX     -0.0187195   4.6998372   ! NH4+-phenol and p-methylphenol
+!NAM      OD31C   -0.3975307   3.3358123   ! NH4+-phenol and p-methylphenol
+
+!!! TMA+ interactions
+!CD2R6A   ND3P2A   -0.3097086   4.8018621   ! TMAMM-benzene, toluene, indole, and 3-methylindole
+!CD2R6A   ND3P2A   -0.3696749   4.1872093   ! TMAMM-phenol and p-methylphenol
+
+!!! TEA+ interactions 
+!CD32A    ODW      -0.0134937   5.0179492   ! TEA-water
+!CD32A    CD2R6A   -0.0621615   4.3096117   ! TEA-benzene
+!CD32A    CD2R6A   -0.0621615   4.4296117   ! TEA-toluene, phenol, and p-methylphenol
+!CD32A    CD2R6A   -0.0621615   4.6256117   ! TEA-indole and 3-methylindole
+
+!!! Aromatics & Heteroaromatics in water
+CD2R6A    ODW      -0.10270     3.93690     ! aromatics in water
+
+END
