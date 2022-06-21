@@ -1,7 +1,7 @@
 # cluster file
-# automatically generated on: Tue Jun 21 11:39:57 2022
+# automatically generated on: Tue Jun 21 13:18:29 2022
 # mode: rmsd, filetype: pdb, lsqfit: 0, selmode: heavy
-@cluster t has 25 elements, 8 subclusters
+@cluster t has 25 elements, 4 subclusters
 1 1
 2 10
 3 11
@@ -27,36 +27,32 @@
 23 7
 24 8
 25 9
-@cluster t.1 has 4 elements, 0 subclusters
-1 1 0.263238
-3 11 0.401296
-11 19 0.385272
-21 5 0.355681
-@cluster t.2 has 3 elements, 0 subclusters
-2 10 0.550560
-6 14 0.459164
-24 8 0.294515
-@cluster t.3 has 3 elements, 0 subclusters
-4 12 0.338643
-16 23 0.237845
-20 4 0.549075
-@cluster t.4 has 2 elements, 0 subclusters
-5 13 0.314348
-10 18 0.314348
-@cluster t.5 has 4 elements, 0 subclusters
-7 15 0.254401
-14 21 0.243704
-22 6 0.458062
-25 9 0.562782
-@cluster t.6 has 6 elements, 0 subclusters
-8 16 0.337952
-12 2 0.363745
-15 22 0.746105
-18 25 0.239276
-19 3 0.243235
-23 7 0.404623
-@cluster t.7 has 2 elements, 0 subclusters
-9 17 0.107583
-17 24 0.107583
-@cluster t.8 has 1 elements, 0 subclusters
-13 20 0.000000
+@cluster t.1 has 6 elements, 0 subclusters
+1 1 0.370160
+4 12 0.337164
+6 14 0.672367
+14 21 0.311572
+17 24 0.318377
+25 9 0.769928
+@cluster t.2 has 14 elements, 0 subclusters
+2 10 0.211300
+3 11 0.081543
+9 17 0.335987
+10 18 0.321925
+12 2 0.308576
+13 20 0.232217
+15 22 0.339110
+16 23 0.315219
+18 25 0.353938
+19 3 0.913755
+20 4 0.587096
+22 6 0.305725
+23 7 0.405887
+24 8 0.387923
+@cluster t.3 has 4 elements, 0 subclusters
+5 13 0.470604
+8 16 0.496938
+11 19 0.699762
+21 5 0.660365
+@cluster t.4 has 1 elements, 0 subclusters
+7 15 0.000000

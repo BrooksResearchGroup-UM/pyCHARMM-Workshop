@@ -1,22 +1,34 @@
 REMARK  TITLE                                                                         
-REMARK  THE DOCKED POSE ID IS 19                                                      
-REMARK  THE CLUSTER ID IS 5                                                           
-REMARK  THE TOTAL ENERGY IS -33.277836                                                
-REMARK  THE VDW ENERGY IS -64.354852                                                  
-REMARK  THE ELEC ENERGY IS -20.134152                                                 
-REMARK  THE ENTROPY IS -1.000394                                                      
-REMARK   DATE:     6/21/22     11:40:12      CREATED BY USER: yujin                   
-ATOM   2604  C1  BNZ   400      26.194   5.582   5.052  1.00  0.00      LIGA
-ATOM   2605  C2  BNZ   400      26.231   4.706   3.960  1.00  0.00      LIGA
-ATOM   2606  C3  BNZ   400      27.062   4.978   2.865  1.00  0.00      LIGA
-ATOM   2607  C4  BNZ   400      27.864   6.125   2.866  1.00  0.00      LIGA
-ATOM   2608  C5  BNZ   400      27.846   6.992   3.965  1.00  0.00      LIGA
-ATOM   2609  C6  BNZ   400      27.005   6.725   5.057  1.00  0.00      LIGA
-ATOM   2610  H1  BNZ   400      25.552   5.370   5.894  1.00  0.00      LIGA
-ATOM   2611  H2  BNZ   400      25.618   3.819   3.963  1.00  0.00      LIGA
-ATOM   2612  H3  BNZ   400      27.086   4.305   2.021  1.00  0.00      LIGA
-ATOM   2613  H4  BNZ   400      28.500   6.340   2.020  1.00  0.00      LIGA
-ATOM   2614  H5  BNZ   400      28.483   7.864   3.971  1.00  0.00      LIGA
-ATOM   2615  H6  BNZ   400      26.989   7.393   5.905  1.00  0.00      LIGA
-TER    2616      BNZ    400
+REMARK  THE DOCKED POSE ID IS 6                                                       
+REMARK  THE CLUSTER ID IS 2                                                           
+REMARK  THE TOTAL ENERGY IS -28.626874                                                
+REMARK  THE VDW ENERGY IS -65.284625                                                  
+REMARK  THE ELEC ENERGY IS -21.762103                                                 
+REMARK  THE ENTROPY IS -0.305180                                                      
+REMARK   DATE:     6/21/22     13:18:33      CREATED BY USER: yujin                   
+ATOM   2604  C4' I4B   401      26.617   9.264   2.143  1.00  0.00      LIGA
+ATOM   2605  C3' I4B   401      27.871   8.592   0.146  1.00  0.00      LIGA
+ATOM   2606  C2' I4B   401      27.195   8.052   1.406  1.00  0.00      LIGA
+ATOM   2607  C1' I4B   401      28.157   7.207   2.275  1.00  0.00      LIGA
+ATOM   2608  C1  I4B   401      27.439   6.608   3.450  1.00  0.00      LIGA
+ATOM   2609  C2  I4B   401      26.752   5.392   3.308  1.00  0.00      LIGA
+ATOM   2610  C3  I4B   401      26.049   4.853   4.392  1.00  0.00      LIGA
+ATOM   2611  C4  I4B   401      26.025   5.528   5.618  1.00  0.00      LIGA
+ATOM   2612  C5  I4B   401      26.712   6.739   5.767  1.00  0.00      LIGA
+ATOM   2613  C6  I4B   401      27.428   7.272   4.690  1.00  0.00      LIGA
+ATOM   2614  H1  I4B   401      26.087   8.977   3.073  1.00  0.00      LIGA
+ATOM   2615  H2  I4B   401      25.905   9.813   1.495  1.00  0.00      LIGA
+ATOM   2616  H3  I4B   401      27.450   9.956   2.382  1.00  0.00      LIGA
+ATOM   2617  H4  I4B   401      27.116   9.048  -0.528  1.00  0.00      LIGA
+ATOM   2618  H5  I4B   401      28.404   7.795  -0.402  1.00  0.00      LIGA
+ATOM   2619  H6  I4B   401      28.609   9.375   0.419  1.00  0.00      LIGA
+ATOM   2620  H7  I4B   401      26.368   7.387   1.071  1.00  0.00      LIGA
+ATOM   2621  H8  I4B   401      28.982   7.832   2.661  1.00  0.00      LIGA
+ATOM   2622  H9  I4B   401      28.591   6.384   1.670  1.00  0.00      LIGA
+ATOM   2623  H10 I4B   401      26.763   4.875   2.360  1.00  0.00      LIGA
+ATOM   2624  H11 I4B   401      25.524   3.919   4.278  1.00  0.00      LIGA
+ATOM   2625  H12 I4B   401      25.479   5.117   6.452  1.00  0.00      LIGA
+ATOM   2626  H13 I4B   401      26.692   7.266   6.708  1.00  0.00      LIGA
+ATOM   2627  H14 I4B   401      27.954   8.208   4.806  1.00  0.00      LIGA
+TER    2628      I4B    401
 END
