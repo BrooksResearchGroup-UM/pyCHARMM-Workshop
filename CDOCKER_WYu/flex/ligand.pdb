@@ -1,6 +1,6 @@
 REMARK  TITLE                                                                         
 REMARK  MOVE LIGAND TO THE CENTER OF BINDING POCKET                                   
-REMARK   DATE:     6/21/22     13:17:13      CREATED BY USER: yujin                   
+REMARK   DATE:     6/22/22     16: 1: 1      CREATED BY USER: yujin                   
 ATOM      1  C4' I4B   401      26.489   8.511   3.361  1.00  0.00      LIGA
 ATOM      2  C3' I4B   401      27.683   7.813   1.303  1.00  0.00      LIGA
 ATOM      3  C2' I4B   401      26.991   7.345   2.550  1.00  0.00      LIGA
