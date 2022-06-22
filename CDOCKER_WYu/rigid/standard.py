@@ -34,7 +34,7 @@ maxlen = np.loadtxt('maxlen', dtype = float)
 sortedResult, dockResult = Rigid_CDOCKER(xcen = xcen, ycen = ycen, zcen = zcen, 
                                          maxlen = maxlen, flag_save_all = False,
                                          flag_delete_conformer = False,
-                                         flag_save_top = False, numPlace = 15) 
+                                         flag_save_top = False)
 print(sortedResult)
 print(dockResult)
 

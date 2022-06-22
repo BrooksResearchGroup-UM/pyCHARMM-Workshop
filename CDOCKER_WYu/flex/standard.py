@@ -38,8 +38,7 @@ flexchain = pd.read_csv('flexchain.csv', sep = '\t', index_col = 0)
 
 ## Flexible CDOCKER standard docking protocol 
 sortedResult, dockResult = Flexible_CDOCKER(xcen = xcen, ycen = ycen, zcen = zcen, 
-                                           maxlen = maxlen, num = 5, copy = 5,
-                                           flexchain = flexchain) 
+                                           maxlen = maxlen, flexchain = flexchain) 
 print(sortedResult)
 print(dockResult)
 
