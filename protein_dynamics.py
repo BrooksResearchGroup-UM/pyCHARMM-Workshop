@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Run protein dynamics with PBCs using PME
+# # Run protein dynamics with PBCs using PME  
 # ## This notebook builds on the previous protein_setup.ipynb and sets up a molecular dynamics simulation using Particle-Mesh Ewald running on CHARMM/OpenMM or CHARMM/BLaDE.
 # ## Note you need top have run the previous notebook and have created the solvated psf and pdb to use this notebook.
 
