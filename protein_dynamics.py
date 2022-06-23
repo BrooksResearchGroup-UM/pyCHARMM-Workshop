@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# # Run protein dynamics with PBCs using PME
+# ## This notebook builds on the previous protein_setup.ipynb and sets up a molecular dynamics simulation using Particle-Mesh Ewald running on CHARMM/OpenMM or CHARMM/BLaDE.
+# ## Note you need top have run the previous notebook and have created the solvated psf and pdb to use this notebook.
+
+# In[ ]:
+
+
 # This script provides a simple example of running molecular dynamics of 
 # a solvated protein structure created in an earlier notebook tutorial
 # further illustrating the functionality exposed in pyCHARMM.
@@ -31,6 +41,12 @@ import pycharmm.shake as shake
 
 from pycharmm.lib import charmm as libcharmm
 
+
+# ## The following are some helper functions for setting-up and running the dynamics
+
+# In[ ]:
+
+
 ################################
 # Ensure that FFT grid is product of small primes 2, 3, 5
 def is_factor(n):
@@ -55,6 +71,10 @@ def checkfft(n, margin = 5):
         if is_factor(n): break
         else: n += 1
     return n
+
+
+# In[ ]:
+
 
 #################################
 def setup_PBC(boxhalf=0.0, protein_segments=[],solvent_resname='TIP3',ions=[],blade=False):
@@ -88,6 +108,12 @@ def setup_PBC(boxhalf=0.0, protein_segments=[],solvent_resname='TIP3',ions=[],bl
 
     return
 
+
+# ## Set-up system - topology and parameter files
+
+# In[ ]:
+
+
 # Read in the topology (rtf) and parameter file (prm) for proteins
 # equivalent to the CHARMM scripting command: read rtf card name toppar/top_all36_prot.rtf
 read.rtf('toppar/top_all36_prot.rtf')
@@ -97,6 +123,13 @@ read.prm('toppar/par_all36m_prot.prm', flex=True)
 # stream in the water/ions parameter using the pycharmm.lingo module
 # equivalent to the CHARMM scripting command: stream toppar/toppar_water_ions.str
 pycharmm.lingo.charmm_script('stream toppar/toppar_water_ions.str')
+
+
+# ## Read in psf and coordinates of solvated systems
+# ## Find the segment names for the solute (first n-2 segments assumed), solvent (penultimate segment assumed) and ions (last segment)
+
+# In[ ]:
+
 
 # Some choices for pdbids
 pdbid = '4pti'  # bovine pancreatic trypsin inhibitor - an x-ray structuture
@@ -108,6 +141,12 @@ pdbid = '4pti'  # bovine pancreatic trypsin inhibitor - an x-ray structuture
 read.psf_card('pdb/{}+wat.psf'.format(pdbid))
 # read coor pdb name pdb/adp+wat_min.pdb
 read.pdb('pdb/{}+wat_min.pdb'.format(pdbid),resid=True)
+
+
+# ## Set-up box size and periodic boundary conditions using the python function setup_PBC
+
+# In[ ]:
+
 
 # Now setup periodic boundaries
 # boxsize
@@ -123,6 +162,14 @@ boxhalf = boxsize / 2.0
 # but I didn't have the time so I just made some generic thing
 setup_PBC(boxhalf=boxhalf, protein_segments=['PROA', 'PROB', 'PROC'],
           solvent_resname='TIP3',ions=['CLA', 'SOD', 'POT'],blade=False)
+
+
+# ## In this section we set-up our nonbonded parameters with cutoff schemes, etc.
+# ## We illustrate two ways to input non-bonded parameters as well as the use of the pyCHARMM _settings.set_warn_level(wrnlev)_ command to alter the warning levels and reduce the output. 
+# ## Note we use two different cutoff schemes (vswitch and vfswitch)
+
+# In[ ]:
+
 
 # Set-up non-bonded parameters
 # Now specify nonbonded cutoffs for solvated box
@@ -170,23 +217,15 @@ nb_wPME_vsw.run()
 settings.set_warn_level(old_wrnlev)
 energy.show()
 
-# Set-up short dynamics
-if not os.path.isdir('res'): os.system('mkdir res')
-if not os.path.isdir('dcd'): os.system('mkdir dcd')
 
-blade=True
-# Set-up short dynamics with blade
-leap = True
-lang = True
-nequil = 1000
-nsteps = 5000
-nsavc = 100
-useblade = useblade = 'prmc pref 1 iprs 100 prdv 100'
-# Let's re-read the starting coordinates instead of starting from the current coordinates
-read.pdb('pdb/{}+wat_min.pdb'.format(pdbid),resid=True)
+# ## This function will run a short md start and restart using either CHARMM/OpenMM interface or the CHARMM/BLaDE interface in pyCHARMM
 
-if blade:
-    # Set-up the needed files
+# In[ ]:
+
+
+def run_md(useomm=False,useblade=False,nequil=1000,nsteps=5000,nsavc=100,leap=True,lang=True):
+    if useomm: append='omm'
+    elif useblade: append='blade'
     dyn.set_fbetas(np.full((psf.get_natom()),1.0,dtype=float))
    
     res_file = pycharmm.CharmmFile(file_name='res/{}.res'.format(pdbid), file_unit=2,
@@ -194,7 +233,6 @@ if blade:
     lam_file = pycharmm.CharmmFile(file_name='res/{}.lam'.format(pdbid), 
                                    file_unit=3,
                                    formatted=False,read_only=False)
-    # run the equilibration dynamics
     my_dyn = pycharmm.DynamicsScript(leap=leap, lang=lang, start=True,
                                      nstep=nequil, timest=0.002,
                                      firstt=298.0, finalt=298.0, tbath=298.0,
@@ -208,19 +246,19 @@ if blade:
                                      isvfrq=nsavc,
                                      iprfrq=2*nsavc, nprint=nsavc, ihtfrq=0, ieqfrq=0,
                                      ilbfrq=0,ihbfrq=0,
-                                 blade=useblade)
+                                     omm=useomm, blade=useblade)
     my_dyn.run()
 
     res_file.close()
     lam_file.close()
-
-    # Now we'll run the production dynamics
-    dcd_file = pycharmm.CharmmFile(file_name='dcd/{}_blade.dcd'.format(pdbid), file_unit=1,
-                                   formatted=False,read_only=False)
+    # open unit 2 write form name res/{}.res
     res_file = pycharmm.CharmmFile(file_name='res/{}.res'.format(pdbid), file_unit=2,
                                    formatted=True,read_only=False)
     lam_file = pycharmm.CharmmFile(file_name='res/{}.lam'.format(pdbid), 
                                    file_unit=3,
+                                   formatted=False,read_only=False)
+    # open unit 1 write file name dcd/{}.dcd
+    dcd_file = pycharmm.CharmmFile(file_name='dcd/{}_{}.dcd'.format(pdbid,append), file_unit=1,
                                    formatted=False,read_only=False)
 
     my_dyn = pycharmm.DynamicsScript(leap=leap, lang=lang, start=False, restart = True,
@@ -238,74 +276,60 @@ if blade:
                                      isvfrq=nsavc,
                                      iprfrq=2*nsavc, nprint=nsavc, ihtfrq=0, ieqfrq=0,
                                      ilbfrq=0,ihbfrq=0,
-                                     blade=useblade)
+                                     omm=useomm, blade=useblade)
     my_dyn.run()
 
     res_file.close()
+    lam_file.close()
     dcd_file.close()
-else:
-    print('BLaDE is not available - no GPU')
+    return
 
-leap = True
-lang = True
-nequil = 1000
-nsavc = 100
-useomm = 'gamma 2 prmc pref 1 iprsfrq 100'
-dyn.set_fbetas(np.full((psf.get_natom()),1.0,dtype=float))
-   
-res_file = pycharmm.CharmmFile(file_name='res/{}.res'.format(pdbid), file_unit=2,
-                               formatted=True,read_only=False)
-my_dyn = pycharmm.DynamicsScript(leap=leap, lang=lang, start=True,
-                                 nstep=nequil, timest=0.002,
-                                 firstt=298.0, finalt=298.0, tbath=298.0,
-                                 tstruc=298.0,
-                                 teminc=0.0, twindh=0.0, twindl=0.0,
-                                 iunwri=res_file.file_unit,
-                                 inbfrq=-1, imgfrq=-1,
-                                 iasors=0, iasvel=1, ichecw=0, iscale=0,
-                                 iscvel=0,echeck=-1, nsavc=0, nsavv=0, nsavl=0, ntrfrq=0,
-                                 isvfrq=nsavc,
-                                 iprfrq=2*nsavc, nprint=nsavc, ihtfrq=0, ieqfrq=0,
-                                 ilbfrq=0,ihbfrq=0,
-                                 omm=useomm)
-my_dyn.run()
 
-res_file.close()
+# # Using CHARMM/BLaDE interface through pyCHARMM
+# ## In this section we set-up a short dynamics run equilibration and production using the CHARMM/BLaDE gpu accelerated engine in CHARMM (if a gpu isn't present this should be skipped - we use torch functions to check whether gpu is present).
 
-# Set-up short dynamics - save the trajectory
-leap = True
-lang = True
-nsteps = 5000
-nsavc = 100
-useomm = 'gamma 2 prmc pref 1 iprsfrq 100'
+# In[ ]:
 
-# open unit 2 write form name res/{}.res
-res_file = pycharmm.CharmmFile(file_name='res/{}.res'.format(pdbid), file_unit=2,
-                               formatted=True,read_only=False)
-# open unit 1 write file name dcd/{}.dcd
-dcd_file = pycharmm.CharmmFile(file_name='dcd/{}.dcd'.format(pdbid), file_unit=1,
-                               formatted=False,read_only=False)
 
-my_dyn = pycharmm.DynamicsScript(leap=leap, lang=lang, start=False, restart = True,
-                                 nstep=nsteps, timest=0.002,
-                                 firstt=298.0, finalt=298.0, tbath=298.0,
-                                 tstruc=298.0,
-                                 teminc=0.0, twindh=0.0, twindl=0.0,
-                                 iunwri=res_file.file_unit,
-                                 iunrea=res_file.file_unit,
-                                 iuncrd=dcd_file.file_unit,
-                                 iunlam=0,
-                                 inbfrq=-1, imgfrq=-1,
-                                 iasors=0, iasvel=1, ichecw=0, iscale=0,
-                                 iscvel=0,echeck=-1, nsavc=nsavc, nsavv=0, nsavl=0, ntrfrq=0,
-                                 isvfrq=nsavc,
-                                 iprfrq=2*nsavc, nprint=nsavc, ihtfrq=0, ieqfrq=0,
-                                 ilbfrq=0,ihbfrq=0,
-                                 omm=useomm)
-my_dyn.run()
+# Set-up short dynamics
+if not os.path.isdir('res'): os.system('mkdir res')
+if not os.path.isdir('dcd'): os.system('mkdir dcd')
 
-res_file.close()
-dcd_file.close()
+# Check to see if cuda is available to run BLaDE
+import torch
+cuda  = torch.cuda.is_available()
+num_devices = torch.cuda.device_count()
+if cuda:
+    print('Running CHARMM/BLaDE MD example on computer with {} CUDA devices'.format(num_devices))
+    print('Running on device {} which is a {}'.format(torch.cuda.current_device(),torch.cuda.get_device_name(torch.cuda.current_device())))
+    run_md(useblade = 'prmc pref 1 iprs 100 prdv 100')
+else: print('Example not run, no CUDA devices available')
 
-pycharmm.lingo.charmm_script('omm clear')
-exit()
+
+# # View your trajectory
+# ## Using vmd in your terminal window issue the following command:
+# > *vmd pdb/4pti+wat.psf dcd/4pti_blade.dcd*
+
+# # Using CHARMM/OpenMM interface through pyCHARMM
+# ## In this section we set-up a short dynamics run equilibration using the CHARMM/OpenMM gpu accelerated engine in CHARMM (if a gpu isn't present this should choose the platform _'cpu'_ and run there.
+
+# In[ ]:
+
+
+# Set-up short dynamics
+if not os.path.isdir('res'): os.system('mkdir res')
+if not os.path.isdir('dcd'): os.system('mkdir dcd')
+# Check to see if cuda is available to run BLaDE
+import torch
+cuda  = torch.cuda.is_available()
+num_devices = torch.cuda.device_count()
+if cuda:
+    print('Running CHARMM/OpenMM MD example on computer with {} CUDA devices'.format(num_devices))
+    print('Running on device {} which is a {}'.format(torch.cuda.current_device(),torch.cuda.get_device_name(torch.cuda.current_device())))
+else: print('No CUDA devices available, using either CPU or OpenCL')
+run_md(useomm = 'gamma 2 prmc pref 1 iprsfrq 100')
+
+
+# # View your trajectory
+# ## Using vmd in your terminal window issue the following command:
+# > *vmd pdb/4pti+wat.psf dcd/4pti_omm.dcd*
