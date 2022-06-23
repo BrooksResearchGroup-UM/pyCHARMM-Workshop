@@ -1,0 +1,32 @@
+
+===================================================================================
+"msld_py_prep" = a suite of python scripts to automate MSLD ligand file preparation
+===================================================================================
+
+== (01/01/2022) == J. Vilseck & L. Cervantes
+
+System Requirements:
+ - msld_py_prep needs python, numpy, and pandas (or alternatively Anaconda)
+ - Lg_Solvate.sh needs convpdb.pl from the MMTSB toolset (https://github.com/mmtsb/toolset)
+ - vis_check.py uses PyMOL 
+
+What's Needed:
+ - a mol2 file and rtf/prm (or cgenff str) toppar files for every ligand you want to study with MSLD
+ - edit "msld_py_prep.py" with information about the current series of ligands
+ - update "mol_list.txt" with mol2 filenames (without the .mol2 suffix)
+
+
+What's Done:
+ (1) A "Maximum Common Substructure"-like search is performed to identify common cores & 
+     alchemical fragment atoms in each molecule
+ (2) Each Molecule is then divided up into core + fragment(s) and each component is subjected to
+     Charge Renormalization to make MSLD suitable rtf file
+ (3) Then pdb, rtf, and prm files are printed
+ (4) Finally, charmm scripts are printed (these work with the current verions of ALF)
+
+
+A few notes of interest:
+- LP (lonepair) sites should be accepted and handled appropriately
+- Lg_Solvate.sh is not automatically called by msld_py_prep.py
+- Lg_Solvate.sh requires up-to-date CHARMM toppar files in a directory called "toppar"
+

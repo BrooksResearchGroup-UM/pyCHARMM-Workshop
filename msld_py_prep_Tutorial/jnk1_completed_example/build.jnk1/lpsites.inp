@@ -1,0 +1,9 @@
+* Load LP Site Definitions (if applicable)
+*
+
+LONEPAIR COLI sele atom @ligseg @resnum LP0B end -
+              sele atom @ligseg @resnum Cl0A end -
+              sele atom @ligseg @resnum C010 end -
+         DIST 1.6400 SCAL 0.00
+coor shake
+

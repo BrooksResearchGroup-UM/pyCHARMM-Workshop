@@ -1,0 +1,34 @@
+* Generated for use with MSLD files prepared with lig_build (JZV 06/2018)
+* Stream file for topology and parameter reading
+*
+
+! protein topology and parameter
+open read card unit 10 name prep/toppar/top_all36_prot.rtf
+read  rtf card unit 10
+
+open read card unit 20 name prep/toppar/par_all36m_prot.prm
+read para card unit 20 flex
+
+! nucleic acids
+open read card unit 10 name prep/toppar/top_all36_na.rtf
+read  rtf card unit 10 append
+
+open read card unit 20 name prep/toppar/par_all36_na.prm
+read para card unit 20 append flex
+
+! carbohydrates
+open read card unit 10 name prep/toppar/top_all36_carb.rtf
+read  rtf card unit 10 append
+
+open read card unit 20 name prep/toppar/par_all36_carb.prm
+read para card unit 20 append flex
+
+! CGenFF
+open read card unit 10 name prep/toppar/top_all36_cgenff.rtf
+read  rtf card unit 10 append
+
+open read card unit 20 name prep/toppar/par_all36_cgenff.prm
+read para card unit 20 append flex
+
+! Water
+stream prep/toppar/toppar_water_ions.str
