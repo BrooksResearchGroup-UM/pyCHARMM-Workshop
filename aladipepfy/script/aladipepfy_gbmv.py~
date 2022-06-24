@@ -1,0 +1,172 @@
+# This script implements that c37test/domdec_gpu.inp test caseThis script generates and
+# plots the alanine dipeptide phi/psi (f/y) map using pyCHARMM
+# Written by C.L. Brooks III, November 10, 2020
+
+import os
+import sys
+import subprocess
+import numpy as np
+import pandas as pd
+import shlex
+
+import pycharmm
+import pycharmm.generate as gen
+import pycharmm.ic as ic
+import pycharmm.coor as coor
+import pycharmm.energy as energy
+import pycharmm.dynamics as dyn
+import pycharmm.nbonds as nbonds
+import pycharmm.minimize as minimize
+# using lingo as stream
+import pycharmm.lingo as stream
+import pycharmm.crystal as crystal
+import pycharmm.select as select
+import pycharmm.image as image
+import pycharmm.psf as psf
+import pycharmm.param as param
+import pycharmm.read as read
+import pycharmm.write as write
+import pycharmm.settings as settings
+import pycharmm.cons_harm as cons_harm
+import pycharmm.cons_fix as cons_fix
+import pycharmm.shake as shake
+import pycharmm.scalar as scalar
+
+# Now we will loop over beads, w/ each bead assigned to
+# a a computational node, where node = rank in python mpi
+# set up a communicator and get the rank of this process
+# Global variables
+# Add in mpi support
+if 'mpi' not in os.getenv('CHARMM_LIB_DIR'):
+    from mpi4py import MPI
+    comm = MPI.COMM_WORLD
+    nproc = comm.Get_size()
+    rank = comm.Get_rank()
+#####################################################################
+###############PYCHARMM SCRIPTING STARTS HERE########################
+read.rtf('toppar/top_all22_prot.inp')
+read.prm('toppar/par_all22_prot.inp')
+read.sequence_string('ALA')
+gen.new_segment(seg_name='alad',
+                    first_patch='ACE',
+                    last_patch='CT3',
+                    setup_ic=True)
+ic.prm_fill(replace_all=True)
+ic.seed(1,'CAY',1,'CY',1,'N')
+ic.build()
+print(coor.get_positions())
+nbonds.configure({'cutnb': 16,
+                  'ctofnb': 14,
+                  'ctonnb': 12,
+                  'atom': True,
+                  'vatom': True,
+                  'eps': 1,
+                  'fswitch': True,
+                  'vfswitch': True,
+                  'cdie': True})
+stream.charmm_script('nbonds switch vswitch')
+
+minimize.run_abnr({'nstep': 1000,
+                         'tolenr': 1e-3,
+                         'tolgrd': 1e-3}, dict())
+
+print(coor.get_positions())
+# set up phi/psi grid to apply restraints and
+# compute energy
+F = np.linspace(-180,180,8)
+Y = F
+# template for f/y restraints
+Fcons = '1 cy 1 n 1 ca 1 c'
+Ycons = '1 n 1 ca 1 c 1 nt'
+count = 0
+ener = {}
+for f in F:
+    ener = {f:[]}
+    if not ( count % nproc == rank ): continue
+    for y in Y:
+        # turn off noise
+        #settings.set_verbosity(0)
+        settings.set_warn_level(-5)
+        # Need to use stream here because no api for cons dihe
+        cons = 'cons dihe {} force {} min {:4.2f}'.format(Fcons,500,f)
+        stream.charmm_script(cons)
+        cons = 'cons dihe {} force {} min {:4.2f}'.format(Ycons,500,y)
+        stream.charmm_script(cons)
+        minimize.run_abnr({'nstep': 1000,
+                           'tolenr': 1e-3,
+                           'tolgrd': 1e-3}, dict())
+        gbmv_str = '''
+prnlev 0
+scalar wmain = radii
+stream toppar/radii_c36gbmvop.str
+prnlev 5
+gbmv beta -12  p3 0.65 watr 1.4  shift -0.102 slope 0.9085 -
+p6 8 sa 0.005 wtyp 2 nphi 38 cutnum 100 kappa 0 weight
+        '''
+        stream.charmm_script(gbmv_str)
+        minimize.run_abnr({'nstep': 500,
+                           'tolenr': 1e-3,
+                           'tolgrd': 1e-3}, dict())
+
+        stream.charmm_script('cons cldh')
+        ener[f].append(energy.get_total())
+        stream.charmm_script('gbmv clear')
+settings.set_verbosity(5)
+exit()
+# reshape the energy array into 37x37 array
+# use transpose (.T) because of loop order above
+ener = np.reshape(np.asarray(ener),(37,37))
+ener = ener.T
+# Make file and save on disk
+fymap = {'F':F,
+         'Y':Y,
+         'ener':ener}
+import pickle
+with open('fymap.pkl', 'wb') as fh:
+    pickle.dump(fymap, fh)
+with open('fymap.pkl', 'rb') as fh:
+     fymap = pickle.load(fh)
+
+emax = np.max(ener)
+emin = np.min(ener)
+erange = emax - emin
+ehigh = np.ceil(emin+1.1*erange)
+elow = np.floor(emax-1.1*erange)
+F,Y=np.meshgrid(F,Y)
+# Now let's plot the data f/y map
+from mpl_toolkits.mplot3d import axes3d
+import matplotlib.pyplot as plt
+from matplotlib import cm
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+# Plot the 3D surface
+ax.contour3D(F,Y,ener,50,cmap='inferno')
+#ax.plot_surface(F, Y, ener, rstride=8, cstride=8, alpha=0.3)
+# Plot projections of the contours for each dimension.  By choosing offsets
+# that match the appropriate axes limits, the projected contours will sit on
+# the 'walls' of the graph
+#cset = ax.contour(F, Y, ener, zdir='ener', offset=elow, cmap=cm.coolwarm)
+#cset = ax.contour(F, Y, ener, zdir='f', offset=180, cmap=cm.coolwarm)
+#cset = ax.contour(F, Y, ener, zdir='y', offset=-180, cmap=cm.coolwarm)
+
+ax.set_xlim(-180, 180)
+ax.set_ylim(-180, 180)
+ax.set_zlim(elow, ehigh)
+
+ax.set_xlabel('Phi')
+ax.set_ylabel('Psi')
+ax.set_zlabel('E')
+
+plt.show()
+exit()
+fig = plt.figure(figsize=(6,5))
+left, bottom, width, height = 0.1, 0.1, 0.8, 0.8
+ax = fig.add_axes([left, bottom, width, height]) 
+cp = plt.contourf(F, Y, ener)
+plt.colorbar(cp)
+ax.set_title('Contour Plot')
+ax.set_xlabel('Phi')
+ax.set_ylabel('Psi')
+plt.show()
+
+exit()
