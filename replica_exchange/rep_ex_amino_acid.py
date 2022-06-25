@@ -709,6 +709,7 @@ def main():
     rex=rep_ex(ncycle=ncycles,condid=condid,lmd=l,conditions=cond_arr)
     rex.run()
     close_clog(charmm_log)
+    comm.barrier()
     rex.trj_unmixing()
     comm.barrier()
     rex.accept_ratio()
