@@ -1,0 +1,23 @@
+REMARK  EXECUTING CHARMM SCRIPT FROM PYTHON                                           
+REMARK   DATE:     1/ 8/23     19:13:44      CREATED BY USER: brookscl                
+ATOM      1  CG  BENX    1      -0.687   1.191   0.000  1.00  0.00      BENX
+ATOM      2  DCG BENX    1      -0.687   1.191   0.000  1.00  0.00      BENX
+ATOM      3  HG  BENX    1      -1.767   1.191   0.000  1.00  0.00      BENX
+ATOM      4  CD1 BENX    1       0.000   0.000   0.000  1.00  0.00      BENX
+ATOM      5 DCD1 BENX    1       0.000   0.000   0.000  1.00  0.00      BENX
+ATOM      6  HD1 BENX    1      -0.540  -0.935   0.000  1.00  0.00      BENX
+ATOM      7  CD2 BENX    1      -0.000   2.382   0.000  1.00  0.00      BENX
+ATOM      8 DCD2 BENX    1      -0.000   2.382   0.000  1.00  0.00      BENX
+ATOM      9  HD2 BENX    1      -0.540   3.317  -0.000  1.00  0.00      BENX
+ATOM     10  CE1 BENX    1       1.375   0.000   0.000  1.00  0.00      BENX
+ATOM     11 DCE1 BENX    1       1.375   0.000   0.000  1.00  0.00      BENX
+ATOM     12  HE1 BENX    1       1.915  -0.935   0.000  1.00  0.00      BENX
+ATOM     13  CE2 BENX    1       1.375   2.382   0.000  1.00  0.00      BENX
+ATOM     14 DCE2 BENX    1       1.375   2.382   0.000  1.00  0.00      BENX
+ATOM     15  HE2 BENX    1       1.915   3.317  -0.000  1.00  0.00      BENX
+ATOM     16  CZ  BENX    1       2.062   1.191   0.000  1.00  0.00      BENX
+ATOM     17  DCZ BENX    1       2.062   1.191   0.000  1.00  0.00      BENX
+ATOM     18  HZ  BENX    1       3.142   1.191  -0.000  1.00  0.00      BENX
+ATOM     19 LPBX BENX    1       0.687   1.191   0.000  1.00  0.00      BENX
+TER      20      BENX     1
+END
