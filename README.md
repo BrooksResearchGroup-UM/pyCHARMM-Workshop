@@ -1,3 +1,8 @@
+# Preface
+## This repository contains a working set of examples, current documentation and details of compiling and running pyCHARMM. The materials here are part of a growing repository for examples and tutorials on using pyCHARMM. As we evolve the program, expand its example base and run new workshops based on pyCHARMM, we anticiapte this repository will grow. 
+
+## We note that pyCHARMM is now part of CHARMM distribution - _free of charge_ to academic and government/non-profit labs. The CHARMM/pyCHARMM source is available through academic licensing at [academiccharmm.org](https://academiccharmm.org/program).
+
 # pyCHARMM Workshop
 
 Date: June 20-24, 2022
