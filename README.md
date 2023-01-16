@@ -68,7 +68,7 @@ If you have pycharmm installed locally in the `pyCHARMM` virtual environment, yo
 7. **CDOCKER_WYu** - Tutorial on using CDOCKER pyCHARMM implementation for flexible ligand - rigid and flexible receptor docking
 8. **DrudeExample** - Simple example of setting-up and using Drude oscillator polarizable model
 9. **NeuralNetExample** - Use of TorchANI machine learned quantum chemistry potentials in CHARMM calculations through pyCHARMM
-10. **msld_py_prep_Tutorial** - Tutorial on setting-up and using MS $\lambda$D free energy calculations with *py_prep*
+10. **msld_py_prep_Tutorial** - Tutorial on setting-up and using MS $\lambda$ D free energy calculations with *py_prep*
 
 
 ----------------------------------------------
