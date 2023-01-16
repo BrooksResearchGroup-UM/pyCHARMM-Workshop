@@ -54,6 +54,7 @@ export CHARMM_LIB_DIR=/path/to/charmm_dir/install-pycharmm-nompi/lib
 ```
 
 ## Required modules/codes:
+### In the workshop examples you will find below the following tools are used.
 
 1. [**MMTSB Toolset**](https://github.com/mmtsb/toolset) is utilized and should be installed .
 2. [**propKa**](https://github.com/jensengroup/propka) will be utilized.
