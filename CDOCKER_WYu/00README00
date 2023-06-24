@@ -1,5 +1,0 @@
-This folders contains basic pyCHARMM docking example.
-	1. Inside folder jupyter_lab/, it contains the jupyter notebook.
-	2. Inside folder flex/, it contains the basic pyCHARMM Flexible CDOCKER docking example (i.e., standard.py)
-	3. Inside folder rigid/, it contains the basic pyCHARMM Rigid CDOCKER docking example (i.e., standard.py)
-	4. Inside folder Toppar/, it contains the necessary topology and parameter files. 
