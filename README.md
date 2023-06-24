@@ -71,7 +71,7 @@ If you have pycharmm installed locally in the `pyCHARMM` virtual environment, yo
 4. **AbsoluteSolvation** - Distributed (mpi) calculation of the solvent half of the absolute solvation free energy using MBAR and BAR
 5. **Aladipeptide_HFBString_MPI** - Construct minimum energy path for $\phi,\psi$ conformational transition in alanine dipeptide using HFB-String approach and mpi task distribution
 6. **ReplicaExchangeExample** - Compute the free energy change for charging a residue in vacuum with replica exchange $\lambda$-windowing distributed simulations using mpi
-7. **CDOCKER_WYu** - Tutorial on using CDOCKER pyCHARMM implementation for flexible ligand - rigid and flexible receptor docking
+7. **CDOCKER_Tutorial** - Tutorial on using CDOCKER pyCHARMM implementation for flexible ligand - rigid receptor and flexible ligand - flexible receptor docking
 8. **DrudeExample** - Simple example of setting-up and using Drude oscillator polarizable model
 9. **NeuralNetExample** - Use of TorchANI machine learned quantum chemistry potentials in CHARMM calculations through pyCHARMM
 10. **msld_py_prep_Tutorial** - Tutorial on setting-up and using MS $\lambda$ D free energy calculations with *py_prep*
