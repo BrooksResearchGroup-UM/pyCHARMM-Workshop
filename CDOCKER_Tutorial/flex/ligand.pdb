@@ -1,0 +1,29 @@
+REMARK  TITLE                                                                         
+REMARK  MOVE LIGAND TO THE CENTER OF BINDING POCKET                                   
+REMARK   DATE:     6/22/22     16: 1: 1      CREATED BY USER: yujin                   
+ATOM      1  C4' I4B     1      26.489   8.511   3.361  1.00  0.00      LIGA
+ATOM      2  C3' I4B     1      27.683   7.813   1.303  1.00  0.00      LIGA
+ATOM      3  C2' I4B     1      26.991   7.345   2.550  1.00  0.00      LIGA
+ATOM      4  C1' I4B     1      27.973   6.507   3.343  1.00  0.00      LIGA
+ATOM      5  C1  I4B     1      27.206   5.777   4.400  1.00  0.00      LIGA
+ATOM      6  C2  I4B     1      27.177   6.296   5.671  1.00  0.00      LIGA
+ATOM      7  C3  I4B     1      26.434   5.646   6.687  1.00  0.00      LIGA
+ATOM      8  C4  I4B     1      25.701   4.518   6.380  1.00  0.00      LIGA
+ATOM      9  C5  I4B     1      25.753   3.982   5.096  1.00  0.00      LIGA
+ATOM     10  C6  I4B     1      26.518   4.609   4.103  1.00  0.00      LIGA
+ATOM     11  H1  I4B     1      25.800   9.083   2.775  1.00  0.00      LIGA
+ATOM     12  H2  I4B     1      27.316   9.130   3.645  1.00  0.00      LIGA
+ATOM     13  H3  I4B     1      25.997   8.149   4.239  1.00  0.00      LIGA
+ATOM     14  H4  I4B     1      28.027   6.966   0.748  1.00  0.00      LIGA
+ATOM     15  H5  I4B     1      28.515   8.430   1.567  1.00  0.00      LIGA
+ATOM     16  H6  I4B     1      26.997   8.376   0.705  1.00  0.00      LIGA
+ATOM     17  H7  I4B     1      26.136   6.756   2.295  1.00  0.00      LIGA
+ATOM     18  H8  I4B     1      28.706   7.140   3.798  1.00  0.00      LIGA
+ATOM     19  H9  I4B     1      28.473   5.813   2.701  1.00  0.00      LIGA
+ATOM     20  H10 I4B     1      27.695   7.162   5.886  1.00  0.00      LIGA
+ATOM     21  H11 I4B     1      26.441   6.014   7.651  1.00  0.00      LIGA
+ATOM     22  H12 I4B     1      25.116   4.071   7.102  1.00  0.00      LIGA
+ATOM     23  H13 I4B     1      25.226   3.122   4.875  1.00  0.00      LIGA
+ATOM     24  H14 I4B     1      26.570   4.204   3.155  1.00  0.00      LIGA
+TER      25      I4B      1
+END

@@ -1,0 +1,57 @@
+REMARK  TITLE                                                                         
+REMARK  THE DOCKED POSE ID IS 11_1.PDB                                                
+REMARK  THE CONFORMER ID IS 11                                                        
+REMARK  THE PLACEMENT ID IS 1                                                         
+REMARK  THE TOTAL ENERGY IS -112.048067                                               
+REMARK  THE VDW ENERGY IS -37.656321                                                  
+REMARK  THE ELEC ENERGY IS -130.685164                                                
+REMARK  THE GRID_HBOND IS 0.000000                                                    
+REMARK   DATE:     6/23/23     18:43:39      CREATED BY USER: brookscl                
+ATOM   2620  P1  LIG     1       7.069  31.977  19.833  1.00  0.00      LIGA
+ATOM   2621  O1  LIG     1       5.696  32.351  20.347  1.00  0.00      LIGA
+ATOM   2622  O2  LIG     1       7.664  32.738  18.675  1.00  0.00      LIGA
+ATOM   2623  O3  LIG     1       7.387  30.485  19.872  1.00  0.00      LIGA
+ATOM   2624  C1  LIG     1       8.140  32.572  21.195  1.00  0.00      LIGA
+ATOM   2625  H1  LIG     1       9.122  32.126  21.024  1.00  0.00      LIGA
+ATOM   2626  H2  LIG     1       7.697  32.211  22.126  1.00  0.00      LIGA
+ATOM   2627  P2  LIG     1       8.416  34.392  21.402  1.00  0.00      LIGA
+ATOM   2628  O4  LIG     1       7.217  35.068  20.807  1.00  0.00      LIGA
+ATOM   2629  O5  LIG     1       8.755  34.520  22.863  1.00  0.00      LIGA
+ATOM   2630  O6  LIG     1       9.765  34.409  20.433  1.00  0.00      LIGA
+ATOM   2631  P3  LIG     1      11.039  35.371  19.968  1.00  0.00      LIGA
+ATOM   2632  O7  LIG     1      10.601  36.811  19.893  1.00  0.00      LIGA
+ATOM   2633  O8  LIG     1      11.695  34.752  18.767  1.00  0.00      LIGA
+ATOM   2634  O9  LIG     1      12.139  35.247  21.171  1.00  0.00      LIGA
+ATOM   2635  C2  LIG     1      12.787  36.454  21.599  1.00  0.00      LIGA
+ATOM   2636  H3  LIG     1      12.944  37.176  20.761  1.00  0.00      LIGA
+ATOM   2637  H4  LIG     1      12.152  36.942  22.374  1.00  0.00      LIGA
+ATOM   2638  C3  LIG     1      14.175  36.177  22.219  1.00  0.00      LIGA
+ATOM   2639  H5  LIG     1      14.504  37.106  22.712  1.00  0.00      LIGA
+ATOM   2640  O10 LIG     1      15.167  35.903  21.210  1.00  0.00      LIGA
+ATOM   2641  C4  LIG     1      14.227  34.975  23.191  1.00  0.00      LIGA
+ATOM   2642  H6  LIG     1      13.230  34.604  23.459  1.00  0.00      LIGA
+ATOM   2643  O11 LIG     1      14.926  35.329  24.391  1.00  0.00      LIGA
+ATOM   2644  H7  LIG     1      14.295  35.621  25.054  1.00  0.00      LIGA
+ATOM   2645  C5  LIG     1      15.028  33.937  22.376  1.00  0.00      LIGA
+ATOM   2646  H8  LIG     1      14.339  33.453  21.665  1.00  0.00      LIGA
+ATOM   2647  O12 LIG     1      15.657  32.917  23.154  1.00  0.00      LIGA
+ATOM   2648  H9  LIG     1      16.028  33.340  23.935  1.00  0.00      LIGA
+ATOM   2649  C6  LIG     1      16.023  34.847  21.651  1.00  0.00      LIGA
+ATOM   2650  H10 LIG     1      16.750  35.297  22.346  1.00  0.00      LIGA
+ATOM   2651  N1  LIG     1      16.677  34.221  20.480  1.00  0.00      LIGA
+ATOM   2652  C7  LIG     1      18.034  34.067  20.302  1.00  0.00      LIGA
+ATOM   2653  H11 LIG     1      18.753  34.413  21.044  1.00  0.00      LIGA
+ATOM   2654  N2  LIG     1      18.357  33.485  19.157  1.00  0.00      LIGA
+ATOM   2655  C8  LIG     1      17.154  33.237  18.540  1.00  0.00      LIGA
+ATOM   2656  C9  LIG     1      16.881  32.646  17.285  1.00  0.00      LIGA
+ATOM   2657  O13 LIG     1      17.662  32.206  16.448  1.00  0.00      LIGA
+ATOM   2658  N3  LIG     1      15.512  32.576  17.026  1.00  0.00      LIGA
+ATOM   2659  H12 LIG     1      15.238  32.186  16.138  1.00  0.00      LIGA
+ATOM   2660  C10 LIG     1      14.503  33.043  17.862  1.00  0.00      LIGA
+ATOM   2661  N4  LIG     1      13.245  32.874  17.430  1.00  0.00      LIGA
+ATOM   2662  H13 LIG     1      13.018  32.448  16.559  1.00  0.00      LIGA
+ATOM   2663  H14 LIG     1      12.505  33.340  17.926  1.00  0.00      LIGA
+ATOM   2664  N5  LIG     1      14.795  33.602  19.059  1.00  0.00      LIGA
+ATOM   2665  C11 LIG     1      16.096  33.689  19.356  1.00  0.00      LIGA
+TER    2666      LIG      1
+END
