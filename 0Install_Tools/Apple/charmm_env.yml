@@ -1,0 +1,42 @@
+name: charmm_env # This represents the name you want to use for your conda environment
+channels:        # This YAML file is for Apple hardware
+  - conda-forge
+  - defaults
+dependencies:
+  - python==3.11
+  - mamba
+  - make
+  - cmake
+  - binutils
+  - fftw
+  - openmpi
+  - openmm
+  - mpi4py
+  - readline==8.2
+  - rdkit
+  - openbabel
+  - pandas
+  - pytorch
+  - jupyter_core
+  - jupyter_client
+  - jupyterlab
+  - jupyterlab_widgets
+  - jupyter_server
+  - jupyterlab_server
+  - jupyter_console
+  - jupyter
+  - jupytext
+  - biopython
+  - py3dmol
+  - mdtraj
+  - nglview
+  - jsonpickle
+  - pymol-open-source
+  - pip
+  - ca-certificates
+  - certifi
+  - openssl
+  - clfft
+variables:
+  CHARMM_LIB_DIR: ~/charmm/c47-dev-release/install_charmm_env/lib
+prefix: /Users/brookscl/opt/anaconda3/envs/charmm_env

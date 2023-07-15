@@ -1,0 +1,48 @@
+name: charmm_wcuda12  # This represents the name you want to use for your conda environment
+channels:
+  - defaults
+  - conda-forge
+  - nvidia/label/cuda-12.0.0  # This tells conda to explicitly load cuda 12.0.0
+  # other examples
+  #- nvidia/label/cuda-12.1.1
+  #- nvidia/label/cuda-11.8.0
+  #- nvidia/label/cuda-11.7.1
+dependencies:
+  - python=3.9
+  - mamba
+  - cuda
+  - ca-certificates
+  - certifi
+  - openssl
+  - gcc
+  - gxx
+  - gfortran
+  - make
+  - cmake
+  - binutils
+  - fftw
+  - openmpi
+  - openmm
+  - mpi4py
+  - sysroot_linux-64==2.17
+  - readline==8.2
+  - rdkit
+  - openbabel
+  - pandas
+  - pytorch
+  - jupyter_core
+  - jupyter_client
+  - jupyterlab
+  - jupyterlab_widgets
+  - jupyter_server
+  - jupyterlab_server
+  - jupyter_console
+  - jupyter
+  - jupytext
+  - biopython
+  - py3dmol
+  - mdtraj
+  - nglview
+  - jsonpickle
+  - pymol-open-source
+prefix: /home/brookscl/.conda/envs/charmm_wcuda12  # This corresponds to the path to this environment
