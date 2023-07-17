@@ -4,7 +4,7 @@
 
 >> <h3>1.1 Apple folder for Apple Intel and Mx hardware using OpenCL</h3>
 
->> <h3>1.1 Linux folder for use with CUDA</h3>
+>> <h3>1.2 Linux folder for use with CUDA</h3>
 
 > <h2>2. Install CHARMM, pyCHARMM and ancillary packages</h2>
 
