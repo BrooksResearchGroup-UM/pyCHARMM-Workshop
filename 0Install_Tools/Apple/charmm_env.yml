@@ -7,7 +7,6 @@ dependencies:
   - mamba
   - make
   - cmake
-  - binutils
   - fftw
   - openmpi
   - openmm
