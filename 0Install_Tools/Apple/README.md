@@ -35,7 +35,7 @@
 - **Install needed packages to build CHARMM and pyCHARMM**
 
 
-`mamba install -y -c conda-forge make cmake binutils fftw clfft openmpi openmm mpi4py readline==8.2 rdkit openbabel pandas pytorch jupyter_core jupyter_client jupyterlab jupyterlab_widgets jupyter_server jupyterlab_server jupyter_console jupyter jupytext biopython py3dmol mdtraj nglview jsonpickle pymol-open-source pip`
+`mamba install -y -c conda-forge make cmake fftw clfft openmpi openmm mpi4py readline==8.2 rdkit openbabel pandas pytorch jupyter_core jupyter_client jupyterlab jupyterlab_widgets jupyter_server jupyterlab_server jupyter_console jupyter jupytext biopython py3dmol mdtraj nglview jsonpickle pymol-open-source clfft pip`
     
 
 
@@ -53,7 +53,6 @@ dependencies:
   - mamba
   - make
   - cmake
-  - binutils
   - fftw
   - openmpi
   - openmm
