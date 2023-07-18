@@ -1,5 +1,5 @@
-<div class="alert alert-block alert-info">
-<h3><b>Note:</b> Apple hardware no longer supports CUDA, but does support OpenCL. Thus, we cannot build CHARMM/pyCHARMM versions that include BLaDe or DOMDEC GPU kernels. However, OpenMM supports OpenCL and thus can be installed and used with any GPU support on your Apple computer.</h3></div>    
+<span style="color:red">some
+<h3><b>Note:</b> Apple hardware no longer supports CUDA, but does support OpenCL. Thus, we cannot build CHARMM/pyCHARMM versions that include BLaDe or DOMDEC GPU kernels. However, OpenMM supports OpenCL and thus can be installed and used with any GPU support on your Apple computer.</h3></span>    
 
 ## 0. Installing needed tools for CHARMM/pyCHARMM
 ### In order to use CHARMM/pyCHARMM you will need to:
@@ -35,9 +35,12 @@
 - **Install needed packages to build CHARMM and pyCHARMM**
 
 
-`mamba install -y -c conda-forge make cmake fftw clfft openmpi openmm mpi4py readline==8.2 rdkit openbabel pandas pytorch jupyter_core jupyter_client jupyterlab jupyterlab_widgets jupyter_server jupyterlab_server jupyter_console jupyter jupytext biopython py3dmol mdtraj nglview jsonpickle pymol-open-source clfft pip`
+`mamba install -y -c conda-forge make cmake fftw clfft openmpi openmm mpi4py readline==8.2 rdkit openbabel pandas pytorch jupyter_core jupyter_client jupyterlab jupyterlab_widgets jupyter_server jupyterlab_server jupyter_console jupyter jupytext biopython py3dmol mdtraj nglview jsonpickle pymol-open-source pip`
     
 
+<div class="alert alert-block alert-warning">
+<h4><b>Note:</b> Our experience has been that using a YAML file leads to very long times to establish the enviornment. Recommendation is to use the mamba route noted above.</h4>
+</div>
 
 ### 1b. Building the CHARMM/pyCHARMM compatable environment with a YAML file
  
@@ -93,8 +96,8 @@ prefix: /Users/brookscl/opt/anaconda3/envs/charmm_env
 `conda env create -f charmm_env.yml`
 
 
-## 2. Install gfortran and OpenMPI using MacPorts or Home.
-### Uou have two choices, if you are already using either MacPorts or HomeBrew, skip down to installing gfortran and OpenMPI  below.
+## 2. Install gfortran and OpenMPI using MacPorts or Homebrew.
+### You have two choices, if you are already using either MacPorts or Homebrew, skip down to installing gfortran and OpenMPI  below.
 ### MacPorts install:
 > - **[Install](https://www.macports.org/install.php) MacPorts for your operating system Follow the directions at the link above.**
 ### `gfortran` and `OpenMPI` install
@@ -102,6 +105,13 @@ prefix: /Users/brookscl/opt/anaconda3/envs/charmm_env
 
 > `sudo port install openmpi-gcc12`
 
+> `sudo port select --set gcc mp-gcc12`
+
+> `sudo port select --set mpi openmpi-gcc12-fortran`
+
+<div class="alert alert-block alert-warning">
+<h4><b>Note:</b> We have been unable to build CHARMM/pyCHARMM with the latest gcc from Homebrew (gcc 13.1), therefore we strongly suggest you use the installation instructions for gcc 12.2 given below.</h4>
+</div>
 
 ### Homebrew install:
 > - **[Install](https://brew.sh/) Homebrew for your operating system Follow the directions at the link above.**
@@ -112,7 +122,7 @@ prefix: /Users/brookscl/opt/anaconda3/envs/charmm_env
 > `brew install open-mpi`
 
 <div class="alert alert-block alert-info">
-<h3><b>Note:</b> If you want to use a particular gcc (current default seems to be gcc 13.1), then it appears you need the following instead.</h3>
+<h4><b>Note:</b> If you want to use a particular gcc (current default seems to be gcc 13.1), then it appears you need the following instead.</h4>
 </div>  
 
 #### In bash
@@ -133,8 +143,6 @@ prefix: /Users/brookscl/opt/anaconda3/envs/charmm_env
 ## 3. CHARMM and pyCHARMM installation once conda environment is installed and active and gfortran and OpenMPI are installed with MacPorts/Homebrew.
 ### Go to CHARMM source root and build CHARMM with configure
 
-<blockquote>
-
 ```csh
 conda activate charmm_env
 cd <charmm_root>
@@ -145,16 +153,12 @@ cd build_charmm
 make -j <n> install
 ```
 
-</blockquote>
-
 - **_charmm_env_ should be replaced with the name of your conda virtual environment**
 - **\<charmm_root\> is the path to the charmm top level tree**
 - **\<charmm_install_path\> is the path where you want the CHARMM installation to reside**
 - **\<n\> is the number of cores to use in compiling the code**
 
 ### pyCHARMM is built from the same source and can be built in the same build directory
-
-<blockquote>
 
 ```csh
 conda activate charmm_wcuda12
@@ -171,12 +175,5 @@ setenv CHARMM_LIB_DIR <pycharmm_install_path>/lib # csh syntax
 conda env config vars set CHARMM_LIB_DIR=<pycharmm_install_path>/lib  # every time when this conda environment (charmm_env) is activated, the environmental variable CHARMM_LIB_DIR is there automatically.
 ```
 
-</blockquote>
-
-<div class="alert alert-block alert-info">
-    <b>Note:</b> <i>$<$pycharmm_install_path$>$</i> is the path where you want the pyCHARMM installation to reside. <br><b>Note</b> that <i>$<$pycharmm_install_path$>$</i> can be the same as <i>$<$charmm_install_path$>$</i>, i.e., you can install both charmm and pyCHARMM in the same install folder.
-</div>
-
-```python
-
-```
+## Note: *<pycharmm_install_path>* is the path where you want the pyCHARMM installation to reside. <br>
+## Note that *<pycharmm_install_path>* can be the same as *<charmm_install_path>*, i.e., you can install both charmm and pyCHARMM in the same install folder *<charmm_install_path>*.
