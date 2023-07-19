@@ -20,6 +20,7 @@
 - **Install CUDA from NVIDIA. Pick one version compatible with your drivers as described below. You can see available [CUDA Toolkit packages (Table 3)](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#title-new-cuda-tools)**<p>
 `mamba install -y -c nvidia cuda` # note this should install CUDA 12.1.1<p>
 `mamba install -y -c "nvidia/label/cuda-12.0.0" cuda` # note this should install CUDA 12.0<p>
+ - **If you use the `cuda-12.0.0` noted above, then you need to use `gcc=12.1 gcc=12.1 gfortran=12.1` in the command below.**
  - **Install needed packages to build CHARMM and pyCHARMM**<p>
 `mamba install -y -c conda-forge gcc gxx gfortran make cmake binutils fftw openmpi openmm mpi4py sysroot_linux-64==2.17 readline==8.2 rdkit openbabel pandas pytorch jupyter_core jupyter_client jupyterlab jupyterlab_widgets jupyter_server jupyterlab_server jupyter_console jupyter jupytext biopython py3dmol mdtraj nglview jsonpickle pymol-open-source`
     
