@@ -23,7 +23,9 @@
  - **If you use the `cuda-12.0.0` noted above, then you need to use `gcc=12.1 gcc=12.1 gfortran=12.1` in the command below.**
  - **Install needed packages to build CHARMM and pyCHARMM**<p>
 `mamba install -y -c conda-forge gcc gxx gfortran make cmake binutils fftw openmpi openmm mpi4py sysroot_linux-64==2.17 readline==8.2 rdkit openbabel pandas pytorch jupyter_core jupyter_client jupyterlab jupyterlab_widgets jupyter_server jupyterlab_server jupyter_console jupyter jupytext biopython py3dmol mdtraj nglview jsonpickle pymol-open-source`
-    
+
+<h4><b>Note on nglview and jupyter_server incompatability:</b> If you have problems viewing graphics in the tutorials from 1 and 2, you probably need to downgrade your jupyter_server package. What seems to work with the current nglview is jupyter_server=1.23.6. I suggest installing this in your environment with `mamba install -c conda-forge jupyter_server=1.23.6`</h4>
+
 <div class="alert alert-block alert-warning">
 <b>Note on CUDA Toolkit/Driver and Compiler Compatabilities:</b> In choosing the CUDA Toolkit you need to coordinate with the compatable CUDA Driver and compilers. The table below outlines these requirements. You should check with your systems manager regarding the installed CUDA Driver on the computer cluster/machine on which you plan to install CHARMM/pyCHARMM. However, you can also glean this information by running the command <i>nvidia-smi</i> on one of the nodes of your GPU-equipped computers. In this case the CUDA Driver will be displayed at the top of the output created from this command:</div><p>
 
