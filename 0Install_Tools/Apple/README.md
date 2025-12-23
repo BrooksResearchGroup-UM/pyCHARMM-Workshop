@@ -10,32 +10,25 @@
 - **Install CHARMM and pyCHARMM (Part 3)**
 
 ## 1. Creating conda environment to install and use CHARMM/pyCHARMM
-- **You will need a base anaconda/miniconda installation: see [anaconda installation](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).**
+- **You will need a base anaconda/miniconda/conda-forge (conda-forge recommended) installation: see [conda-forge installation](https://conda-forge.org/download/#:~:text=Miniforge%20is%20the%20preferred%20conda,conda%20create%20or%20mamba%20create%20.).**
 - **Follow steps in 1a to create the conda environment manually OR follow steps in 1b to create the conda environment from a YAML file.**
 ### 1a. Create a conda environment manually
-- **Make a conda environment (See below for a shortcut using `conda env create -f <name_of_environment>.yml`). In this example we will call the enviroment _charmm_env_**
+- **Make a conda environment (See below for a shortcut using `mamba env create -f <name_of_environment>.yml`). In this example we will call the enviroment _charmm_env_**
 
 
-`conda create -y -n charmm_env python=3.11` # note python can be > 3.9
+`mamba create -y -n charmm_env python=3.12` # note python can be > 3.9
 
 
 - **Activate this environment**
 
 
-`conda activate charmm_env`
-
-
-- **Install mamba as a faster conda**
-
-
-`conda install -y -c conda-forge mamba`
- 
+`conda activate charmm_env` 
 
 
 - **Install needed packages to build CHARMM and pyCHARMM**
 
 
-`mamba install -y -c conda-forge make cmake fftw clfft openmpi openmm mpi4py readline==8.2 rdkit openbabel pandas pytorch jupyter_core jupyter_client jupyterlab jupyterlab_widgets jupyter_server jupyterlab_server jupyter_console jupyter jupytext biopython py3dmol mdtraj nglview jsonpickle pymol-open-source pip`
+`mamba install -y -c conda-forge make cmake fftw clfft openmpi openmm mpi4py readline rdkit openbabel pandas pytorch jupyter biopython py3dmol mdtraj nglview jsonpickle pymol-open-source pip`
     
 
 <div class="alert alert-block alert-warning">
@@ -52,28 +45,19 @@ channels:        # This YAML file is for Apple hardware
   - conda-forge
   - defaults
 dependencies:
-  - python==3.11
-  - mamba
+  - python==3.12
   - make
   - cmake
   - fftw
   - openmpi
   - openmm
   - mpi4py
-  - readline==8.2
+  - readline
   - rdkit
   - openbabel
   - pandas
   - pytorch
-  - jupyter_core
-  - jupyter_client
-  - jupyterlab
-  - jupyterlab_widgets
-  - jupyter_server
-  - jupyterlab_server
-  - jupyter_console
   - jupyter
-  - jupytext
   - biopython
   - py3dmol
   - mdtraj
@@ -81,19 +65,16 @@ dependencies:
   - jsonpickle
   - pymol-open-source
   - pip
-  - ca-certificates
-  - certifi
-  - openssl
   - clfft
 variables:  # Note one would need to change this to point to their path
-  CHARMM_LIB_DIR: Users/brookscl/charmm/c47-dev-release/install_charmm_env/lib
-prefix: /Users/brookscl/opt/anaconda3/envs/charmm_env
+  CHARMM_LIB_DIR: /Users/brookscl/charmm/c47-dev-release/install_charmm_env/lib
+prefix: /Users/brookscl/miniforge3/envs/charmm_env
 ```
 
 - **You can edit this YAML file to add/change the installed packages. You can install this new conda environment with the command:**
 
 
-`conda env create -f charmm_env.yml`
+`mamba env create -f charmm_env.yml`
 
 
 ## 2. Install gfortran and OpenMPI using MacPorts or Homebrew.
@@ -141,7 +122,7 @@ prefix: /Users/brookscl/opt/anaconda3/envs/charmm_env
 
 
 ## 3. CHARMM and pyCHARMM installation once conda environment is installed and active and gfortran and OpenMPI are installed with MacPorts/Homebrew.
-### Go to CHARMM source root and build CHARMM with configure
+### Go to CHARMM source root and build CHARMM/pyCHARMM with configure
 
 ```csh
 conda activate charmm_env
@@ -150,30 +131,31 @@ mkdir build_charmm
 cd build_charmm
 # Build CHARMM with FFTDOCK, DOMDEC (default) and OpenMM (default)
 ../configure --without-cuda --with-fftdock -p <charmm_install_path>
-make -j <n> install
+make -j install
 ```
 
 - **_charmm_env_ should be replaced with the name of your conda virtual environment**
 - **\<charmm_root\> is the path to the charmm top level tree**
 - **\<charmm_install_path\> is the path where you want the CHARMM installation to reside**
-- **\<n\> is the number of cores to use in compiling the code**
+- **Note: CHARMM html documentation and pyCHARMM html files are created in the directory \<charmm_install_path\>/html_doc.***
 
-### pyCHARMM is built from the same source and can be built in the same build directory
+### CHARMM/pyCHARMM are built from the same source if you want to use pyCHARMM with mpi4py (the python api for mpi control at the python level use the following build
 
 ```csh
-conda activate charmm_wcuda12
+conda activate charmm_env-wompi
 cd <charmm_root>
 cd build_charmm
 rm -r *   # Clean the build directory
 # Build CHARMM with FFTDOCK and OpenMM (default)
-../configure --without-cuda --with-fftdock --without-mpi --as-library -p <pycharmm_install_path>
-make -j <n> install
+../configure --without-cuda --with-fftdock --without-mpi -p <pycharmm_install_path>
+make -j install
 cd <charmm_root>
-pip install `pwd`/tool/pycharmm  # Installs the pyCHARMM modules in your current environment
 export CHARMM_LIB_DIR=<pycharmm_install_path>/lib # bash syntax
 setenv CHARMM_LIB_DIR <pycharmm_install_path>/lib # csh syntax
 conda env config vars set CHARMM_LIB_DIR=<pycharmm_install_path>/lib  # every time when this conda environment (charmm_env) is activated, the environmental variable CHARMM_LIB_DIR is there automatically.
 ```
 
 ## Note: *<pycharmm_install_path>* is the path where you want the pyCHARMM installation to reside. <br>
-## Note that *<pycharmm_install_path>* can be the same as *<charmm_install_path>*, i.e., you can install both charmm and pyCHARMM in the same install folder *<charmm_install_path>*.
+## Note that *<pycharmm_install_path>* can be the same as *<charmm_install_path>*, i.e., you can install both charmm and pyCHARMM in the same install folder *<charmm_install_path>*.<br>
+## Note: *CHARMM_LIB_DIR* should automatically be derived from installation in an environment.
+
