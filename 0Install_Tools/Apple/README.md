@@ -66,6 +66,11 @@ dependencies:
   - pymol-open-source
   - pip
   - clfft
+  - pip:
+    - crimm==2025.4b0
+    - numpy==2.2.6
+    - propka==3.5.0
+    - tinycss2==1.4.0
 variables:  # Note one would need to change this to point to their path
   CHARMM_LIB_DIR: /Users/brookscl/charmm/c47-dev-release/install_charmm_env/lib
 prefix: /Users/brookscl/miniforge3/envs/charmm_env
