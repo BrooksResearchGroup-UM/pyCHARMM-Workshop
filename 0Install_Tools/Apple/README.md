@@ -6,7 +6,7 @@
 - **Create a conda environment capable of building CHARMM, pyCHARMM (Part 1)**
 - **Install gfortran and OpenMPI with MacPorts or Homebrew (Part 2)**
 - **Install the MMTSB ToolSet from [MMTSB](https://feig.bch.msu.edu/mmtsb/Main_Page). Follow the instructions to install the package.**
-- **Obtain the CHARMM software (free to academics and government labs) from [AcademicCHARMM](https://academiccharmm.org/program). Follow the directions below to build a conda environment capable of installing CHARMM/pyCHARMM.**
+- **Obtain the CHARMM software (free to academics and government labs) from [Academic CHARMM](https://academiccharmm.org/program). Follow the directions below to build a conda environment capable of installing CHARMM/pyCHARMM.**
 - **Install CHARMM and pyCHARMM (Part 3)**
 
 ## 1. Creating conda environment to install and use CHARMM/pyCHARMM
@@ -28,12 +28,10 @@
 - **Install needed packages to build CHARMM and pyCHARMM**
 
 
-`mamba install -y -c conda-forge make cmake fftw clfft openmpi openmm mpi4py readline rdkit openbabel pandas pytorch jupyter biopython py3dmol mdtraj nglview jsonpickle pymol-open-source pip`
+`mamba install -y -c conda-forge make cmake fftw clfft openmpi openmm openmm-torch mpi4py readline rdkit openbabel pandas pytorch jupyter biopython py3dmol mdtraj nglview jsonpickle pymol-open-source pip`
     
 
-<div class="alert alert-block alert-warning">
-<h4><b>Note:</b> Our experience has been that using a YAML file leads to very long times to establish the enviornment. Recommendation is to use the mamba route noted above.</h4>
-</div>
+**Note: We have added new support for [OpenMM PyTorch plugin](https://github.com/openmm/openmm-torch).**
 
 ### 1b. Building the CHARMM/pyCHARMM compatable environment with a YAML file
  
@@ -51,6 +49,7 @@ dependencies:
   - fftw
   - openmpi
   - openmm
+  - openmm-torch # Added support for openmm pytorch plugin
   - mpi4py
   - readline
   - rdkit
