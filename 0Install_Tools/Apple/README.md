@@ -30,6 +30,9 @@
 
 `mamba install -y -c conda-forge make cmake fftw clfft openmpi openmm openmm-torch mpi4py readline rdkit openbabel pandas pytorch jupyter biopython py3dmol mdtraj nglview jsonpickle pymol-open-source pip`
     
+- **Install [crimm](https://github.com/BrooksResearchGroup-UM/crimm/tree/master) to provide support of preparing files, fixing charges based on pH (using PropKa).**
+
+`pip install crimm` 
 
 **Note: We have added new support for [OpenMM PyTorch plugin](https://github.com/openmm/openmm-torch).**
 
