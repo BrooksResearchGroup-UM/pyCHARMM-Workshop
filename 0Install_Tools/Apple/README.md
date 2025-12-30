@@ -74,8 +74,8 @@ dependencies:
     - propka==3.5.0
     - tinycss2==1.4.0
 variables:  # Note one would need to change this to point to their path
-  CHARMM_LIB_DIR: /Users/brookscl/charmm/c47-dev-release/install_charmm_env/lib
-prefix: /Users/brookscl/miniforge3/envs/charmm_env
+  CHARMM_LIB_DIR: /Users/brookscl/charmm/charmm-dev/install_charmm_env/lib  # Note change to your path
+prefix: /Users/brookscl/miniforge3/envs/charmm_env # Note change to your environment
 ```
 
 - **You can edit this YAML file to add/change the installed packages. You can install this new conda environment with the command:**
