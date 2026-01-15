@@ -1,4 +1,4 @@
-<span style="color:red">some
+<span style="color:red">
 <h3><b>Note:</b> Apple hardware no longer supports CUDA, but does support OpenCL. Thus, we cannot build CHARMM/pyCHARMM versions that include BLaDe or DOMDEC GPU kernels. However, OpenMM supports OpenCL and thus can be installed and used with any GPU support on your Apple computer.</h3></span>    
 
 ## 0. Installing needed tools for CHARMM/pyCHARMM
