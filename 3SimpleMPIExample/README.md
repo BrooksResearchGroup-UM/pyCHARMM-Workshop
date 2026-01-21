@@ -1,0 +1,1 @@
+# Temporarily disabled. In advancing pyCHARMM capabilities we have temporarily disabled the ability to use MPI within pyCHARMM scripting. We are working to further advance this functionality and will update the Jupyter notebook once we have completed this.

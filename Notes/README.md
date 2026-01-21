@@ -1,0 +1,1 @@
+# The pyCHARMM workshop was originally run in summer 2022. The notes in this directory apply to the workshop run in Michigan during that period. Thus, machine specific details and details on building the necessary conda environment and compiling pycharmm are not the latest. However, these details we are trying to keep updated in the `0Install_tools` folder of this repository.
