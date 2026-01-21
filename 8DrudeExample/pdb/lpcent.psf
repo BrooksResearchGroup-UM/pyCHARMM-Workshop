@@ -2,7 +2,7 @@ PSF EXT CMAP DRUDE XPLOR AUTOG
 
          2 !NTITLE
 * EXECUTING CHARMM SCRIPT FROM PYTHON                                           
-*  DATE:     1/ 8/23     19:13:44      CREATED BY USER: brookscl                
+*  DATE:     1/21/26     14:48: 1      CREATED BY USER: brookscl                
 
         19 !NATOM
          1 BENX     1        BENX     CG       CD2R6A    2.04340       11.6110           0  -1.50000       1.20100    

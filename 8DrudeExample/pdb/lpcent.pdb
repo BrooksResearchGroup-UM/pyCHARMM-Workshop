@@ -1,5 +1,5 @@
 REMARK  EXECUTING CHARMM SCRIPT FROM PYTHON                                           
-REMARK   DATE:     1/ 8/23     19:13:44      CREATED BY USER: brookscl                
+REMARK   DATE:     1/21/26     14:48: 1      CREATED BY USER: brookscl                
 ATOM      1  CG  BENX    1      -0.687   1.191   0.000  1.00  0.00      BENX
 ATOM      2  DCG BENX    1      -0.687   1.191   0.000  1.00  0.00      BENX
 ATOM      3  HG  BENX    1      -1.767   1.191   0.000  1.00  0.00      BENX

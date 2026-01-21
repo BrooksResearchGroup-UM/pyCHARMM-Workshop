@@ -13,28 +13,8 @@ import subprocess
 import numpy as np
 import pandas as pd
 
+from pycharmm import *
 import pycharmm
-import pycharmm.read as read
-import pycharmm.lingo as lingo
-import pycharmm.generate as gen
-import pycharmm.settings as settings
-import pycharmm.write as write
-import pycharmm.nbonds as nbonds
-import pycharmm.ic as ic
-import pycharmm.coor as coor
-import pycharmm.energy as energy
-import pycharmm.dynamics as dyn
-import pycharmm.minimize as minimize
-import pycharmm.crystal as crystal
-import pycharmm.select as select
-import pycharmm.image as image
-import pycharmm.psf as psf
-import pycharmm.param as param
-import pycharmm.cons_harm as cons_harm
-import pycharmm.cons_fix as cons_fix
-import pycharmm.shake as shake
-import pycharmm.scalar as scalar
-import pycharmm.charmm_file as charmm_file
 
 # user defined variables
 nl_chem=int(sys.argv[1]) # number of windows in lambda_chem
@@ -150,15 +130,15 @@ def define_sub(aa,ires):
     resn=aa.upper()
     resid=str(ires)
     atom_list=titr_grp(resn)
-    sele_w=~pycharmm.SelectAtoms(select_all=True)
-    sele_m=~pycharmm.SelectAtoms(select_all=True)
-    sele_p=~pycharmm.SelectAtoms(select_all=True)
-    sele_u=~pycharmm.SelectAtoms(select_all=True)
+    sele_w=~SelectAtoms(select_all=True)
+    sele_m=~SelectAtoms(select_all=True)
+    sele_p=~SelectAtoms(select_all=True)
+    sele_u=~SelectAtoms(select_all=True)
     for name in atom_list:
-        sele_w = sele_w | pycharmm.SelectAtoms().by_res_and_type(seg_id=segid,res_id=resid,atom_type=name+'W')
-        sele_m = sele_m | pycharmm.SelectAtoms().by_res_and_type(seg_id=segid,res_id=resid,atom_type=name+'M')
-        sele_p = sele_p | pycharmm.SelectAtoms().by_res_and_type(seg_id=segid,res_id=resid,atom_type=name+'P')
-        sele_u = sele_u | pycharmm.SelectAtoms().by_res_and_type(seg_id=segid,res_id=resid,atom_type=name+'U')
+        sele_w = sele_w | SelectAtoms().by_res_and_type(seg_id=segid,res_id=resid,atom_type=name+'W')
+        sele_m = sele_m | SelectAtoms().by_res_and_type(seg_id=segid,res_id=resid,atom_type=name+'M')
+        sele_p = sele_p | SelectAtoms().by_res_and_type(seg_id=segid,res_id=resid,atom_type=name+'P')
+        sele_u = sele_u | SelectAtoms().by_res_and_type(seg_id=segid,res_id=resid,atom_type=name+'U')
     sele_w.store('site{}{}subW'.format(resn,resid))
     sele_m.store('site{}{}subM'.format(resn,resid))
     sele_p.store('site{}{}subP'.format(resn,resid))
@@ -277,10 +257,10 @@ class resd_restrain:
     def reset(self):
         lingo.charmm_script('RESD reset')
     def resd(self,name):
-        sel_w=pycharmm.SelectAtoms().by_res_and_type(seg_id=segid,res_id=self.resid,atom_type=name+'W')
-        sel_m=pycharmm.SelectAtoms().by_res_and_type(seg_id=segid,res_id=self.resid,atom_type=name+'M')
-        sel_p=pycharmm.SelectAtoms().by_res_and_type(seg_id=segid,res_id=self.resid,atom_type=name+'P')
-        sel_u=pycharmm.SelectAtoms().by_res_and_type(seg_id=segid,res_id=self.resid,atom_type=name+'U')
+        sel_w=SelectAtoms().by_res_and_type(seg_id=segid,res_id=self.resid,atom_type=name+'W')
+        sel_m=SelectAtoms().by_res_and_type(seg_id=segid,res_id=self.resid,atom_type=name+'M')
+        sel_p=SelectAtoms().by_res_and_type(seg_id=segid,res_id=self.resid,atom_type=name+'P')
+        sel_u=SelectAtoms().by_res_and_type(seg_id=segid,res_id=self.resid,atom_type=name+'U')
         w=sel_w.get_n_selected()
         m=sel_m.get_n_selected()
         p=sel_p.get_n_selected()

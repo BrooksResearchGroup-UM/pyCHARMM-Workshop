@@ -1,5 +1,6 @@
 # This script generates and plots the alanine dipeptide phi/psi (f/y) map using pyCHARMM
 # Written by C.L. Brooks III, November 10, 2020
+from mpi4py import MPI
 
 import os
 import sys
@@ -7,31 +8,12 @@ import subprocess
 import numpy as np
 import pandas as pd
 
+from pycharmm import *
 import pycharmm
-import pycharmm.generate as gen
-import pycharmm.ic as ic
-import pycharmm.coor as coor
-import pycharmm.energy as energy
-import pycharmm.dynamics as dyn
-import pycharmm.nbonds as nbonds
-import pycharmm.minimize as minimize
-import pycharmm.crystal as crystal
-import pycharmm.image as image
-import pycharmm.psf as psf
-import pycharmm.read as read
-import pycharmm.write as write
-import pycharmm.settings as settings
-import pycharmm.cons_harm as cons_harm
-import pycharmm.cons_fix as cons_fix
-import pycharmm.select as select
-import pycharmm.shake as shake
-
-from pycharmm.lib import charmm as libcharmm
 
 # We will loop over the phi/psi angles to construct the phi/psi
 # surface and distribute this across processes to reduce cost using mpi
 # Add in mpi support
-from mpi4py import MPI
 comm = MPI.COMM_WORLD
 nproc = comm.Get_size()
 rank = comm.Get_rank()
@@ -76,8 +58,8 @@ def pltFYMap():
     ax.set_ylim(-180, 180)
     ax.set_zlim(elow, ehigh)
     
-    if gbmv: ax.set_title('($\phi$, $\psi$) GBMV Surface for Alanine dipeptide')
-    else: ax.set_title('($\phi$, $\psi$) Vacuum Surface for Alanine dipeptide')
+    if gbmv: ax.set_title(r'($\phi$, $\psi$) GBMV Surface for Alanine dipeptide')
+    else: ax.set_title(r'($\phi$, $\psi$) Vacuum Surface for Alanine dipeptide')
     ax.set_xlabel(r'$\phi$')
     ax.set_ylabel(r'$\psi$')
     ax.set_zlabel('E (kacal/mol)')
@@ -89,32 +71,29 @@ def pltFYMap():
     ax = fig.add_axes([left, bottom, width, height]) 
     cp = plt.contourf(F, Y, ener)
     plt.colorbar(cp) 
-    if gbmv: ax.set_title('($\phi$, $\psi$) GBMV Surface for Alanine dipeptide')
-    else: ax.set_title('($\phi$, $\psi$) Vacuum Surface for Alanine dipeptide')
-    ax.set_xlabel('$\phi$')
-    ax.set_ylabel('$\psi$')
+    if gbmv: ax.set_title(r'($\phi$, $\psi$) GBMV Surface for Alanine dipeptide')
+    else: ax.set_title(r'($\phi$, $\psi$) Vacuum Surface for Alanine dipeptide')
+    ax.set_xlabel(r'$\phi$')
+    ax.set_ylabel(r'$\psi$')
     if gbmv: plt.savefig('gbmv/fycontour-ala_gbmv.pdf')
     else: plt.savefig('vacuum/fycontour-ala.pdf')
     plt.show()
     return
 #####################################################################
 ###############PYCHARMM SCRIPTING STARTS HERE########################
-# template for f/y restraints
-Fcons = '1 cy 1 n 1 ca 1 c'
-Ycons = '1 n 1 ca 1 c 1 nt'
 settings.set_verbosity(0)
 settings.set_warn_level(-5)
 read.rtf('../toppar/top_all36_prot.rtf')
 read.prm('../toppar/par_all36m_prot.prm')
 read.sequence_string('ALA')  # ALAD for full dipeptide
-gen.new_segment(seg_name='ALAD',
+generate.new_segment(seg_name='ALAD',
                 first_patch='ACE', #comment to use alad residue
                 last_patch='CT3',  #comment to use alad residue
                 setup_ic=True)
 ic.prm_fill(replace_all=True)
 ic.seed(1,'CAY',1,'CY',1,'N')  
 ic.build()
-pycharmm.NonBondedScript(**{'cutnb': 16,
+NonBondedScript(**{'cutnb': 16,
                             'ctofnb': 14,
                             'ctonnb': 12,
                             'atom': True,
@@ -128,8 +107,12 @@ minimize.run_abnr(**{'nstep': 1000,
                          'tolenr': 1e-3,
                          'tolgrd': 1e-3})
 comm.barrier()
+exit()
 # set up phi/psi grid to apply restraints and
 # compute energy
+# template for f/y restraints
+Fcons = '1 CY 1 N 1 CA 1 C'
+Ycons = '1 N 1 CA 1 C 1 NT'
 F = np.linspace(-180,180,36)
 Y = F
 fymap = {'F':[],
@@ -138,33 +121,29 @@ fymap = {'F':[],
 for iphi,f in enumerate(F):
     if not ( iphi % nproc == rank ): continue
     for y in Y:
+        print(f'Doing phi/psi {f}/{y} on rank {rank}')
         # turn off noise
         # Need to use stream here because no api for cons dihe
-        cons = 'cons dihe {} force {} min {:4.2f}'.format(Fcons,500,f)
-        pycharmm.lingo.charmm_script(cons)
-        cons = 'cons dihe {} force {} min {:4.2f}'.format(Ycons,500,y)
-        pycharmm.lingo.charmm_script(cons)
+        cons_methods.dihe(selection=Fcons,force=500,min=f'{f:4.3f}')
+        cons_methods.dihe(selection=Ycons,force=500,min=f'{y:4.3f}')
         settings.set_verbosity(0)
         minimize.run_abnr(**{'nstep': 1000,
                            'tolenr': 1e-3,
                            'tolgrd': 1e-3})
         if gbmv:
-            gbmv_str = '''
-prnlev 0
-scalar wmain = radii
-stream ../toppar/radii_c36gbmvop.str
-prnlev 5
-gbmv beta -12  p3 0.65 watr 1.4  shift -0.102 slope 0.9085 -
-p6 8 sa 0.005 wtyp 2 nphi 38 cutnum 100 kappa 0 weight
-            '''
+            opl=settings.set_verbosity(0)
+            coor.set_weights(scalar.get_radius())
+            read.stream('../toppar/radii_c36gbmvop.str')
+            settings.set_verbosity(opl)
+            script.CommandScript('gbmv', beta=-12,p3=0.65,watr=1.4,shift=-0.102,slope=0.9085,
+                                 p6=8,sa=0.005,wtyp=2,nphi=38,cutnum=100,kappa=0,weight=True).run()
             settings.set_verbosity(0)
             settings.set_warn_level(-5)
-            pycharmm.lingo.charmm_script(gbmv_str)
             minimize.run_abnr(**{'nstep': 500,
                                'tolenr': 1e-3,
                                'tolgrd': 1e-3})
 
-        pycharmm.lingo.charmm_script('cons cldh')
+        cons_methods.dihe(cldh=True)
         fymap['F'].append(f)
         fymap['Y'].append(y)
         fymap['ener'].append(energy.get_total())

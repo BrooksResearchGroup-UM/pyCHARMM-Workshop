@@ -2,11 +2,8 @@
 
 ## Import module
 import numpy as np
+from pycharmm import *
 import pycharmm
-import pycharmm.lib as lib
-import pycharmm.read as read
-import pycharmm.lingo as lingo
-import pycharmm.settings as settings
 from pycharmm.cdocker import Rigid_CDOCKER 
 
 ################################################################
