@@ -169,8 +169,8 @@ dependencies:
 <blockquote>
  
 ```csh 
-export CONDA_OVERRIDE_CUDA="12.9" # enables build on head nodes w/o GPU
-setenv CONDA_OVERRIDE_CODA 12.9   # enables build on head nodes w/o GPU
+export CONDA_OVERRIDE_CUDA="12.6" # enables build on head nodes w/o GPU
+setenv CONDA_OVERRIDE_CODA 12.6   # enables build on head nodes w/o GPU
 conda env create -n <your_charmm_environment_name> -f charmm_gpu_env.yml
 ```
 
@@ -232,7 +232,7 @@ conda env config vars set CHARMM_LIB_DIR=<pycharmm_install_path>/lib  # every ti
 <blockquote>
 
 ```bash
-conda activate charmm_wcuda12
+conda activate charmm_gpu_env
 cd <alf_root>
 export ALF_SOURCE_DIR=`pwd` # bash syntax
 setenv ALF_SOURCE_DIR `pwd` # csh syntax
