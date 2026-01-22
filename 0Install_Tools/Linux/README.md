@@ -63,10 +63,10 @@ channels:
   - pytorch
 dependencies:
   # =====================================================
-  # CUDA 12.9 Toolkit (PINNED - do not update)
+  # CUDA 12.6 Toolkit (PINNED - do not update)
   # =====================================================
-  - cuda-version=12.9.*
-  - cuda-toolkit=12.9.*
+  - cuda-version=12.6.*
+  - cuda-toolkit=12.6.*
   - cuda-cudart
   - cuda-nvcc
   - cuda-libraries
@@ -94,7 +94,7 @@ dependencies:
   # OpenMM (includes CUDA platform when cuda-toolkit present)
   # =====================================================
   - openmm>=8.2
-  - openmm-torch=*=*cuda129*
+  - openmm-torch=*=*cuda126*
   # =====================================================
   # Math libraries needed for CHARMM
   # =====================================================
@@ -103,7 +103,7 @@ dependencies:
   # =====================================================
   # TorchANI for support of ML  QM/ML potentials
   # =====================================================
-  - torchani=*=*cuda129*
+  - torchani=*=*cuda126*
   # =====================================================
   # Utilities usefull for CHARMM/pyCHARMM
   # =====================================================
