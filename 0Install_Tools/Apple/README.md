@@ -1,87 +1,126 @@
 <span style="color:red">
-<h3><b>Note:</b> Apple hardware no longer supports CUDA, but does support OpenCL. Thus, we cannot build CHARMM/pyCHARMM versions that include BLaDe or DOMDEC GPU kernels. However, OpenMM supports OpenCL and thus can be installed and used with any GPU support on your Apple computer.</h3></span>    
+<h3><b>Note:</b> Apple hardware no longer supports CUDA, but does support OpenCL. Thus, we cannot build CHARMM/pyCHARMM versions that include BLaDe or DOMDEC GPU kernels. However, OpenMM supports OpenCL and thus can be installed and used with any GPU support on your Apple computer. At [resent we are working to make a fully gnu compiler supported version through a conda environment, but for present we still utilize <i>clang</i> and <i>clang++</i> from the MacOS Xcode toolchain.</h3></span>    
 
 ## 0. Installing needed tools for CHARMM/pyCHARMM
 ### In order to use CHARMM/pyCHARMM you will need to:
 - **Create a conda environment capable of building CHARMM, pyCHARMM (Part 1)**
-- **Install gfortran and OpenMPI with MacPorts or Homebrew (Part 2)**
+- **Install gfortran and OpenMPI with MacPorts or Homebrew (Part 2) (No longer necessary on MacOSX with Apple hardware)**
 - **Install the MMTSB ToolSet from [MMTSB](https://feig.bch.msu.edu/mmtsb/Main_Page). Follow the instructions to install the package.**
 - **Obtain the CHARMM software (free to academics and government labs) from [Academic CHARMM](https://academiccharmm.org/program). Follow the directions below to build a conda environment capable of installing CHARMM/pyCHARMM.**
 - **Install CHARMM and pyCHARMM (Part 3)**
 
 ## 1. Creating conda environment to install and use CHARMM/pyCHARMM
 - **You will need a base anaconda/miniconda/conda-forge (conda-forge recommended) installation: see [conda-forge installation](https://conda-forge.org/download/#:~:text=Miniforge%20is%20the%20preferred%20conda,conda%20create%20or%20mamba%20create%20.).**
-- **Follow steps in 1a to create the conda environment manually OR follow steps in 1b to create the conda environment from a YAML file.**
-### 1a. Create a conda environment manually
-- **Make a conda environment (See below for a shortcut using `mamba env create -f <name_of_environment>.yml`). In this example we will call the enviroment _charmm_env_**
+- **Follow steps in 1 to create the conda environment from the included YAML file.**
+> **Note: We have added new support for [OpenMM PyTorch plugin](https://github.com/openmm/openmm-torch).**
 
-
-`mamba create -y -n charmm_env python=3.12` # note python can be > 3.9
-
-
-- **Activate this environment**
-
-
-`conda activate charmm_env` 
-
-
-- **Install needed packages to build CHARMM and pyCHARMM**
-
-
-`mamba install -y -c conda-forge make cmake fftw clfft openmpi openmm openmm-torch mpi4py readline rdkit openbabel pandas pytorch jupyter biopython py3dmol mdtraj nglview jsonpickle pymol-open-source pip`
-    
-- **Install [crimm](https://github.com/BrooksResearchGroup-UM/crimm/tree/master) to provide support of preparing files, fixing charges based on pH (using PropKa).**
-
-`pip install crimm` 
-
-**Note: We have added new support for [OpenMM PyTorch plugin](https://github.com/openmm/openmm-torch).**
-
-### 1b. Building the CHARMM/pyCHARMM compatable environment with a YAML file
+### 1. Building the CHARMM/pyCHARMM compatable environment with a YAML file
  
-`charmm_env.yml`
+`charmm_cpu_env.yml`
  
 ```YAML
-name: charmm_env # This represents the name you want to use for your conda environment
-channels:        # This YAML file is for Apple hardware
+name: charmm_cpu_env # This represents the name you want to use for your conda environment
+channels:        # This YAML file is for cpu-only implementation hardware
   - conda-forge
+  - pytorch
   - defaults
 dependencies:
-  - python==3.12
+  # =====================================================
+  # Compilers (GCC 12.x for CHARMM compatibility)
+  # =====================================================
+  - gcc
+  - gxx
+  - gfortran
+  - binutils
   - make
   - cmake
-  - fftw
-  - openmpi
-  - openmm
-  - openmm-torch # Added support for openmm pytorch plugin
+  # =====================================================
+  # MPI (OpenMPI with CUDA awareness)
+  # =====================================================
+  - openmpi>=5.0.8
   - mpi4py
+  # =====================================================
+  # Python
+  # =====================================================
+  - python=3.12
+  # =====================================================
+  # OpenMM (includes CUDA platform when cuda-toolkit present)
+  # =====================================================
+  - openmm>=8.2
+  - openmm-torch
+  # =====================================================
+  # Math libraries needed for CHARMM
+  # =====================================================
+  - fftw
+  - clfft
+  # =====================================================
+  # TorchANI for support of ML  QM/ML potentials
+  # =====================================================
+  - torchani
+  # =====================================================
+  # Utilities usefull for CHARMM/pyCHARMM
+  # =====================================================
   - readline
+  - scipy
+  - jsonpickle
+  - pip
+  - pdoc  # needed for documentation creation
+  # =====================================================
+  # Jupyter & Development
+  # =====================================================
+  - jupyter
+  - ipywidgets
+  - ipympl
+  - ipyparallel
+##########################################################
+##########################################################
+# The above is required or highly desired for basic CHARMM
+# pyCHARMM build on a Linux cluster supporting CUDA
+##########################################################
+# File chm_addon.txt
+##########################################################
+# What's below this line is recommended for building
+# modeling/computational workflows and their analyses
+# with CHARMM/pyCHARMM
+##########################################################
+# =====================================================
+# MD Analysis & Simulation Tools
+# =====================================================
+  - mdanalysis
+  - mdtraj
+  - biopython
+  - parmed
+  - pdbfixer
+# =====================================================
+# Free Energy & Enhanced Sampling
+# =====================================================
+  - pymbar
+  - alchemlyb
+# =====================================================
+# Visualization
+# =====================================================
+  - matplotlib
+  - nglview
+  - py3dmol
+  - pymol-open-source
+# =====================================================
+# Chemistry Tools
+# =====================================================
   - rdkit
   - openbabel
-  - pandas
-  - pytorch
-  - jupyter
-  - biopython
-  - py3dmol
-  - mdtraj
-  - nglview
-  - jsonpickle
-  - pymol-open-source
-  - pip
-  - clfft
+  - mendeleev
+# =====================================================
+# pip Tools
+# =====================================================
   - pip:
-    - crimm==2025.4b0
-    - numpy==2.2.6
-    - propka==3.5.0
-    - tinycss2==1.4.0
-variables:  # Note one would need to change this to point to their path
-  CHARMM_LIB_DIR: /Users/brookscl/charmm/charmm-dev/install_charmm_env/lib  # Note change to your path
-prefix: /Users/brookscl/miniforge3/envs/charmm_env # Note change to your environment
+    - crimm
+    - fastmbar
 ```
 
 - **You can edit this YAML file to add/change the installed packages. You can install this new conda environment with the command:**
 
 
-`mamba env create -f charmm_env.yml`
+`conda env create -n <your_charmm_environment name> -f charmm_cpu_env.yml`
 
 
 ## 2. Install gfortran and OpenMPI using MacPorts or Homebrew.
