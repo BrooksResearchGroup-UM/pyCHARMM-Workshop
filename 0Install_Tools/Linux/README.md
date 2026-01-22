@@ -8,23 +8,9 @@
 - **Install pyALF (Part 3)**
 
 ## 1. Creating conda environment to install and use CHARMM/pyCHARMM
-- **You will need a base anaconda/miniconda installation: see [anaconda installation](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html).**
-- **Follow steps in 1a to create the conda environment manually OR follow steps in 1b to create the conda environment from a YAML file.**
-### 1a. Create a conda environment manually
-- **Make a conda environment (See below for a shortcut using `conda env create -f <name_of_environment>.yml`)**<p>
-`conda create -y -n <name_of_environment> python=3.9` # note python can be > 3.9
-- **Activate this environment**<p>
-`conda activate <name_of_environment>`
-- **Install mamba as a faster conda**<p>
-`conda install -y -c conda-forge mamba`
-- **Install CUDA from NVIDIA. Pick one version compatible with your drivers as described below. You can see available [CUDA Toolkit packages (Table 3)](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#title-new-cuda-tools)**<p>
-`mamba install -y -c nvidia cuda` # note this should install CUDA 12.1.1<p>
-`mamba install -y -c "nvidia/label/cuda-12.0.0" cuda` # note this should install CUDA 12.0<p>
- - **If you use the `cuda-12.0.0` noted above, then you need to use `gcc=12.1 gcc=12.1 gfortran=12.1` in the command below.**
- - **Install needed packages to build CHARMM and pyCHARMM**<p>
-`mamba install -y -c conda-forge gcc==12.1 gxx==12.1 gfortran==12.1 make cmake binutils fftw openmpi openmm mpi4py rdkit openbabel pandas pytorch-gpu jupyter propka biopython py3dmol mdtraj nglview jsonpickle pymol-open-source`
-
-<h4><b>Note on nglview and jupyter_server incompatability:</b> If you have problems viewing graphics in the tutorials from 1 and 2, you probably need to downgrade your jupyter_server package. What seems to work with the current nglview is jupyter_server=1.23.6. I suggest installing this in your environment with `mamba install -c conda-forge jupyter_server=1.23.6`</h4>
+- **You will need a base anaconda/miniconda/conda-forge (conda-forge recommended) installation: see [conda-forge installation](https://conda-forge.org/download/#:~:text=Miniforge%20is%20the%20preferred%20conda,conda%20create%20or%20mamba%20create%20.).**
+- **Follow steps in 1 to create the conda environment from the included YAML file.**
+> **Note: We have added new support for [OpenMM PyTorch plugin](https://github.com/openmm/openmm-torch).**
 
 <div class="alert alert-block alert-warning">
 <b>Note on CUDA Toolkit/Driver and Compiler Compatabilities:</b> In choosing the CUDA Toolkit you need to coordinate with the compatable CUDA Driver and compilers. The table below outlines these requirements. You should check with your systems manager regarding the installed CUDA Driver on the computer cluster/machine on which you plan to install CHARMM/pyCHARMM. However, you can also glean this information by running the command <i>nvidia-smi</i> on one of the nodes of your GPU-equipped computers. In this case the CUDA Driver will be displayed at the top of the output created from this command:</div><p>
@@ -62,73 +48,124 @@ Specifying that the Driver Version is 525.85.05. Thus, as seen from the table be
 <b>Newer drivers work with older CUDA versions, but older drivers do not work with newer CUDA version. Thus, if your driver is older than 525.85.05, the oldest available CUDA version, 11.3.1, should be compatible with the largest number of drivers. You can install it using
 </div><p>
 
-`mamba install -y -c "nvidia/label/cuda-11.3.1" cuda`
-
-<div class="alert alert-block alert-warning">
-<b>This CUDA version is incompatible with current versions of gcc, but version 10.4 works well so replace "gcc gxx gfortran" with "gcc==10.4 gxx==10.4 gfortran==10.4"
-</div><p>
-
-`mamba install -y -c conda-forge gcc==10.4 gxx==10.4 gfortran==10.4 make cmake binutils fftw openmpi openmm mpi4py sysroot_linux-64 readline rdkit openbabel pandas pytorch-gpu jupyter_server jupyter  propka biopython py3dmol mdtraj nglview jsonpickle pymol-open-source`
-
-### 1b. Building the CHARMM/pyCHARMM compatable environment with a YAML file
+### 1. Building the CHARMM/pyCHARMM compatable environment with a YAML file
  
-`charmm_wcuda12.yml`
+`charmm_gpu_env.yml`
  
 ```YAML
-name: charmm_wcuda12  # This represents the name you want to use for your conda environment
+# File charmm_gpu_env.yml
+name: charmm_gpu_env
 channels:
-  - defaults
   - conda-forge
-  - nvidia/label/cuda-12.0.0  # This tells conda to explicitly load cuda 12.0.0
-  #- nvidia/label/cuda-12.1.1
-  #- nvidia/label/cuda-11.8.0
-  #- nvidia/label/cuda-11.7.1
+  - nvidia
+  - pytorch
 dependencies:
-  - python=3.9
-  - mamba
-  - cuda
-  - ca-certificates
-  - certifi
-  - openssl
-  - gcc=12.1
-  - gxx=12.1
-  - gfortran=12.1
+  # =====================================================
+  # CUDA 12.9 Toolkit (PINNED - do not update)
+  # =====================================================
+  - cuda-version=12.9.*
+  - cuda-toolkit=12.9.*
+  - cuda-cudart
+  - cuda-nvcc
+  - cuda-libraries
+  - cuda-nvrtc
+  - cudnn
+  # =====================================================
+  # Compilers (GCC 12.x for CHARMM compatibility)
+  # =====================================================
+  - gcc=12.2.0
+  - gxx=12.2.0
+  - gfortran=12.2.0
+  - binutils
   - make
   - cmake
-  - binutils
-  - fftw
-  - openmpi
-  - openmm
+  # =====================================================
+  # MPI (OpenMPI with CUDA awareness)
+  # =====================================================
+  - openmpi>=5.0.8
   - mpi4py
-  - sysroot_linux-64
+  # =====================================================
+  # Python
+  # =====================================================
+  - python=3.12
+  # =====================================================
+  # OpenMM (includes CUDA platform when cuda-toolkit present)
+  # =====================================================
+  - openmm>=8.2
+  - openmm-torch=*=*cuda129*
+  # =====================================================
+  # Math libraries needed for CHARMM
+  # =====================================================
+  - fftw
+  - clfft
+  # =====================================================
+  # TorchANI for support of ML  QM/ML potentials
+  # =====================================================
+  - torchani=*=*cuda129*
+  # =====================================================
+  # Utilities usefull for CHARMM/pyCHARMM
+  # =====================================================
   - readline
+  - scipy
+  - jsonpickle
+  - pip
+  - pdoc
+  # =====================================================
+  # Jupyter & Development
+  # =====================================================
+  - jupyter
+  - ipywidgets
+  - ipympl
+  - ipyparallel
+##########################################################
+##########################################################
+# The above is required or highly desired for basic CHARMM
+# pyCHARMM build on a Linux cluster supporting CUDA
+##########################################################
+# File chm_addon.txt
+##########################################################
+# What's below this line is recommended for building
+# modeling/computational workflows and their analyses
+# with CHARMM/pyCHARMM
+##########################################################
+# =====================================================
+# MD Analysis & Simulation Tools
+# =====================================================
+  - mdanalysis
+  - mdtraj
+  - biopython
+  - parmed
+  - pdbfixer
+# =====================================================
+# Free Energy & Enhanced Sampling
+# =====================================================
+  - pymbar
+  - alchemlyb
+# =====================================================
+# Visualization
+# =====================================================
+  - matplotlib
+  - nglview
+  - py3dmol
+  - pymol-open-source
+# =====================================================
+# Chemistry Tools
+# =====================================================
   - rdkit
   - openbabel
-  - pandas
-  - pytorch
-  - jupyter_core
-  - jupyter_client
-  - jupyterlab
-  - jupyterlab_widgets
-  - jupyter_server
-  - jupyterlab_server
-  - jupyter_console
-  - jupyter
-  - jupytext
-  - propka
-  - biopython
-  - py3dmol
-  - mdtraj
-  - nglview
-  - jsonpickle
-  - pymol-open-source
-prefix: /home/brookscl/.conda/envs/charmm_wcuda12  # This corresponds to the path to this environment
+  - mendeleev
+# =====================================================
+# pip Tools
+# =====================================================
+  - pip:
+    - crimm
+    - fastmbar
 ```
 
 - **You can edit this YAML file to add/change the cuda version as noted above. You can install this new conda environment with the command:**
 
 
-`conda env create -f charmm_wcuda12.yml`
+`conda env create -n <your_charmm_environment_name> -f charmm_gpu_env.yml`
 
 
 ## 2. CHARMM and pyCHARMM installation once conda environment is installed and active.
@@ -137,7 +174,7 @@ prefix: /home/brookscl/.conda/envs/charmm_wcuda12  # This corresponds to the pat
 <blockquote>
 
 ```csh
-conda activate charmm_wcuda12
+conda activate charmm_gpu_env
 cd <charmm_root>
 mkdir build_charmm
 cd build_charmm
@@ -150,18 +187,18 @@ make -j <n> install
 
 </blockquote>
 
-- **charmm_wcuda12 should be replaced with the name of your conda virtual environemnt**
+- **charmm__gpu_env should be replaced with the name of your conda virtual environemnt**
 - **\<charmm_root\> is the path to the charmm top level tree**
 - **\<charmm_install_path\> is the path where you want the CHARMM installation to reside**
 - **\<n\> is the number of cores to use in compiling the code**
-- **-D nvcc_ptx_target=52 is required for older GPUs like GTX980s**
+- **`-D nvcc_ptx_target=52` is required for older GPUs like GTX980s default is 75 so `-D nvcc_ptx_target` is not necessary if building for more modern Nvidia GPUs.**
 
-### pyCHARMM is built from the same source and can be built in the same build directory
+### pyCHARMM is built from the same source and can be built in the same build directory. If you want to ues pyCHARMM with MPI in python use this build
 
 <blockquote>
 
 ```csh
-conda activate charmm_wcuda12
+conda activate charmm_gpu_env
 cd <charmm_root>
 cd build_charmm
 rm -r *   # Clean the build directory
@@ -209,5 +246,5 @@ python -c "import alf"
 
 </blockquote>
 
-- **charmm_wcuda12 should be replaced with the name of your conda virtual environemnt**
+- **charmm_gpu_env should be replaced with the name of your conda virtual environemnt**
 - **\<alf_root\> is the path to the alf top level tree**
