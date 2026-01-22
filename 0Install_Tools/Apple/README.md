@@ -120,9 +120,10 @@ dependencies:
 - **You can edit this YAML file to add/change the installed packages. You can install this new conda environment with the command:**
 
 
-`conda env create -n <your_charmm_environment name> -f charmm_cpu_env.yml`
+`conda env create -n <your_charmm_environment_name> -f charmm_cpu_env.yml`
 
-
+- **If you do not specify `-n <your_charmm_environment_name>` it will default to the name at the top of the YAML file.**
+- 
 ## 2. Install gfortran and OpenMPI using MacPorts or Homebrew.
 ### You have two choices, if you are already using either MacPorts or Homebrew, skip down to installing gfortran and OpenMPI  below. (Note thos is unncessary any longer since gfortran and openmpi are now available in conda-forge. 
 ### MacPorts install:
@@ -185,7 +186,7 @@ make -j install
 ### CHARMM/pyCHARMM are built from the same source if you want to use pyCHARMM with mpi4py (the python api for mpi control at the python level use the following build
 
 ```csh
-conda activate charmm_env-wompi
+conda activate charmm_cpu_env
 cd <charmm_root>
 cd build_charmm
 rm -r *   # Clean the build directory
