@@ -1,49 +1,107 @@
-name: charmm_wcuda12  # This represents the name you want to use for your conda environment
+# File charmm_gpu_env.yml
+name: charmm_gpu_env
 channels:
-  - defaults
   - conda-forge
-  - nvidia/label/cuda-12.0.0  # This tells conda to explicitly load cuda 12.0.0
-  # other examples
-  #- nvidia/label/cuda-12.1.1
-  #- nvidia/label/cuda-11.8.0
-  #- nvidia/label/cuda-11.7.1
+  - nvidia
+  - pytorch
 dependencies:
-  - python=3.9
-  - mamba
-  - cuda
-  - ca-certificates
-  - certifi
-  - openssl
-  - gcc=12.1
-  - gxx=12.1
-  - gfortran=12.1
+  # =====================================================
+  # CUDA 12.9 Toolkit (PINNED - do not update)
+  # =====================================================
+  - cuda-version=12.9.*
+  - cuda-toolkit=12.9.*
+  - cuda-cudart
+  - cuda-nvcc
+  - cuda-libraries
+  - cuda-nvrtc
+  - cudnn
+  # =====================================================
+  # Compilers (GCC 12.x for CHARMM compatibility)
+  # =====================================================
+  - gcc=12.2.0
+  - gxx=12.2.0
+  - gfortran=12.2.0
+  - binutils
   - make
   - cmake
-  - binutils
-  - fftw
-  - openmpi
-  - openmm
+  # =====================================================
+  # MPI (OpenMPI with CUDA awareness)
+  # =====================================================
+  - openmpi>=5.0.8
   - mpi4py
-  - sysroot_linux-64==2.17
-  - readline==8.2
+  # =====================================================
+  # Python
+  # =====================================================
+  - python=3.12
+  # =====================================================
+  # OpenMM (includes CUDA platform when cuda-toolkit present)
+  # =====================================================
+  - openmm>=8.2
+  - openmm-torch=*=*cuda129*
+  # =====================================================
+  # Math libraries needed for CHARMM
+  # =====================================================
+  - fftw
+  - clfft
+  # =====================================================
+  # TorchANI for support of ML  QM/ML potentials
+  # =====================================================
+  - torchani=*=*cuda129*
+  # =====================================================
+  # Utilities usefull for CHARMM/pyCHARMM
+  # =====================================================
+  - readline
+  - scipy
+  - jsonpickle
+  - pip
+  - pdoc
+  # =====================================================
+  # Jupyter & Development
+  # =====================================================
+  - jupyter
+  - ipywidgets
+  - ipympl
+  - ipyparallel
+##########################################################
+##########################################################
+# The above is required or highly desired for basic CHARMM
+# pyCHARMM build on a Linux cluster supporting CUDA
+##########################################################
+# File chm_addon.txt
+##########################################################
+# What's below this line is recommended for building
+# modeling/computational workflows and their analyses
+# with CHARMM/pyCHARMM
+##########################################################
+# =====================================================
+# MD Analysis & Simulation Tools
+# =====================================================
+  - mdanalysis
+  - mdtraj
+  - biopython
+  - parmed
+  - pdbfixer
+# =====================================================
+# Free Energy & Enhanced Sampling
+# =====================================================
+  - pymbar
+  - alchemlyb
+# =====================================================
+# Visualization
+# =====================================================
+  - matplotlib
+  - nglview
+  - py3dmol
+  - pymol-open-source
+# =====================================================
+# Chemistry Tools
+# =====================================================
   - rdkit
   - openbabel
-  - pandas
-  - pytorch
-  - jupyter_core
-  - jupyter_client
-  - jupyterlab
-  - jupyterlab_widgets
-  - jupyter_server=1.23.6
-  - jupyterlab_server
-  - jupyter_console
-  - jupyter
-  - jupytext
-  - propka
-  - biopython
-  - py3dmol
-  - mdtraj
-  - nglview
-  - jsonpickle
-  - pymol-open-source
-prefix: /home/brookscl/.conda/envs/charmm_wcuda12  # This corresponds to the path to this environment
+  - mendeleev
+# =====================================================
+# pip Tools
+# =====================================================
+  - pip:
+    - crimm
+    - fastmbar
