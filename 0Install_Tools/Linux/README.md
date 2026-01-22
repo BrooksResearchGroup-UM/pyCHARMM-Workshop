@@ -167,11 +167,13 @@ dependencies:
 - **You can edit this YAML file to add/change the cuda version as noted above. You can install this new conda environment with the command:**
 
 <blockquote>
+ 
 ```csh 
 export CONDA_OVERRIDE_CUDA="12.9" # enables build on head nodes w/o GPU
 setenv CONDA_OVERRIDE_CODA 12.9   # enables build on head nodes w/o GPU
-`conda env create -n <your_charmm_environment_name> -f charmm_gpu_env.yml`
+conda env create -n <your_charmm_environment_name> -f charmm_gpu_env.yml
 ```
+
 </blockquote>
 
 ## 2. CHARMM and pyCHARMM installation once conda environment is installed and active.
