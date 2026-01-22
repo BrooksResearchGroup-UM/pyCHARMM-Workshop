@@ -1,5 +1,5 @@
 <span style="color:red">
-<h3><b>Note:</b> Apple hardware no longer supports CUDA, but does support OpenCL. Thus, we cannot build CHARMM/pyCHARMM versions that include BLaDe or DOMDEC GPU kernels. However, OpenMM supports OpenCL and thus can be installed and used with any GPU support on your Apple computer. At [resent we are working to make a fully gnu compiler supported version through a conda environment, but for present we still utilize <i>clang</i> and <i>clang++</i> from the MacOS Xcode toolchain.</h3></span>    
+<h3><b>Note:</b> Apple hardware no longer supports CUDA, but does support OpenCL. Thus, we cannot build CHARMM/pyCHARMM versions that include BLaDe or DOMDEC GPU kernels. However, OpenMM supports OpenCL and thus can be installed and used with any GPU support on your Apple computer. At present we are working to make a fully gnu compiler supported version through a conda environment, but for present we still utilize <i>clang</i> and <i>clang++</i> from the MacOS Xcode toolchain.</h3></span>    
 
 ## 0. Installing needed tools for CHARMM/pyCHARMM
 ### In order to use CHARMM/pyCHARMM you will need to:
@@ -26,10 +26,10 @@ channels:        # This YAML file is for cpu-only implementation hardware
   - defaults
 dependencies:
   # =====================================================
-  # Compilers (GCC 12.x for CHARMM compatibility)
+  # Compilers (GCC for CHARMM compatibility)
   # =====================================================
-  - gcc
-  - gxx
+  #- gcc  # gcc only for Linux at present
+  #- gxx  # gcc only for Linux at present
   - gfortran
   - binutils
   - make
@@ -113,7 +113,7 @@ dependencies:
 # pip Tools
 # =====================================================
   - pip:
-    - crimm
+    - crimm # note latest crimm offers many structure preperation features
     - fastmbar
 ```
 
@@ -124,23 +124,20 @@ dependencies:
 
 
 ## 2. Install gfortran and OpenMPI using MacPorts or Homebrew.
-### You have two choices, if you are already using either MacPorts or Homebrew, skip down to installing gfortran and OpenMPI  below.
+### You have two choices, if you are already using either MacPorts or Homebrew, skip down to installing gfortran and OpenMPI  below. (Note thos is unncessary any longer since gfortran and openmpi are now available in conda-forge. 
 ### MacPorts install:
 > - **[Install](https://www.macports.org/install.php) MacPorts for your operating system Follow the directions at the link above.**
 ### `gfortran` and `OpenMPI` install
-> `sudo port install gcc12`
+> `sudo port install gcc13.4`
 
-> `sudo port install openmpi-gcc12`
+> `sudo port install openmpi-gcc13.4`
 
-> `sudo port select --set gcc mp-gcc12`
+> `sudo port select --set gcc mp-gcc13.4`
 
-> `sudo port select --set mpi openmpi-gcc12-fortran`
+> `sudo port select --set mpi openmpi-gcc13.4-fortran`
 
 <div class="alert alert-block alert-warning">
-<h4><b>Note:</b> We have been unable to build CHARMM/pyCHARMM with the latest gcc from Homebrew (gcc 13.1), therefore we strongly suggest you use the installation instructions for gcc 12.2 given below.</h4>
-</div>
-
-### Homebrew install:
+## Homebrew install:
 > - **[Install](https://brew.sh/) Homebrew for your operating system Follow the directions at the link above.**
 ### `gfortran` and `OpenMPI` install
 
@@ -171,19 +168,19 @@ dependencies:
 ### Go to CHARMM source root and build CHARMM/pyCHARMM with configure
 
 ```csh
-conda activate charmm_env
+conda activate charmm_cpu_env
 cd <charmm_root>
 mkdir build_charmm
 cd build_charmm
-# Build CHARMM with FFTDOCK, DOMDEC (default) and OpenMM (default)
+# Build CHARMM with FFTDOCK, DOMDEC (default) and OpenMM  and OpenMM-Torch (default)
 ../configure --without-cuda --with-fftdock -p <charmm_install_path>
 make -j install
 ```
 
-- **_charmm_env_ should be replaced with the name of your conda virtual environment**
+- **_charmm_cpu_env_ should be replaced with the name of your conda virtual environment**
 - **\<charmm_root\> is the path to the charmm top level tree**
 - **\<charmm_install_path\> is the path where you want the CHARMM installation to reside**
-- **Note: CHARMM html documentation and pyCHARMM html files are created in the directory \<charmm_install_path\>/html_doc.***
+- **Note: CHARMM html documentation and pyCHARMM html files are created in the directory \<charmm_install_path\>/html_doc and \<charmm_install_path\>/html_doc\/pycharmm respectively.***
 
 ### CHARMM/pyCHARMM are built from the same source if you want to use pyCHARMM with mpi4py (the python api for mpi control at the python level use the following build
 
@@ -202,6 +199,6 @@ conda env config vars set CHARMM_LIB_DIR=<pycharmm_install_path>/lib  # every ti
 ```
 
 ## Note: *<pycharmm_install_path>* is the path where you want the pyCHARMM installation to reside. <br>
-## Note that *<pycharmm_install_path>* can be the same as *<charmm_install_path>*, i.e., you can install both charmm and pyCHARMM in the same install folder *<charmm_install_path>*.<br>
+## Note that *<pycharmm_install_path>* can be the same as *<charmm_install_path>*, i.e., you can install both CHARMM and pyCHARMM in the same install folder *<charmm_install_path>*.<br>
 ## Note: *CHARMM_LIB_DIR* should automatically be derived from installation in an environment.
 
