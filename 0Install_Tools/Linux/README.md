@@ -184,7 +184,7 @@ cd build_charmm
 export FFTW_HOME=$CONDA_PREFIX # bash syntax
 setenv FFTW_HOME $CONDA_PREFIX # csh syntax
 ../configure --with-blade --with-fftdock -u  -D nvcc_ptx_target="52:75" -p <charmm_install_path>
-make -j <n> install
+make -j install
 ```
 
 </blockquote>
@@ -192,7 +192,6 @@ make -j <n> install
 - **charmm__gpu_env should be replaced with the name of your conda virtual environemnt**
 - **\<charmm_root\> is the path to the charmm top level tree**
 - **\<charmm_install_path\> is the path where you want the CHARMM installation to reside**
-- **\<n\> is the number of cores to use in compiling the code**
 - **`-D nvcc_ptx_target=52` is required for older GPUs like GTX980s default is 75 so `-D nvcc_ptx_target` is not necessary if building for more modern Nvidia GPUs.**
 
 ### pyCHARMM is built from the same source and can be built in the same build directory. If you want to ues pyCHARMM with MPI in python use this build
@@ -208,7 +207,7 @@ rm -r *   # Clean the build directory
 export FFTW_HOME=$CONDA_PREFIX # bash syntax
 setenv FFTW_HOME $CONDA_PREFIX # csh syntax
 ../configure --with-blade --with-fftdock --without-mpi --as-library  -D nvcc_ptx_target=52 -p <pycharmm_install_path>
-make -j <n> install
+make -j install
 cd <charmm_root>
 pip install `pwd`/tool/pycharmm  # Installs the pyCHARMM modules in your current environment
 export CHARMM_LIB_DIR=<pycharmm_install_path>/lib # bash syntax
