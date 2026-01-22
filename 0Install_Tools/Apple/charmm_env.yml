@@ -1,41 +1,96 @@
-name: charmm_env # This represents the name you want to use for your conda environment
-channels:        # This YAML file is for Apple hardware
+name: charmm_cpu_env # This represents the name you want to use for your conda environment
+channels:        # This YAML file is for cpu-only implementation hardware
   - conda-forge
+  - pytorch
   - defaults
 dependencies:
-  - python==3.11
-  - mamba
+  # =====================================================
+  # Compilers (GCC for CHARMM compatibility)
+  # =====================================================
+  #- gcc  # gcc only for Linux at present
+  #- gxx  # gcc only for Linux at present
+  - gfortran
+  - binutils
   - make
   - cmake
-  - fftw
-  - openmpi
-  - openmm
+  # =====================================================
+  # MPI (OpenMPI with CUDA awareness)
+  # =====================================================
+  - openmpi>=5.0.8
   - mpi4py
-  - readline==8.2
+  # =====================================================
+  # Python
+  # =====================================================
+  - python=3.12
+  # =====================================================
+  # OpenMM (includes CUDA platform when cuda-toolkit present)
+  # =====================================================
+  - openmm>=8.2
+  - openmm-torch
+  # =====================================================
+  # Math libraries needed for CHARMM
+  # =====================================================
+  - fftw
+  - clfft
+  # =====================================================
+  # TorchANI for support of ML  QM/ML potentials
+  # =====================================================
+  - torchani
+  # =====================================================
+  # Utilities usefull for CHARMM/pyCHARMM
+  # =====================================================
+  - readline
+  - scipy
+  - jsonpickle
+  - pip
+  - pdoc  # needed for documentation creation
+  # =====================================================
+  # Jupyter & Development
+  # =====================================================
+  - jupyter
+  - ipywidgets
+  - ipympl
+  - ipyparallel
+##########################################################
+##########################################################
+# The above is required or highly desired for basic CHARMM
+# pyCHARMM build on a Linux cluster supporting CUDA
+##########################################################
+# File chm_addon.txt
+##########################################################
+# What's below this line is recommended for building
+# modeling/computational workflows and their analyses
+# with CHARMM/pyCHARMM
+##########################################################
+# =====================================================
+# MD Analysis & Simulation Tools
+# =====================================================
+  - mdanalysis
+  - mdtraj
+  - biopython
+  - parmed
+  - pdbfixer
+# =====================================================
+# Free Energy & Enhanced Sampling
+# =====================================================
+  - pymbar
+  - alchemlyb
+# =====================================================
+# Visualization
+# =====================================================
+  - matplotlib
+  - nglview
+  - py3dmol
+  - pymol-open-source
+# =====================================================
+# Chemistry Tools
+# =====================================================
   - rdkit
   - openbabel
-  - pandas
-  - pytorch
-  - jupyter_core
-  - jupyter_client
-  - jupyterlab
-  - jupyterlab_widgets
-  - jupyter_server
-  - jupyterlab_server
-  - jupyter_console
-  - jupyter
-  - jupytext
-  - biopython
-  - py3dmol
-  - mdtraj
-  - nglview
-  - jsonpickle
-  - pymol-open-source
-  - pip
-  - ca-certificates
-  - certifi
-  - openssl
-  - clfft
-variables:
-  CHARMM_LIB_DIR: ~/charmm/c47-dev-release/install_charmm_env/lib
-prefix: /Users/brookscl/opt/anaconda3/envs/charmm_env
+  - mendeleev
+# =====================================================
+# pip Tools
+# =====================================================
+  - pip:
+    - crimm # note latest crimm offers many structure preperation features
+    - fastmbar
