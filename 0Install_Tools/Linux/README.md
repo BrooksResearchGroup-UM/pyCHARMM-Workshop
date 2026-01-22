@@ -29,6 +29,8 @@ Specifying that the Driver Version is 525.85.05. Thus, as seen from the table be
 
 | Toolkit Version | Minimum Required Driver | Recommended GCC | Recommended Intel Compilers
 | :-: | :-: | :-: | :-:     
+|CUDA 13.x|>=580.xx|12.x,13.x,14.x|unknown
+|CUDA 12.x|>=526.60.13|12.x,13.x|unknown
 |CUDA 12.1.x|>=530.30.02|12.2|2021.7
 |CUDA 12.0.0|>=525.85.05|12.1|2021.6
 |CUDA 11.8.x|>=520.61.05|11|2021
