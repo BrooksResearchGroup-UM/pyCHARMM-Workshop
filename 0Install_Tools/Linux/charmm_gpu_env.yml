@@ -47,6 +47,7 @@ dependencies:
   # TorchANI for support of ML  QM/ML potentials
   # =====================================================
   - torchani=*=*cuda126*
+  - ase
   # =====================================================
   # Utilities usefull for CHARMM/pyCHARMM
   # =====================================================
