@@ -90,6 +90,7 @@ dependencies:
   - mdanalysis
   - mdtraj
   - biopython
+  - propk>=3.5.1
   - parmed
   - pdbfixer
 # =====================================================
