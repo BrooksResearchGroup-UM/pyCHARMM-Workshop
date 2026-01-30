@@ -82,6 +82,7 @@ dependencies:
   - biopython
   - parmed
   - pdbfixer
+  - propka>=3.5.1
 # =====================================================
 # Free Energy & Enhanced Sampling
 # =====================================================
