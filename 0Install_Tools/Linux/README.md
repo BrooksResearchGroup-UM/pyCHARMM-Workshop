@@ -134,6 +134,7 @@ dependencies:
 # =====================================================
 # MD Analysis & Simulation Tools
 # =====================================================
+  - ambertools 
   - mdanalysis
   - mdtraj
   - biopython
