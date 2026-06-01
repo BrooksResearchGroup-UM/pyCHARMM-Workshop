@@ -1,7 +1,7 @@
 ## 0. Installing needed tools for CHARMM/pyCHARMM
 ### In order to use CHARMM, pyCHARMM, and pyALF you will need to:
 - **Create a conda environment capable of building CHARMM, pyCHARMM, and pyALF (Part 1)**
-- **Install the MMTSB ToolSet from [MMTSB](https://feig.bch.msu.edu/mmtsb/Main_Page). Follow the instructions to install the package.**
+- **Install the MMTSB ToolSet from [MMTSB](https://feig.bch.msu.edu/mmtsb/Main_Page). Follow the instructions to install the package.Note, we will move to using crimm for structure preparation, MMTSB Tools will only be necessary for clustering.**
 - **Obtain the CHARMM software (free to academics and government labs) from [AcademicCHARMM](https://academiccharmm.org/program). Follow the directions below to build a conda environment capable of installing CHARMM/pyCHARMM.**
 - **Install CHARMM and pyCHARMM (Part 2)**
 - **Obtain [ALF version 3.2](https://github.com/ryanleehayes/alf) from github**
